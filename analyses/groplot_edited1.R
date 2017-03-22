@@ -262,6 +262,7 @@ plot(fSENstartm, BB_Flodoy, xlab = "Senescence DOY", ylab = "Flowering - Budburs
 abline(lm(BB_Flodoy ~ fSENstartm))
 
 
+
 BB_Frudoy = fFRstartm - fLDstartm
 plot(fLDstartm, BB_Frudoy, xlab = "Budburst DOY", ylab = "Fruiting - Budburst DOY")
 abline(lm(BB_Frudoy~fLDstartm))
@@ -460,58 +461,6 @@ plot(fLOstartm, Fru_SSdoy, xlab = "Leaf Out DOY", ylab = "Senescence - Fruiting 
 abline(lm(Fru_SSdoy~fLOstartm))
 
 
-########### 10/30/16 Megaplot
-
-quartz(height=9, width=7)#this sets the dimensions of the plotting window
-par(mfrow=c(5,3))#this sets the number of rows and columns for the plots - in this case 5 rows and 5 columns
-par(mfrow=c(5,3),mai=c(.5,.7,.2,.1), omi=c(.4,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
-
-plot(fLOstartm, BB_LOdoy, xlab = "Leaf Out", ylab = "Leaf Out - Budburst DOY")
-abline(lm(BB_LOdoy~fLOstartm))
-
-plot(fFLstartm, BB_LOdoy, xlab = "Flowering DOY", ylab = "Leaf Out - Budburst DOY")
-abline(lm(BB_LOdoy~fFLstartm))
-
-plot(fLOstartm, BB_Flodoy, xlab = "Leaf Out DOY", ylab = "Flowering - Budburst DOY")
-abline(lm(BB_Flodoy~fLOstartm))
-
-plot(fFLstartm, BB_Flodoy, xlab = "Flowering DOY", ylab = "Flowering - Budburst DOY")
-abline(lm(BB_Flodoy~fFLstartm))
-
-plot(fFRstartm, BB_Frudoy, xlab = "Fruiting DOY", ylab = "Fruiting - Budburst DOY")
-abline(lm(BB_Frudoy~fFRstartm))
-
-plot(fFLstartm, LO_FLdoy, xlab = "Flowering DOY", ylab = "Flowering - Leaf Out DOY")
-abline(lm(LO_FLdoy~fFLstartm))
-
-plot(fFRstartm, LO_FLdoy, xlab = "Fruiting DOY", ylab = "Flowering - Leaf Out DOY")
-abline(lm(LO_FLdoy~fFRstartm))
-
-plot(fFRstartm, LO_FRdoy, xlab = "Fruiting DOY", ylab = "Fruiting - Leaf Out DOY")
-abline(lm(LO_FRdoy~fFRstartm))
-
-plot(fFRstartm, Flo_Frudoy, xlab = "Fruiting DOY", ylab = "Fruiting - Flowering DOY")
-abline(lm(Flo_Frudoy~fFRstartm))
- 
-plot(fFLstartm, Flo_SSdoy, xlab = "Flowering DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fFLstartm))
-
-plot(fFRstartm, Flo_SSdoy, xlab = "Fruiting DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fFRstartm))
-
-plot(fFRstartm, Fru_SSdoy, xlab = "Fruiting DOY", ylab = "Senescence - Fruiting DOY")
-abline(lm(Fru_SSdoy~fFRstartm))
-
-plot(fSENstartm, Flo_Frudoy, xlab = "Senescence DOY", ylab = "Fruiting - Flowering DOY")
-abline(lm(Flo_Frudoy~fSENstartm))
-
-plot(fSENstartm, Flo_SSdoy, xlab = "Senescence DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fSENstartm))
-
-plot(fSENstartm, Fru_SSdoy, xlab = "Senescence DOY", ylab = "Senescence - Fruiting DOY")
-abline(lm(Fru_SSdoy~fSENstartm))
-
-
 ################################
 ################################
 ####### 11/1/16 correlations between stages and interperiod
@@ -705,103 +654,65 @@ summary(lm(Fru_SSdoy~fLOstartm))
 
 quartz(height=7, width=9)#this sets the dimensions of the plotting window
 #par(mfrow=c(5,5))#this sets the number of rows and columns for the plots - in this case 5 rows and 5 columns
-par(mfcol=c(4,5),mai=c(.2,.7,.2,.01), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
+par(mfcol=c(5,5),mai=c(.1,.4,.1,.01), omi=c(.8,.01,.1,.01))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
 
 #1- commenting this panel out for now because budburst is earliest stage- can't predict it with previous stage
-#plot(BB_LOdoy, fLDstartm, ylab = "Budburst DOY", xlab = "Leaf Out - Budburst DOY",bg=cols[as.numeric(as.factor(fspecies))])
-#abline(lm(BB_LOdoy~fLDstartm))
-plot(BB_LOdoy, fLOstartm, ylab = "Leaf Out", xlab = "")
-plot(BB_LOdoy,fFLstartm, ylab = "Flowering DOY", xlab = "")
-plot(BB_LOdoy,fFRstartm,  ylab = "Fruiting DOY", xlab = "")
-plot(BB_LOdoy,fSENstartm, ylab = "Senescence DOY", xlab = "Leaf Out - Budburst DOY")
+plot(BB_LOdoy, fLDstartm, ylab = "", xlab = "Leaf Out - Budburst DOY",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n')
+abline(lm(fLDstartm~BB_LOdoy))
+mtext("Budburst DOY", side=2, cex=.7, line=2)
+plot(BB_LOdoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n')
+mtext("Leaf Out DOY", side=2, cex=.7, line=2)
+plot(BB_LOdoy,fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n')
+mtext("Flowering DOY", side=2, cex=.7, line=2)
+plot(BB_LOdoy,fFRstartm,  ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n')
+mtext("Fruiting DOY", side=2, cex=.7, line=2)
+plot(BB_LOdoy,fSENstartm, ylab = "", xlab = "Leaf Out - Budburst DOY",pch=21,bg=cols[as.numeric(as.factor(fspecies))])
 mtext("Leaf Out - Budburst DOY", side=1, cex=.7, line=2)
+mtext("Senescence DOY", side=2, cex=.7, line=2)
 
 #2
-#plot(fLDstartm, BB_Flodoy, xlab = "Budburst DOY", ylab = "Flowering - Budburst DOY")
-plot(BB_Flodoy,fLOstartm, ylab = "", xlab = "")
-plot(BB_Flodoy,fFLstartm, ylab = "", xlab = "")
+plot(BB_Flodoy, fLDstartm, xlab = "", ylab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(BB_Flodoy,fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+abline(lm(fLOstartm~BB_Flodoy), lty=2)
+plot(BB_Flodoy,fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFLstartm~BB_Flodoy))
-plot(BB_Flodoy,fFRstartm, ylab = "", xlab = "")
+plot(BB_Flodoy,fFRstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFRstartm~BB_Flodoy))
-plot(BB_Flodoy,fSENstartm, ylab = "", xlab = "Flowering - Budburst DOY")
+plot(BB_Flodoy,fSENstartm, ylab = "", xlab = "Flowering - Budburst DOY",pch=21,bg=cols[as.numeric(as.factor(fspecies))], yaxt='n')
 mtext("Flowering - Budburst DOY", side=1, cex=.7, line=2)
 
-#plot(BB_Frudoy,fLDstartm,  ylab = "Budburst DOY", xlab = "")
-plot(BB_Frudoy, fLOstartm, ylab = "", xlab = "")
-plot(BB_Frudoy, fFLstartm, ylab = "", ylab = "")
-abline(lm(fFLstartm~BB_Frudoy))
-plot(BB_Frudoy, fFRstartm, ylab = "", xlab = "")
-abline(lm(fFRstartm~BB_Frudoy))
-plot(BB_Frudoy, fSENstartm, ylab = "", xlab = "Fruiting - Budburst DOY")
-
-
-#plot(fLDstartm, BB_SSdoy, xlab = "Budburst DOY", ylab = "Senescence - Budburst DOY")
-plot(BB_SSdoy, fLOstartm, ylab = "", xlab = "")
-plot(BB_SSdoy, fFLstartm, ylab = "", xlab = "")
-plot(BB_SSdoy, fFRstartm, ylab = "", xlab = "")
-plot(BB_SSdoy, fSENstartm, ylab = "", xlab = "Senescence - Budburst DOY")
-abline(lm(fSENstartm~BB_SSdoy))
-
 #3
-#plot(LO_FLdoy, fLDstartm, ylab = "", xlab = "")
-plot(LO_FLdoy, fLOstartm, ylab = "", xlab = "")
-plot(LO_FLdoy, fFLstartm, ylab = "", xlab = "")
+plot(LO_FLdoy, fLDstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(LO_FLdoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(LO_FLdoy, fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFLstartm~LO_FLdoy))
-plot(LO_FLdoy, fFRstartm, ylab = "", xlab = "")
+plot(LO_FLdoy, fFRstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFRstartm~LO_FLdoy))
-plot(LO_FLdoy,fSENstartm, ylab = "", xlab = "Flowering - Leaf Out DOY")
+plot(LO_FLdoy,fSENstartm, ylab = "", xlab = "Flowering - Leaf Out DOY",pch=21,bg=cols[as.numeric(as.factor(fspecies))],yaxt='n')
 mtext("Flowering - Leaf Out DOY", side=1, cex=.7, line=2)
 
-
-#plot(LO_FRdoy,fLDstartm,  ylab = "", xlab = "")
-plot(LO_FRdoy, fLOstartm, ylab = "", xlab = "")
-plot(LO_FRdoy, fFLstartm, ylab = "", xlab = "")
-abline(lm(fFLstartm~LO_FRdoy))
-plot(LO_FRdoy, fFRstartm, ylab = "", xlab = "Fruiting - Leaf Out DOY")
-abline(lm(fFRstartm~LO_FRdoy))
-plot(LO_FRdoy, fSENstartm, ylab = "", xlab = "Fruiting - Leaf Out DOY")
-
-
-#plot(fLDstartm, LO_SSdoy, xlab = "Budburst DOY", ylab = "Senescence - Leaf Out DOY")
-plot(fLOstartm, LO_SSdoy, xlab = "Leaf Out DOY", ylab = "Senescence - Leaf Out DOY")
-plot(fFLstartm, LO_SSdoy, xlab = "Flowering DOY", ylab = "Senescence - Leaf Out DOY")
-plot(fFRstartm, LO_SSdoy, xlab = "Fruiting DOY", ylab = "Senescence - Leaf Out DOY")
-plot(fSENstartm, LO_SSdoy, xlab = "Senescence DOY", ylab = "Senescence - Leaf Out DOY")
-abline(lm(LO_SSdoy~fSENstartm))
-
 #4
-#plot(fLDstartm, Flo_Frudoy, xlab = "Budburst DOY", ylab = "Fruiting - Flowering DOY")
-plot(Flo_Frudoy, fLOstartm, ylab = "", xlab = "")
-plot(Flo_Frudoy, fFLstartm, ylab = "", xlab = "")
-plot(Flo_Frudoy, fFRstartm, ylab = "", xlab = "")
+plot(fLDstartm, Flo_Frudoy, xlab = "", ylab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(Flo_Frudoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(Flo_Frudoy, fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(Flo_Frudoy, fFRstartm, ylab = "", xlab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFRstartm~Flo_Frudoy))
-plot(Flo_Frudoy, fSENstartm, ylab = "", xlab = "Fruiting - Flowering DOY")
+plot(Flo_Frudoy, fSENstartm, ylab = "", xlab = "Fruiting - Flowering DOY",pch=21,bg=cols[as.numeric(as.factor(fspecies))], yaxt='n')
 mtext("Fruiting - Flowering DOY", side=1, cex=.7, line=2)
 
-
-plot(fLDstartm, Flo_SSdoy, xlab = "Budburst DOY", ylab = "Senescence - Flowering DOY")
-plot(fLOstartm, Flo_SSdoy, xlab = "Leaf Out DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fLOstartm))
-plot(fFLstartm, Flo_SSdoy, xlab = "Flowering DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fFLstartm))
-plot(fFRstartm, Flo_SSdoy, xlab = "Fruiting DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fFRstartm))
-plot(fSENstartm, Flo_SSdoy, xlab = "Senescence DOY", ylab = "Senescence - Flowering DOY")
-abline(lm(Flo_SSdoy~fSENstartm))
-
 #5
-#plot(Fru_SSdoy, fLDstartm, xlab = "", ylab = "Senescence - Fruiting DOY")
-#abline(lm(fLDstartm~Fru_SSdoy))
-plot(Fru_SSdoy, fLOstartm, xlab = "", ylab = "")
-plot(Fru_SSdoy, fFLstartm, xlab = "", ylab = "")
+plot(Fru_SSdoy, fLDstartm, xlab = "", ylab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+abline(lm(fLDstartm~Fru_SSdoy))
+plot(Fru_SSdoy, fLOstartm, xlab = "", ylab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
+plot(Fru_SSdoy, fFLstartm, xlab = "", ylab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFLstartm~Fru_SSdoy))
-plot(Fru_SSdoy, fFRstartm, xlab = "", ylab = "")
+plot(Fru_SSdoy, fFRstartm, xlab = "", ylab = "",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 abline(lm(fFRstartm~Fru_SSdoy))
-plot(Fru_SSdoy, fSENstartm, xlab = "", ylab = "Senescence - Fruiting DOY")
+plot(Fru_SSdoy, fSENstartm, xlab = "", ylab = "Senescence - Fruiting DOY",pch=21,bg=cols[as.numeric(as.factor(fspecies))], xaxt='n', yaxt='n')
 mtext("Senescence - Fruiting DOY", side=1, cex=.7, line=2)
 
-##Now plot of later stage versus earlier stage
 
+##Now plot of later stage versus earlier stage
 quartz(height=7, width=7)#this sets the dimensions of the plotting window
 #par(mfrow=c(5,5))#this sets the number of rows and columns for the plots - in this case 5 rows and 5 columns
 par(mfcol=c(4,4),mai=c(.2,.7,.2,.01), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
@@ -846,78 +757,23 @@ abline(lm(fSENstartm~fFRstartm), lty=2)
 mtext("Fruiting DOY", side=1, cex=.7, line=2)
 
 
-
-
-
-
-#####################################################################################
-
-#arrows(x0, y0, x1 = x0, y1 = y0, length = 0.25, angle = 30,
-#       code = 2, col = par("fg"), lty = par("lty"),
-#       lwd = par("lwd"), ...)
-
-
-## OLD CODE 
-
-##########################
-# Plotting error bars.started 7/13/16 
-# code = 2 plots arrow at end of line, and code = 3 plots arrow on both sides. I decided to play around with both codes. I plotted flowering season with code 3.
-# The growing season lines begin with start DOY and end with end DOY. In creating the error bars I have different values at the beginning of the of the line segment, 
-# corresponding to the standard error value at the start DOY, and a different value at the end of the segment, corresponding to the standard error value at the end       DOY. 
-#########################
-
-for(i in 1:length(species)){
-  arrows(LDstartm[i],y[i], LDstartm[i]-LDstart.se[i],y[i], length =0.1, angle=90, code=2, lty = 1,lwd = 2)
-  arrows(LDendm[i],y[i], LDendm[i]+LDend.se[i],y[i], length =0.05, angle=90, code=2, lty = 1,lwd = 2)
-  arrows(FLstartm[i],y[i]-0.2, FLstart[i]-FLstart.se[i],y[i]-0.2, length =0.05, angle=90, code=3, lty = 1,lwd = 2)
-  arrows(FLendm[i],y[i]-0.2, FLendm[i]+FLend.se[i],y[i]-0.2, length =0.05, angle=90, code=3, lty = 1,lwd = 2)
-  arrows(FRstartm[i],y[i]-0.4, FRstartm[i]-FRstart.se[i],y[i]-0.4, length =0.05, angle=90, code=2, lty = 1,lwd = 2)
-  arrows(FRendm[i],y[i]-0.4, FRendm[i]+FRend.se[i],y[i]-0.4, length =0.05, angle=90, code=2, lty = 1,lwd = 2)
-  arrows(SENstartm[i],y[i]-0.2, SENstartm[i]-SENstart.se[i],y[i]-0.2, length =0.05, angle=90, code=2, lty = 1,lwd = 2)
-  arrows(SENendm[i],y[i]-0.2, SENendm[i]+SENend.se[i],y[i]-0.2, length =0.05, angle=90, code=2, lty = 1,lwd = 2)
-}
-
-
-legend("center", c("Leaf Development", "Flowering","Fruiting","Senescence"), col= c(col="darkgreen",col="darksalmon",col="purple",col="brown"), cex =0.6,lwd=4, bty="n",horiz = T)
-axis(side=2,at=c(seq(1:25)),labels=(paste(rev(names(LDstartm)))),las=1)
-#Start with Aesculus
-species<-names(LDstartm)
-y<-rev(seq(1:25))
-for(i in 1:length(species)){
-  
-  lines(c(LDstartm[i],LDendm[i]),c(y[i],y[i]), col="darkgreen", lwd=4)
-  lines(c(FLstartm[i],FLendm[i]),c(y[i],y[i]), col="darksalmon", lwd=4)
-  lines(c(FRstartm[i],FRendm[i]),c(y[i],y[i]), col="purple", lwd=4)
-  lines(c(SENstartm[i],SENendm[i]),c(y[i],y[i]), col="brown4", lwd=4)
-}
-
-
-#to see lots of color names do "colors()"
-
-############# Use if want species to be in a particular order. Would need to do it for all means, sd, and stderr. 
-## was not used in plot below. 7/13/16
-LDstart<-sort(LDstart, decreasing = FALSE)
-LDend<-LDend[names(LDstart)]
-FLstart<-LDstart[names(LDstart)]
-FLend<-FLend[names(LDstart)]
-FRstart<-FRstart[names(LDstart)]
-FRend<-FRend[names(LDstart)]
-SENstart<-SENstart[names(LDstart)]
-SENend<-SENend[names(LDstart)]
-
-LDstartm<-sort(LDstartm, decreasing = FALSE)
-LDendm<-LDendm[names(LDstartm)]
-FLstartm<-LDstartm[names(LDstartm)]
-FLendm<-FLendm[names(LDstartm)]
-FRstartm<-FRstartm[names(LDstartm)]
-FRendm<-FRendm[names(LDstartm)]
-SENstartm<-SENstartm[names(LDstartm)]
-SENendm<-SENendm[names(LDstartm)]
-#############
-y<-rev(seq(1:25))
-for(i in 1:length(species)){
-  lines(c(FLstartm[i],FLendm[i]),c(y[i]-0.2,y[i]-0.2), col="red", lwd=4)
-  lines(c(LDstartm[i],LDendm[i]),c(y[i] ,y[i]), col="darkgreen", lwd=4)
-  lines(c(FRstartm[i],FRendm[i]),c(y[i]-0.4,y[i]-0.4), col="darksalmon", lwd=4)
-  lines(c(SENstartm[i],SENendm[i]),c(y[i]-0.2,y[i]-0.2), col="brown", lwd=4)
-}
+###Simulating data to make hypotheses figures
+#Hyp1: previous stage (flow) constraints later stage (fruit); duration is random
+flowstdoy<-c(1,2,3,4,5)
+#flowdur<-c(5,5,5,5,5)
+flowdur<-rnorm(5,mean=5, sd=1)
+flowendoy<-flowstdoy+flowdur
+frstdoy<-flowstdoy+flowdur
+quartz(height=3, width=5)
+par(mfrow=c(1,2))
+plot(flowstdoy,frstdoy)
+abline(lm(frstdoy~flowstdoy))
+plot(flowdur,frstdoy)
+abline(lm(frstdoy~flowdur))
+#Hyp2: Interphase time (flow) constraints later stage (fruit); flow stard time is constant
+flowstdoy<-c(1,1,1,1,1)
+flowdur<-c(5,6,7,8,9)
+flowendoy<-flowstdoy+flowdur
+frstdoy<-flowstdoy+flowdur
+plot(flowdur,frstdoy)
+abline(lm(frstdoy~flowdur))
