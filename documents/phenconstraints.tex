@@ -81,7 +81,8 @@ This study was conducted at the Arnold Arboretum of Harvard University, a 281-ac
 \subsection*{Phenology data collection}
 
 \subsection*{Statistical analyses}
-To understand the extent to which previous phenological events constrain later events (hypothesis 1), we fit linear models with each phenological stage that we observed (except budburst, the earliest stage we quantified) as the response variable (i.e. species-level mean day of year of leaf-out, flowering, fruiting, or senesence).  We fit 10 different models, each with one of the previous phenological stages as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table 1.
+To understand the extent to which previous phenological events constrain later events (hypothesis 1), we fit linear models with each phenological stage that we observed (except budburst, the earliest stage we quantified) as the response variable (i.e. species-level mean day of year of leaf-out, flowering, fruiting, or senesence).  We fit 10 different models, each with one of the previous phenological stages as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table 1. All analyses were conducted in R version 3.2.4.
+
 \section* {Results}
 Main messages for Sally's thesis paper
 \begin{enumerate}
@@ -128,20 +129,21 @@ Next steps: Encourage a phylogenetic approach, collect data across years. We obs
 \begin{figure}[h]
   \centering
   \includegraphics{../analyses/figures/grosea_repsort.pdf}
-  \caption{\textbf{Focal species' phenology during the 2015 growing season, sorted by their mean first-flower dates.} For growth phenology, light green represents the bud-burst phase (from its mean start day-of-year to the mean start day-of-year for leaf-out, across all individuals within a species), dark green represents full leaf-out (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and yellow represents the senescence phase (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95 percent of leaves on the tree had changed color). For reproductive phenology, light purple represents the flowering phase (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and dark purple represents the fruiting phase (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95 percent of fruits were first observed as ripe).}
+  \caption{\textbf{Focal species' phenology during the 2015 growing season, sorted by their mean first-flower dates.} For growth phenology, light green represents the bud-burst phase (from its mean start day-of-year to the mean start day-of-year for leaf-out, across all individuals within a species), dark green represents full leaf-out (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and yellow represents the senescence phase (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95 percent of leaves on the tree had changed color). For reproductive phenology, light purple represents the flowering phase (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and dark purple represents the fruiting phase (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95 percent of fruits were first observed as ripe). Species are ordered from early to late first flower dates.}
   \label{fig:focsp}
 \end{figure}
   
   \begin{figure}[h]
   \centering
-  \includegraphics{../analyses/figures/latevearly_rp.pdf}
-  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and mean day of year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table 2.}
+  \includegraphics{../analyses/figures/latevearly_rp_col_legend.pdf}
+  
+  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and mean day of year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table 2.Species in the legend are ordered from early to late first flower dates, as in Figure 2.}
   \label{fig:latevearly}
 \end{figure}
 \begin{figure}[h]
   \centering
-  \includegraphics{../analyses/figures/adj_stagesmegaplot.pdf}
-  \caption{\bf{Relationships among phenological stages and inter-phenophase duration across the 25 focal species.} Inter-phenophase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and interphenophase duration as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10.Full model results are summarized in Table 3.}
+  \includegraphics{../analyses/figures/adj_stagesmegaplot_col2.pdf}
+  \caption{\textbf{Relationships among phenological stages and inter-phenophase duration across the 25 focal species.} Inter-phenophase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and interphenophase duration as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10.Full model results are summarized in Table 3.}
   \label{fig:inter}
    \end{figure}
 
