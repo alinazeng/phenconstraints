@@ -75,29 +75,34 @@
 \par Hypothesis 2: Inter-phenophase time  constrains phenology; e.g., late-fruiting species set fruit late in the season because they require longer development time (Figure \ref{fig:hyp}).
 \section* {Materials and Methods}
 \subsection*{Study site and focal species}
-This study was conducted at the Arnold Arboretum of Harvard University, a 281-acre park in Boston, Massachusetts, established in 1872. It contains a living collection of trees, shrubs, and vines that are native to New England, as well as others from around the world. Arboreta are great resources for studies across many species, particularly in temperate areas, since they may contain a higher diversity of tree species in one location than nearby natural areas. In addition, there is often high variation in phenology in the species planted in arboreta, for public enjoyment. For this study, we selected 25 focal angiosperm species that varied in their flowering times (Table 1). We selected up to five individuals of each species for the study, yielding a total of 118 individuals in this study.
+This study was conducted at the Arnold Arboretum of Harvard University, a 281-acre park in Boston, Massachusetts, established in 1872. It contains a living collection of trees, shrubs, and vines that are native to New England, as well as others from around the world. Arboreta are great resources for studies across many species, particularly in temperate areas, since they may contain a higher diversity of tree species groing in one location than nearby natural areas. In addition, there is often high variation in phenology in the species planted in arboreta, for public enjoyment. For this study, we selected 25 focal angiosperm species that varied in their flowering times (Table 1). We selected up to five individuals of each species for the study, yielding a total of 118 individuals.
 
 \subsection*{Phenology data collection}
 Phenology was quantified following the National Phenology Network (NPN) protocols (USA-NPN National Coordinating Office, 2012). The budburst phase is characterized by the green leaf tips visible at the tips of buds. Leaf out phase is characterized by visible fully unfolded leaves and petioles that have completely emerged from the buds. Leaf senesce phase is characterized by leaves changing from green to fall colors. Flowering phase is when open flowers are visible. Fruiting phase is when developing fruit are visible. 
 \par We visited each individual once every 6-10 days throughout the growing season. Phenology observations in the spring began on April 6, 2015, and fall phenology observations ended on December 2, 2015.
 From the phenology data, we extracted the day of the year (DOY) of the first observed occurrence of a given phenological phase. Budburst DOY was defined as the first day when three or more leaf buds were seen bursting. Leaf out DOY was defined as the first day when 5\% or more of the individual was leafing out. Flowering DOY was defined as the first day when 5\% or more of the flower buds were open. Fruiting DOY was defined as the first day when three or more developing fruits were observed on the individual. Leaf senescence DOY was defined as the first day when 5\% or more of the individual showed fall colors. (These definitions follow NPN protocols.)
 \subsection*{Statistical analyses}
-To understand the extent to which previous phenological events constrain later events (hypothesis 1), we fit linear models with each phenological stage that we observed (except budburst, the earliest stage we quantified) as the response variable (i.e. species-level mean day of year of leaf-out, flowering, fruiting, or senesence).  We fit 10 different models, each with one of the previous phenological stages as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table S1. All analyses were conducted in R version 3.2.4.
+To understand the extent to which previous phenological events constrain later events (Hypothesis 1, Figure 1), we fit linear models with each phenological stage that we observed (except budburst, the earliest stage we quantified) as the response variable (i.e. species-level mean day of year of leaf-out, flowering, fruiting, or senesence).  We fit 10 different models, each with one of the previous phenological stages as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table S1.
+\par To understand the extent to which inter-pheno phenological events constrain later events (Hypothesis 1, Figure 1), we fit linear models with each phenological stage that we observed (except budburst, the earliest stage we quantified) as the response variable (i.e. species-level mean day of year of leaf-out, flowering, fruiting, or senesence).  We fit 10 different models, each with one of the previous phenological stages as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table S1.
+All analyses were conducted in R version 3.2.4.
 
 \section* {Results}
-Main messages for Sally's thesis paper
-\begin{enumerate}
-\item Earlier phenological stages constrain later phenology (Figures \ref{fig:focsp}, \ref{fig:latevearly}). The strongest correlations occurred between adjacent stages (e.g. leaf-out and budburst, fruiting and flowering). Senescence was the only phenological stage not well-correlated with an earlier phanological stage.
-\item Inter-phenophase duration constrains reproductive phenology (flowering and fruiting time, Figure \ref{fig:inter}). Furthermore, reproductive phenology appears to be constrained by both earlier inter-phenophase times (e.g. time between flowering and budburst, time between fruiting and flowering) and later interphase times (e.g. time between senescence and flowering). However, growth phenology was not strongly constrained.
 
-\end{enumerate}
+\par Our results suggest that earlier phenological stages constrain later phenology in many cases (Figures \ref{fig:focsp}, \ref{fig:latevearly}). The strongest correlations occurred between adjacent stages (i.e. those along the diagonal in Figure \ref{fig:latevearly}, such as leaf-out and budburst, fruiting and flowering). Senescence was the only phenological stage not well-correlated with an earlier phanological stage.
+\par The data also suggest that inter-phenophase duration constrain phenology for reproductive stages (flowering and fruiting time, Figure \ref{fig:inter}). Reproductive phenology appears to be constrained by both earlier inter-phenophase times (e.g. time between flowering and budburst, time between fruiting and flowering) and later interphase times (e.g. time between senescence and flowering). 
+
+\par In general, our results suggest that growth phenology was not strongly constrained by inter-phenophase time, inter-phenophase time was not a strong predictor for growth phenology in most cases (Figure \ref{fig:inter}). The exception to this was budburst day of year, which was most strongly related to inter-phenophase time between leafout and budburst.
+
 \section* {Discussion}
-These stages support hypothesis 1, these support hypothesis 2, these are intermediate
-Fruiting takes about 0-20 days for most species
-Expect correlations could be strongest  at biggest at end of season. Geometric constraint.
+Leaf-out, flowering, and fruiting support hypothesis 1: their timing appears to be constrained by earlier phenological stages.  
+Add references/studies that may explain physiology behind this, or have observed something that concurs with this?
+\par Flowering and fruiting also support hypothesis 2: their timing appears to be constrained by inter-phenophase time. Fruiting takes about 0-20 days for most species. Add references/studies that may explain physiology behind this, or have observed something that concurs with this?
+
+\par Our two hypotheses are not mutually exclusive. Constraints on phenology may be species-specific. 
+\par Budburst and inter-phenophase time relationship suggests that earlier budburst does not always result in earlier leaf-out (although many species did that burst their buds early did also leaf out early, Figure \ref{fig:latevearly}). For some species, earlier budburst is simply associated with longer time between budburst and leaf-out (Figure \ref{fig:inter}). From our data, it is not clear if this pattern is due to variation in species' physiology and drivers of phenology, or to weather patterns. For example, many species leafed out after day 130, despite budburst days ranging from day 110 to 130. Weather conditions during the spring of 2015 were cold and wet, with warming occuring suddenly on day XXX (just an idea- i have no idea if this is true! ned to look at the data). Multi-year studies will be critical. 
+\par Expect correlations could be strongest  at biggest at end of season. Geometric constraint.
 \section* {Conclusions}
 Next steps: Encourage a phylogenetic approach, collect data across years. We observed variation at whole organism level- may want to explore at individual flower/fruit level. 
-
 \section* {Tables}
 
 \begin{table}[p]
@@ -138,15 +143,16 @@ Next steps: Encourage a phylogenetic approach, collect data across years. We obs
   \centering
   \includegraphics{../analyses/figures/latevearly_rp_col_legend.pdf}
   
-  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and mean day of year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table 2.Species in the legend are ordered from early to late first flower dates, as in Figure 2.}
+  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and mean day of year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Species in the legend are ordered from early to late first flower dates, as in Figure 2.}
   \label{fig:latevearly}
 \end{figure}
 \begin{figure}[h]
   \centering
   \includegraphics{../analyses/figures/adj_stagesmegaplot_col2.pdf}
-  \caption{\textbf{Relationships among phenological stages and inter-phenophase duration across the 25 focal species.} Inter-phenophase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and interphenophase duration as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10.Full model results are summarized in Table 3.}
+  \caption{\textbf{Relationships among phenological stages and inter-phenophase duration across the 25 focal species.} Inter-phenophase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and interphenophase duration as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10.}
   \label{fig:inter}
    \end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}

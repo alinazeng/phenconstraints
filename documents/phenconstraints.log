@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 MAY 2017 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 MAY 2017 16:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,84 +482,84 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 85.
 
 [2]
-Overfull \hbox (35.03929pt too wide) in paragraph at lines 106--119
+Overfull \hbox (35.03929pt too wide) in paragraph at lines 111--124
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--119
+Underfull \hbox (badness 10000) in paragraph at lines 111--124
 
  []
 
 [3] [4]
-<../analyses/figures/hypotheses3.pdf, id=62, 849.97653pt x 319.59299pt>
+<../analyses/figures/hypotheses3.pdf, id=64, 849.97653pt x 319.59299pt>
 File: ../analyses/figures/hypotheses3.pdf Graphic file (type pdf)
 
 <use ../analyses/figures/hypotheses3.pdf>
 Package pdftex.def Info: ../analyses/figures/hypotheses3.pdf used on input line
- 125.
+ 130.
 (pdftex.def)             Requested size: 377.62633pt x 141.98679pt.
 
-<../analyses/figures/grosea_repsort.pdf, id=63, 578.16pt x 578.16pt>
+<../analyses/figures/grosea_repsort.pdf, id=65, 578.16pt x 578.16pt>
 File: ../analyses/figures/grosea_repsort.pdf Graphic file (type pdf)
 
 <use ../analyses/figures/grosea_repsort.pdf>
 Package pdftex.def Info: ../analyses/figures/grosea_repsort.pdf used on input l
-ine 132.
+ine 137.
 (pdftex.def)             Requested size: 377.62633pt x 377.6257pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<../analyses/figures/latevearly_rp_col_legend.pdf, id=64, 505.89pt x 505.89pt>
+<../analyses/figures/latevearly_rp_col_legend.pdf, id=66, 505.89pt x 505.89pt>
 File: ../analyses/figures/latevearly_rp_col_legend.pdf Graphic file (type pdf)
 
 <use ../analyses/figures/latevearly_rp_col_legend.pdf>
 Package pdftex.def Info: ../analyses/figures/latevearly_rp_col_legend.pdf used 
-on input line 139.
+on input line 144.
 (pdftex.def)             Requested size: 377.62633pt x 377.6334pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 141.
+(Font)              <9> on input line 146.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 141.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 146.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../analyses/figures/adj_stagesmegaplot_col2.pdf, id=65, 650.43pt x 505.89pt>
+<../analyses/figures/adj_stagesmegaplot_col2.pdf, id=67, 650.43pt x 505.89pt>
 File: ../analyses/figures/adj_stagesmegaplot_col2.pdf Graphic file (type pdf)
 
 <use ../analyses/figures/adj_stagesmegaplot_col2.pdf>
 Package pdftex.def Info: ../analyses/figures/adj_stagesmegaplot_col2.pdf used o
-n input line 146.
+n input line 151.
 (pdftex.def)             Requested size: 377.62633pt x 293.71744pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
 [5
 
 ] [6 <../analyses/figures/hypotheses3.pdf>] [7 <../analyses/figures/grosea_reps
 ort.pdf>] [8 <../analyses/figures/latevearly_rp_col_legend.pdf>] [9 <../analyse
 s/figures/adj_stagesmegaplot_col2.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
  (./phenconstraints.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
 Package rerunfilecheck Info: File `phenconstraints.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 152.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 7984 strings out of 493089
- 120783 string characters out of 6134842
- 207767 words of memory out of 5000000
+ 7982 strings out of 493089
+ 120771 string characters out of 6134842
+ 209677 words of memory out of 5000000
  11277 multiletter control sequences out of 15000+600000
  48229 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,10n,43p,1198b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,43p,1198b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></u
@@ -575,10 +575,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on phenconstraints.pdf (9 pages, 1428923 bytes).
+Output written on phenconstraints.pdf (9 pages, 1431227 bytes).
 PDF statistics:
- 649 PDF objects out of 1000 (max. 8388607)
- 478 compressed objects within 5 object streams
- 35 named destinations out of 1000 (max. 500000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 480 compressed objects within 5 object streams
+ 33 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
