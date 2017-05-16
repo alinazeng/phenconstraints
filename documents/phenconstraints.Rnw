@@ -87,10 +87,9 @@ To understand the extent to which previous phenological events constrain later e
 All analyses were conducted in R version 3.2.4.
 
 \section* {Results}
-Main messages for Sally's thesis paper
-\begin{enumerate}
-\item Earlier phenological stages constrain later phenology (Figures \ref{fig:focsp}, \ref{fig:latevearly}). The strongest correlations occurred between adjacent stages (e.g. leaf-out and budburst, fruiting and flowering). Senescence was the only phenological stage not well-correlated with an earlier phanological stage.
-\item Inter-phenophase duration constrains reproductive phenology (flowering and fruiting time, Figure \ref{fig:inter}). Furthermore, reproductive phenology appears to be constrained by both earlier inter-phenophase times (e.g. time between flowering and budburst, time between fruiting and flowering) and later interphase times (e.g. time between senescence and flowering). However, growth phenology was not strongly constrained.
+
+\par Our results suggest that earlier phenological stages constrain later phenology in many cases (Figures \ref{fig:focsp}, \ref{fig:latevearly}). The strongest correlations occurred between adjacent stages (e.g. leaf-out and budburst, fruiting and flowering). Senescence was the only phenological stage not well-correlated with an earlier phanological stage.
+\par Our results also suggest that inter-phenophase duration constrain phenology, for reproductive stages (flowering and fruiting time, Figure \ref{fig:inter}). Furthermore, reproductive phenology appears to be constrained by both earlier inter-phenophase times (e.g. time between flowering and budburst, time between fruiting and flowering) and later interphase times (e.g. time between senescence and flowering). However, growth phenology was not strongly constrained b.
 
 \end{enumerate}
 \section* {Discussion}
@@ -140,13 +139,13 @@ Next steps: Encourage a phylogenetic approach, collect data across years. We obs
   \centering
   \includegraphics{../analyses/figures/latevearly_rp_col_legend.pdf}
   
-  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and mean day of year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Full model results are summarized in Table 2.Species in the legend are ordered from early to late first flower dates, as in Figure 2.}
+  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and mean day of year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10. Species in the legend are ordered from early to late first flower dates, as in Figure 2.}
   \label{fig:latevearly}
 \end{figure}
 \begin{figure}[h]
   \centering
   \includegraphics{../analyses/figures/adj_stagesmegaplot_col2.pdf}
-  \caption{\textbf{Relationships among phenological stages and inter-phenophase duration across the 25 focal species.} Inter-phenophase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and interphenophase duration as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10.Full model results are summarized in Table 3.}
+  \caption{\textbf{Relationships among phenological stages and inter-phenophase duration across the 25 focal species.} Inter-phenophase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable, and interphenophase duration as the explanatory variable. R\textsuperscript{2} and \textit{p}-value for each model are shown, with solid lines representing model fit when \textit{p}<0.05 and dashed lines representing model fit when 0.05<\textit{p}<0.10.}
   \label{fig:inter}
    \end{figure}
 
