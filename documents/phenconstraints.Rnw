@@ -69,6 +69,10 @@
 \subsection*{Conclusions}
 \section* {Key words}
 \section* {Introduction}
+Plant phenology varies dramatically yet we do not understand what drives this variation. Different plant species vary widely in the timing of leaf out and other phenological processes, even when exposed to the same environmental conditions (Lechowicz, 1984). For example, spring leaf out can span weeks among coexisting tree species (Lechowicz, 1984). The drivers of these variations are poorly understood, even though phenology has been long-observed (Wolkovich & Ettinger, 2014). 
+
+Phenological events are sequential (e.g. leaf bud-burst comes before leaf-out, flowering comes before fruiting). This ordering may constrain phenological events but the extent of constraints between phenological events is poorly understood,because few studies have integrated across events. 
+
 \subsection* {Hypotheses}
  %\citep{wolkovich2014}
 \par Hypothesis 1: Previous phenological events constrain later events; e.g., late-fruiting species set fruit late in the season because they leaf-out late  (Figure \ref{fig:hyp}).
@@ -95,14 +99,25 @@ All analyses were conducted in R version 3.2.4.
 
 \section* {Discussion}
 Leaf-out, flowering, and fruiting support hypothesis 1: their timing appears to be constrained by earlier phenological stages.  
-Add references/studies that may explain physiology behind this, or have observed something that concurs with this?
+Add references/studies that may explain physiology behind this, or have observed something that concurs with this? These constraints in phenological events likely create correlations among other traits. For example, frost tolerance may critically control bud-burst date, which in turn affects leaf-out, flowering, and fruiting dates, and thus could create a correlation between frost tolerance and fruit size (think about this example and look at lit to choose best example...).
 \par Flowering and fruiting also support hypothesis 2: their timing appears to be constrained by inter-phenophase time. Fruiting takes about 0-20 days for most species. Add references/studies that may explain physiology behind this, or have observed something that concurs with this?
 
 \par Our two hypotheses are not mutually exclusive. Constraints on phenology may be species-specific. 
 \par Budburst and inter-phenophase time relationship suggests that earlier budburst does not always result in earlier leaf-out (although many species did that burst their buds early did also leaf out early, Figure \ref{fig:latevearly}). For some species, earlier budburst is simply associated with longer time between budburst and leaf-out (Figure \ref{fig:inter}). From our data, it is not clear if this pattern is due to variation in species' physiology and drivers of phenology, or to weather patterns. For example, many species leafed out after day 130, despite budburst days ranging from day 110 to 130. Weather conditions during the spring of 2015 were cold and wet, with warming occuring suddenly on day XXX (just an idea- i have no idea if this is true! ned to look at the data). Multi-year studies will be critical. 
 \par Expect correlations could be strongest  at biggest at end of season. Geometric constraint.
+\par Implications of these constraints
 \section* {Conclusions}
 Next steps: Encourage a phylogenetic approach, collect data across years. We observed variation at whole organism level- may want to explore at individual flower/fruit level. 
+\section*{Acknowledgements}
+We thank H. Eyster, D. Flynn, E. Forrestel, S. Golumbeanu, W. Friedman, R. Mcnellis, J. Samaha, J. Savage, and T. Savas for field and laboratory assistance and advice. We thank J. DelRosso, M. Dosmann, A. Gapinski, K. Richardson, F. Rosin, and the many other curatorial, horticultural, and research staff of the Arnold Arboretum who made this work possible. Research was supported by the Harvard College Research Program (to S.G.), the Grants-In-Aid of Undergraduate Research program of the Museum of Comparative Zoology, the Harvard University Herbaria, and the Arnold Arboretum of Harvard University (to S.G.), and the National Science Foundation (NSF DBI 14-01854 to A.E.). Any opinion, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+
+\section*{Data Accessibility}
+The data set for this study available online at supplemental
+material in Appendix S1. OR better to have on KNB? 
+
+\section*{Authors’ contributions} All authors conceived and designed the study and edited the manuscript; S.G. conducted the field and lab work; S.G. and A.E. analyzed the data and wrote the manuscript.
+
+\section{Bibliography}
 \section* {Tables}
 
 \begin{table}[p]
