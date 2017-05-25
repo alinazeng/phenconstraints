@@ -1,16 +1,16 @@
 
 ###Start of code to make a plot of when different phenological phases (growth, flowering, fruiting) 
 #occur during the growing season at Arnold ARboretum, for Sally Gee's thesis data
-#Sarted by Ailene, Feb 1, 2016, then handed off to Sally!
-#Edited by sally
+#by Ailene and sally
+## housekeeping
+rm(list=ls()) 
+options(stringsAsFactors = FALSE)
 
-##New edits with offsetting lines and error bars
-#started 7/10/2016
+# Set working directory: 
+if(length(grep("ailene", getwd()))>0) {setwd("git/phenconstraints")}
 
-##Second edits with plotting whole growing season started 7/24/16
-
-##Read in data:
-setwd("~/git/phenconstraints")
+#Read in data:
+#setwd("~/git/phenconstraints")
 dat<-read.csv("data/growingseason_doy.csv", header=T)
 dat2<-read.csv("data/growingseason_doy2.csv", header = T)
 dim(dat)
@@ -771,3 +771,41 @@ flowendoy<-flowstdoy+flowdur
 frstdoy<-flowstdoy+flowdur
 plot(flowdur,frstdoy)
 abline(lm(frstdoy~flowdur))
+
+
+#Look at Dan & Lizzie's data from growth chambers to see if it matches Sally's:
+d<-read.csv("data/leafoutdays_growthchamber.csv", header=T)
+cols2 <- colorRampPalette(brewer.pal(8,"Accent"))(28)
+#First, later vs. earlier:
+quartz(height=3, width=7)
+par(mfrow=c(1,2))
+plot(d$BB.HF , d$LO.HF, ylab = "Leafout", xlab = "Budburst",pch=21,bg=cols2[as.numeric(as.factor(d$X))], bty="l", main="Harvard Forest")
+abline(lm(d$LO.HF~d$BB.HF))
+mtext(paste("r2=",round(summary((lm(d$LO.HF~d$BB.HF)))$r.squared, digits=2),", p=",round(summary(lm(d$LO.HF~d$BB.HF))$coeff[2,4],digits=3)), side=1, line=-1, cex=.6, adj=1)
+
+plot(d$BB.SH , d$LO.SH, ylab = "Leafout", xlab = "Budburst",pch=21,bg=cols2[as.numeric(as.factor(d$X))], bty="l", main="St. Hippolyte")
+abline(lm(d$LO.HF~d$BB.HF))
+mtext(paste("r2=",round(summary((lm(d$LO.SH~d$BB.SH)))$r.squared, digits=2),", p=",round(summary(lm(d$LO.SH~d$BB.SH))$coeff[2,4],digits=3)), side=1, line=-1, cex=.6, adj=1)
+
+##Now , stages vs. interphenophase:
+d$LO_BB.HF<-d$LO.HF-d$BB.HF
+d$LO_BB.SH<-d$LO.HF-d$BB.SH
+
+quartz(height=6, width=7)
+par(mfrow=c(2,2))
+plot(d$LO_BB.HF,d$BB.HF,ylab = "Budburst", xlab = "Leafout-Budburst",pch=21,bg=cols2[as.numeric(as.factor(d$X))], bty="l",main="Harvard Forest")
+mtext(paste("r2=",round(summary((lm(d$BB.HF~d$LO_BB.HF)))$r.squared, digits=2),", p=",round(summary(lm(d$BB.HF~d$LO_BB.HF))$coeff[2,4],digits=3)), side=1, line=-1, cex=.6, adj=1)
+#abline(lm(d$BB.HF~d$LO_BB.HF))
+
+plot(d$LO_BB.SH, d$BB.SH,ylab = "Budburst", xlab = "Leafout-Budburst",pch=21,bg=cols2[as.numeric(as.factor(d$X))], bty="l", main="St. Hippolyte")
+mtext(paste("r2=",round(summary((lm(d$BB.SH~d$LO_BB.SH)))$r.squared, digits=2),", p=",round(summary(lm(d$BB.SH~d$LO_BB.SH))$coeff[2,4],digits=3)), side=1, line=-1, cex=.6, adj=1)
+#abline(lm(d$BB.SH~d$LO_BB.SH))
+
+plot( d$LO_BB.HF,d$LO.HF,ylab = "Leafout", xlab = "Leafout-Budburst",pch=21,bg=cols2[as.numeric(as.factor(d$X))], bty="l")
+mtext(paste("r2=",round(summary((lm(d$LO.HF~d$LO_BB.HF)))$r.squared, digits=2),", p=",round(summary(lm(d$LO.HF~d$LO_BB.HF))$coeff[2,4],digits=3)), side=1, line=-1, cex=.6, adj=1)
+#abline(lm(d$LO.HF~d$LO_BB.HF))
+
+plot(d$LO_BB.SH,d$LO.SH, ylab = "Leafout", xlab = "Leafout-Budburst",pch=21,bg=cols2[as.numeric(as.factor(d$X))], bty="l")
+mtext(paste("r2=",round(summary((lm(d$LO.SH~d$LO_BB.SH)))$r.squared, digits=2),", p=",round(summary(lm(d$LO.SH~d$LO_BB.SH))$coeff[2,4],digits=3)), side=1, line=-1, cex=.6, adj=1)
+abline(lm(d$LO.SH~d$LO_BB.SH), lty=1, col="black")
+
