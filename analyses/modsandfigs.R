@@ -6,7 +6,7 @@
 ## housekeeping
 rm(list=ls()) 
 options(stringsAsFactors = FALSE)
-sort(dat2$FLstartm, decreasing = FALSE)
+#sort(dat2$FLstartm, decreasing = FALSE)
 # Set working directory: 
 if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints")}
 
@@ -43,32 +43,6 @@ FRendm<-tapply(dat2$FruEnd_DOY,dat2$Species,mean, na.rm=T)
 SENstartm<-tapply(dat2$SenStart_DOY,dat2$Species,mean, na.rm=T)
 SENendm<-tapply(dat2$SenEnd_DOY,dat2$Species,mean, na.rm=T)
 
-## finding the standard deviation
-#LDstart.sd<-tapply(dat$LDStart_DOY,dat$Species, sd, na.rm=T)
-#LDend.sd<-tapply(dat$LDEnd_DOY,dat$Species,sd, na.rm=T)
-#FLstart.sd<-tapply(dat$FloStart_DOY,dat$Species,sd, na.rm=T)
-#FLend.sd<-tapply(dat$FloEnd_DOY,dat$Species,sd, na.rm=T)
-#FRstart.sd<-tapply(dat$FruStart_DOY,dat$Species,sd, na.rm=T)
-#FRend.sd<-tapply(dat$FruEnd_DOY,dat$Species,sd, na.rm=T)
-#SENstart.sd<-tapply(dat$SenStart_DOY,dat$Species,sd, na.rm=T)
-#SENend.sd<-tapply(dat$SenEnd_DOY,dat$Species,sd, na.rm=T)
-
-# tried length () to get sample size but that did not work. It said I was passing it two arguments.
-#LDstart.n<-tapply(dat$LDStart_DOY,dat$Species,length(length(dat$Species[i])), na.rm=T)
-#used table() instead and returns a vector
-
-#samplesize <- table(dat$Species)
-
-#standard error = standard deviation of DOY/sqrt of sample size of each species
-#LDstart.se<- LDstart.sd/sqrt(samplesize)
-#LDend.se<- LDend.sd/sqrt(samplesize)
-#FLstart.se<-FLstart.sd/sqrt(samplesize)
-#FLend.se<-FLend.sd/sqrt(samplesize)
-#FRstart.se<-FRstart.sd/sqrt(samplesize)
-#FRend.se<-FRend.sd/sqrt(samplesize)
-#SENstart.se<-SENstart.sd/sqrt(samplesize)
-#SENend.se<-SENend.sd/sqrt(samplesize)
-
 ### 8/8 sort values from earliest LD start date to latest 
 
 lLDstartm<-sort(LDstartm, decreasing = FALSE)
@@ -81,27 +55,6 @@ lFRstartm<-FRstartm[names(LDstartm)]
 lFRendm<-FRendm[names(LDstartm)]
 lSENstartm<-SENstartm[names(LDstartm)]
 lSENendm<-SENendm[names(LDstartm)]
-
-#lLDstart.sd<-LDstart.sd[names(LDstartm)]
-#lLDend.sd<-LDend.sd[names(LDstartm)]
-#lFLstart.sd<-FLstart.sd[names(LDstartm)]
-#lFLend.sd<-FLend.sd[names(LDstartm)]
-#lFRstart.sd<-FRstart.sd[names(LDstartm)]
-#lFRend.sd<-FRend.sd[names(LDstartm)]
-#lSENstart.sd<-SENstart.sd[names(LDstartm)]
-#lSENend.sd<-SENend.sd[names(LDstartm)]
-#3
-#lsamplesize <- samplesize[names(LDstartm)]
-
-#lLDstart.se<- LDstart.se[names(LDstartm)]
-#lLDend.se<- LDend.se[names(LDstartm)]
-#lFLstart.se<-FLstart.se[names(LDstartm)]
-#lFLend.se<-FLend.se[names(LDstartm)]
-#lFRstart.se<-FRstart.se[names(LDstartm)]
-#lFRend.se<-FRend.se[names(LDstartm)]
-#lSENstart.se<-SENstart.se[names(LDstartm)]
-#lSENend.se<-SENend.se[names(LDstartm)]
-
 ##sort by flowering time
 
 fFLstartm<-sort(FLstartm, decreasing = FALSE)
@@ -114,27 +67,6 @@ fFRstartm<-FRstartm[names(fFLstartm)]
 fFRendm<-FRendm[names(fFLstartm)]
 fSENstartm<-SENstartm[names(fFLstartm)]
 fSENendm<-SENendm[names(fFLstartm)]
-
-#fLDstart.sd<-LDstart.sd[names(fFLstartm)]
-#fLDend.sd<-LDend.sd[names(fFLstartm)]
-#fFLstart.sd<-FLstart.sd[names(fFLstartm)]
-#fFLend.sd<-FLend.sd[names(fFLstartm)]
-#fFRstart.sd<-FRstart.sd[names(fFLstartm)]
-#fFRend.sd<-FRend.sd[names(fFLstartm)]
-#fSENstart.sd<-SENstart.sd[names(fFLstartm)]
-#fSENend.sd<-SENend.sd[names(fFLstartm)]
-
-
-#fsamplesize <- samplesize[names(fFLstartm)]
-
-#fLDstart.se<- LDstart.se[names(fFLstartm)]
-#fLDend.se<- LDend.se[names(fFLstartm)]
-#fFLstart.se<-FLstart.se[names(fFLstartm)]
-#fFLend.se<-FLend.se[names(fFLstartm)]
-#fFRstart.se<-FRstart.se[names(fFLstartm)]
-#fFRend.se<-FRend.se[names(fFLstartm)]
-#fSENstart.se<-SENstart.se[names(fFLstartm)]
-#fSENend.se<-SENend.se[names(fFLstartm)]
 
 
 
@@ -162,20 +94,6 @@ for(i in 1:length(species)){
   lines(c(fSENstartm[i],fSENendm[i]),c(y[i],y[i]), col="yellow2",lwd=3)
 }
 
-
-# skiperror bars- too confusing
-#error bars
-
-#for(i in 1:length(species)){
- # arrows(LDstartm[i],y[i], LDstartm[i]-LDstart.se[i],y[i], length =0.02, angle=90, code=2, lty = 1,lwd = 1)
-  #arrows(LDendm[i],y[i], LDendm[i]+LDend.se[i],y[i], length =0.02, angle=90, code=2, lty = 1,lwd = 1)
-  #arrows(FLstartm[i],y[i]-0.4, FLstartm[i]-FLstart.se[i],y[i]-0.4, length =0.02, angle=90, code=2, lty = 1,lwd = 1)
-  #arrows(FLendm[i],y[i]-0.4, FLendm[i]+FLend.se[i],y[i]-0.4, length =0.02, angle=90, code=2, col = "white",lty = 1,lwd = 1)
-  #arrows(FRstartm[i],y[i]-0.4, FRstartm[i]-FRstart.se[i],y[i]-0.4, length =0.02, angle=90, code=2, col = "white", lty = 1,lwd = 1)
-  #arrows(FRendm[i],y[i]-0.4, FRendm[i]+FRend.se[i],y[i]-0.4, length =0.02, angle=90, code=2, lty = 1,lwd = 1)
-  #arrows(SENstartm[i],y[i], SENstartm[i]-SENstart.se[i],y[i], length =0.02, angle=90, code=2, lty = 1,lwd = 1)
-  #arrows(SENendm[i],y[i], SENendm[i]+SENend.se[i],y[i], length =0.02, angle=90, code=2, lty = 1,lwd = 1)
-#}
 ###########################################
 # 10/5/16 & 10/18/16 plotting all possible combinations
 # plotting the difference between flowering doy and leaf developement doy over the season
@@ -260,44 +178,6 @@ Fru_SSdoy = fSENstartm - fFRstartm
 #plot(fSENstartm, Fru_SSdoy, xlab = "Senescence DOY", ylab = "Senescence - Fruiting DOY")
 #abline(lm(Fru_SSdoy~fSENstartm))
 
-#10/5/16
-#plot(fFRstartm, Flo_Frudoy, xlab = "Fruiting DOY", ylab = "Flowering - Fruiting DOY")
-#plot(fFRstartm, Flo_Frudoy2, xlab = "Fruiting DOY", ylab = "Fruiting - Flowering DOY")
-#plot(fFLstartm, Flo_Frudoy2, xlab = "Flowering DOY", ylab = "Fruiting - Flowering DOY")
-
-
-#quartz(height = 5, width = 7)
-#par(mai=c(1,3,.2,.1), omi=c(.7,.1,.2,.2))
-#plot(1,1,type="p", cex=.8,pch=21, col="white", bty="L", xlab="Flowering Doy - Leafout Doy",ylab=" ", ylim=c(1,25), yaxt='n',xlim=c(-10,80),las=1)
-#axis(side=2,at=c(seq(1:25)),labels=(paste(rev(names(fLDstartm)))),las=1)
-
-#y<-rev(seq(1:25))
-#for(i in 1:length(fspecies)){
-#  points(Flo_Leafdoy[i],y[i])
-#}
-
-#plot(1,1,type="p", cex=.8,pch=21, col="white", bty="L", xlab="Flowering Doy - Leafout Doy",ylab=" ", ylim=c(1,25), yaxt='n',xlim=c(-10,80),las=1)
-#axis(side=2,at=c(seq(1:25)),labels=(paste(rev(names(fLDstartm)))),las=1)
-
-#plot(fLDstartm, Flo_Leafdoy, xlab = "Budburst DOY", ylab = "Flowering - Budburst DOY")
-#plot(fFLstartm, Flo_Leafdoy, xlab = "Flowering DOY", ylab = "Flowering - Budburst DOY")
-#abline(lm(Flo_Leafdoy ~ fFLstartm), col = "red")
-#plot(fFRstartm, Flo_Frudoy, xlab = "Fruiting DOY", ylab = "Flowering - Fruiting DOY")
-#plot(fFRstartm, Flo_Frudoy2, xlab = "Fruiting DOY", ylab = "Fruiting - Flowering DOY")
-#plot(fFLstartm, Flo_Frudoy2, xlab = "Flowering DOY", ylab = "Fruiting - Flowering DOY")
-
-
-### Addition 10/22/16
-## After plotting all possible combinations of phenological phases, I(Sally) felt that there wasn't 
-## a clear trend of the ends being constrained by weather conditions. So, I decided to plot the repoduction
-## time from open flowering to appearance of fruit instead of end fruit ripe to see if there would be a clearer represenation.
-
-##Plot by flowering date
-#quartz(height=10,width=10)#for pc you replace "quartz" with X11
-#par(mai=c(1,3,.2,.1), omi=c(.7,.1,.2,.2))
-#plot(10,10, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(1,50), yaxt='n',xlim=c(110,340),las=1)
-#axis(side=2,at=c(seq(from =2,to=50, by=2)),labels=(paste(rev(names(fLDstartm)))),las=1)
-
 
 
 ### 10/23/16 Making plots for Leaf Out
@@ -309,41 +189,8 @@ fLOstartm<- LOstartm[names(fFLstartm)]
 fLOendm<- LOendm[names(fFLstartm)]
 
 BB_LOdoy = fLOstartm - fLDstartm
-#plot(fLDstartm, BB_LOdoy, xlab = "Budburst DOY", ylab = "Leaf Out - Budburst DOY")
-#abline(lm(BB_LOdoy~fLDstartm))
-#plot(fLOstartm, BB_LOdoy, xlab = "Leaf Out", ylab = "Leaf Out - Budburst DOY")
-#abline(lm(BB_LOdoy~fLOstartm))
-#plot(fFLstartm, BB_LOdoy, xlab = "Flowering DOY", ylab = "Leaf Out - Budburst DOY")
-#abline(lm(BB_LOdoy~fFLstartm))
-#plot(fFRstartm, BB_LOdoy, xlab = "Fruiting DOY", ylab = "Leaf Out - Budburst DOY")
-#abline(lm(BB_LOdoy~fFRstartm))
-#plot(fSENstartm, BB_LOdoy, xlab = "Senescence DOY", ylab = "Leaf Out - Budburst DOY")
-#abline(lm(BB_LOdoy~fSENstartm))
-
 LO_FLdoy = fFLstartm - fLOstartm
-#plot(fLDstartm, LO_FLdoy, xlab = "Budburst DOY", ylab = "Flowering - Leaf Out DOY")
-#abline(lm(LO_FLdoy~fLDstartm))
-#plot(fLOstartm, LO_FLdoy, xlab = "Leaf Out DOY", ylab = "Flowering - Leaf Out DOY")
-#abline(lm(LO_FLdoy~fLOstartm))
-#plot(fFLstartm, LO_FLdoy, xlab = "Flowering DOY", ylab = "Flowering - Leaf Out DOY")
-#abline(lm(LO_FLdoy~fFLstartm))
-#plot(fFRstartm, LO_FLdoy, xlab = "Fruiting DOY", ylab = "Flowering - Leaf Out DOY")
-#abline(lm(LO_FLdoy~fFRstartm))
-#plot(fSENstartm, LO_FLdoy, xlab = "Senescence DOY", ylab = "Flowering - Leaf Out DOY")
-#abline(lm(LO_FLdoy~fSENstartm))
-
 LO_FRdoy = fFRstartm - fLOstartm
-#plot(fLDstartm, LO_FRdoy, xlab = "Budburst DOY", ylab = "Fruiting - Leaf Out DOY")
-#abline(lm(LO_FRdoy~fLDstartm))
-#plot(fLOstartm, LO_FRdoy, xlab = "Leaf Out DOY", ylab = "Fruiting - Leaf Out DOY")
-#abline(lm(LO_FRdoy~fLOstartm))
-#plot(fFLstartm, LO_FRdoy, xlab = "Flowering DOY", ylab = "Fruiting - Leaf Out DOY")
-#abline(lm(LO_FRdoy~fFLstartm))
-#plot(fFRstartm, LO_FRdoy, xlab = "Fruiting DOY", ylab = "Fruiting - Leaf Out DOY")
-#abline(lm(LO_FRdoy~fFRstartm))
-#plot(fSENstartm, LO_FRdoy, xlab = "Senescence DOY", ylab = "Fruiting - Leaf Out DOY")
-#abline(lm(LO_FRdoy~fSENstartm))
-
 LO_SSdoy = fSENstartm - fLOstartm
 #plot(fLDstartm, LO_SSdoy, xlab = "Budburst DOY", ylab = "Senescence - Leaf Out DOY")
 #abline(lm(LO_SSdoy~fLDstartm))
