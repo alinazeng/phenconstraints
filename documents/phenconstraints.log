@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 AUG 2017 21:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  14 AUG 2017 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -471,7 +471,7 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 94.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 93.
 
 [2] [3]
 
@@ -482,70 +482,88 @@ ne 122.
 Package natbib Warning: Citation `sun2011' on page 4 undefined on input line 12
 2.
 
+[4]
 
-Package natbib Warning: Citation `diez2012' on page 4 undefined on input line 1
-32.
+Package natbib Warning: Citation `diez2012' on page 5 undefined on input line 1
+27.
 
-[4] (./phenconstraints.bbl [5])
+
+Package natbib Warning: Citation `]' on page 5 undefined on input line 130.
+
+
+Package natbib Warning: Citation `teller2016' on page 5 undefined on input line
+ 130.
+
+
+Overfull \hbox (15.03468pt too wide) in paragraph at lines 130--131
+\T1/aer/m/n/10 stud-ies have sought to iden-tify the par-tic-u-lar en-vi-ron-me
+n-tal drivers of phe-nol-ogy (\T1/aer/bx/n/10 ?\T1/aer/m/n/10 , e.g.)morin2010,
+schwartz2013;
+ []
+
+[5] (./phenconstraints.bbl [6])
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 159.
+(Font)              <5> on input line 150.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 159.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 150.
 
-Overfull \hbox (35.03929pt too wide) in paragraph at lines 159--172
+Overfull \hbox (35.03929pt too wide) in paragraph at lines 150--163
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--172
+Underfull \hbox (badness 10000) in paragraph at lines 150--163
 
  []
 
-[6] [7]
-<../analyses/figures/hypotheses3.pdf, id=155, 849.97653pt x 319.59299pt>
+[7] [8]
+<../analyses/figures/hypotheses3.pdf, id=176, 849.97653pt x 319.59299pt>
 File: ../analyses/figures/hypotheses3.pdf Graphic file (type pdf)
 
 <use ../analyses/figures/hypotheses3.pdf>
 Package pdftex.def Info: ../analyses/figures/hypotheses3.pdf used on input line
- 178.
+ 169.
 (pdftex.def)             Requested size: 377.62633pt x 141.98679pt.
 
-<../analyses/figures/grosea_repsort_legend.pdf, id=156, 656.4525pt x 486.81876p
-t>
-File: ../analyses/figures/grosea_repsort_legend.pdf Graphic file (type pdf)
- <use ../analyses/figures/grosea_repsort_legend.pdf>
-Package pdftex.def Info: ../analyses/figures/grosea_repsort_legend.pdf used on 
-input line 185.
-(pdftex.def)             Requested size: 377.62633pt x 280.04489pt.
+<../analyses/figures/grosea_repsort_ripefruit_legend.pdf, id=177, 675.52374pt x
+ 491.436pt>
+File: ../analyses/figures/grosea_repsort_ripefruit_legend.pdf Graphic file (typ
+e pdf)
+ <use ../analyses/figures/grosea_repsort_ripefruit_legend.pdf>
+Package pdftex.def Info: ../analyses/figures/grosea_repsort_ripefruit_legend.pd
+f used on input line 176.
+(pdftex.def)             Requested size: 377.62633pt x 274.72237pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<../analyses/figures/latevearly_rp_col_legend_YOR.pdf, id=157, 505.89pt x 505.8
-9pt>
-File: ../analyses/figures/latevearly_rp_col_legend_YOR.pdf Graphic file (type p
-df)
- <use ../analyses/figures/latevearly_rp_col_legend_YOR.pdf>
-Package pdftex.def Info: ../analyses/figures/latevearly_rp_col_legend_YOR.pdf u
-sed on input line 192.
-(pdftex.def)             Requested size: 377.62633pt x 377.6334pt.
+<../analyses/figures/latevearly_rp_col_legend_ROY_ripefruit.pdf, id=178, 529.98
+pt x 505.89pt>
+File: ../analyses/figures/latevearly_rp_col_legend_ROY_ripefruit.pdf Graphic fi
+le (type pdf)
+
+<use ../analyses/figures/latevearly_rp_col_legend_ROY_ripefruit.pdf>
+Package pdftex.def Info: ../analyses/figures/latevearly_rp_col_legend_ROY_ripef
+ruit.pdf used on input line 183.
+(pdftex.def)             Requested size: 377.62633pt x 360.46579pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 194.
+(Font)              <9> on input line 185.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 194.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 185.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-<../analyses/figures/adj_stagesmegaplot_col_YOR.pdf, id=158, 650.43pt x 505.89p
-t>
-File: ../analyses/figures/adj_stagesmegaplot_col_YOR.pdf Graphic file (type pdf
-)
- <use ../analyses/figures/adj_stagesmegaplot_col_YOR.pdf>
-Package pdftex.def Info: ../analyses/figures/adj_stagesmegaplot_col_YOR.pdf use
-d on input line 199.
+<../analyses/figures/adj_stagesmegaplot_col_YOR_ripefruit.pdf, id=179, 650.43pt
+ x 505.89pt>
+File: ../analyses/figures/adj_stagesmegaplot_col_YOR_ripefruit.pdf Graphic file
+ (type pdf)
+
+<use ../analyses/figures/adj_stagesmegaplot_col_YOR_ripefruit.pdf>
+Package pdftex.def Info: ../analyses/figures/adj_stagesmegaplot_col_YOR_ripefru
+it.pdf used on input line 190.
 (pdftex.def)             Requested size: 377.62633pt x 293.71744pt.
 
 
@@ -554,29 +572,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
-[8
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+[9
 
-] [9 <../analyses/figures/hypotheses3.pdf> <../analyses/figures/grosea_repsort_
-legend.pdf>] [10 <../analyses/figures/latevearly_rp_col_legend_YOR.pdf>]
-[11 <../analyses/figures/adj_stagesmegaplot_col_YOR.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
-
-(./phenconstraints.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
+] [10 <../analyses/figures/hypotheses3.pdf> <../analyses/figures/grosea_repsort
+_ripefruit_legend.pdf>] [11 <../analyses/figures/latevearly_rp_col_legend_ROY_r
+ipefruit.pdf>] [12 <../analyses/figures/adj_stagesmegaplot_col_YOR_ripefruit.pd
+f>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+ (./phenconstraints.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `phenconstraints.out' has not changed.
 (rerunfilecheck)             Checksum: 1A0415265D5D10913B1B9C96C25B3D94;47.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
- 8063 strings out of 493089
- 122313 string characters out of 6134842
- 212781 words of memory out of 5000000
- 11332 multiletter control sequences out of 15000+600000
+ 8082 strings out of 493089
+ 122765 string characters out of 6134842
+ 214154 words of memory out of 5000000
+ 11346 multiletter control sequences out of 15000+600000
  48521 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,10n,43p,1317b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,43p,1854b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -593,10 +611,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on phenconstraints.pdf (11 pages, 2147299 bytes).
+Output written on phenconstraints.pdf (12 pages, 968469 bytes).
 PDF statistics:
- 1330 PDF objects out of 1440 (max. 8388607)
- 1008 compressed objects within 11 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 60 named destinations out of 1000 (max. 500000)
  29 words of extra memory for PDF output out of 10000 (max. 10000000)
 

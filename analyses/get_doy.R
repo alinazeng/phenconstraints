@@ -174,4 +174,17 @@ SenEnd_DOY=strptime(alldata[,14], "%m/%d/%Y")$yday+1
 alldata2=cbind(alldata,LDStart_DOY,LDEnd_DOY,LOutStart_DOY,LOutEnd_DOY,FloStart_DOY,FloEnd_DOY,FruStart_DOY,FruEnd_DOY,RipeFruStart_DOY,RipeFruEnd_DOY,SenStart_DOY,SenEnd_DOY)
 head(alldata2)
 write.csv(alldata2,"data/growingseason_doy2.csv")
-
+alldata2<-as.data.frame(alldata2)
+#Getting the numbers that sally had in her thesis (first paragraph in results)
+min(as.numeric(alldata2$LDStart_DOY))#110
+max(as.numeric(alldata2$LDStart_DOY))#142
+min(as.numeric(alldata2$LOutStart_DOY))#117
+max(as.numeric(alldata2$LOutStart_DOY))#147
+min(as.numeric(alldata2$FloStart_DOY), na.rm=T)#111
+max(as.numeric(alldata2$FloStart_DOY), na.rm=T)#252
+min(as.numeric(alldata2$FruStart), na.rm=T)#132
+max(as.numeric(alldata2$FruStart), na.rm=T)#315
+min(as.numeric(alldata2$RipeFruStart), na.rm=T)#154
+max(as.numeric(alldata2$RipeFruStart), na.rm=T)#329
+min(as.numeric(alldata2$SenStart_DOY), na.rm=T)#245
+max(as.numeric(alldata2$SenStart_DOY), na.rm=T)#301

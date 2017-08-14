@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Basler and K{\"o}rner(2012)}]{basler2012}
@@ -36,6 +36,11 @@ Lechowicz, M.~J. 1984.
   adaptation and ecology of forest communities.
 \newblock The American Naturalist 124:821--842.
 
+\bibitem[{Letten et~al.(2013)Letten, Kathleen~Lyons, and Moles}]{letten2013}
+Letten, A.~D., S.~Kathleen~Lyons, and A.~T. Moles. 2013.
+\newblock The mid-domain effect: it's not just about space.
+\newblock Journal of Biogeography 40:2017--2019.
+
 \bibitem[{Miller-Rushing et~al.(2010)Miller-Rushing, Hoye, Inouye, and
   Post}]{miller-rushing2010}
 Miller-Rushing, A.~J., T.~T. Hoye, D.~W. Inouye, and E.~Post. 2010.
@@ -53,11 +58,23 @@ Miller-Rushing, A.~J., D.~W. Inouye, and R.~B. Primack. 2008.
 \newblock Journal of Ecology 96.
 \newblock PT: J; TC: 37; UT: WOS:000260108500016.
 
+\bibitem[{Mimura and Aitken(2010)}]{mimura2010}
+Mimura, M., and S.~Aitken. 2010.
+\newblock Local adaptation at the range peripheries of sitka spruce.
+\newblock Journal of evolutionary biology 23:249--258.
+
 \bibitem[{Morin et~al.(2010)Morin, Roy, Soni{\'e}, and Chuine}]{morin2010}
 Morin, X., J.~Roy, L.~Soni{\'e}, and I.~Chuine. 2010.
 \newblock Changes in leaf phenology of three european oak species in response
   to experimental climate change.
 \newblock New Phytologist 186:900--910.
+
+\bibitem[{Ogle et~al.(2015)Ogle, Barber, Barron-Gafford, Bentley, Young,
+  Huxman, Loik, and Tissue}]{ogle2015}
+Ogle, K., J.~J. Barber, G.~A. Barron-Gafford, L.~P. Bentley, J.~M. Young, T.~E.
+  Huxman, M.~E. Loik, and D.~T. Tissue. 2015.
+\newblock Quantifying ecological memory in plant and ecosystem processes.
+\newblock Ecology letters 18:221--235.
 
 \bibitem[{Parmesan(2006)}]{parmesan2006}
 Parmesan, C. 2006.
@@ -99,9 +116,9 @@ Willis, C.~G., B.~R. Ruhfel, R.~B. Primack, A.~J. Miller-Rushing, J.~B. Losos,
 \newblock Plos One 5:e8878.
 \newblock PT: J; TC: 27; UT: WOS:000273896500007.
 
-\bibitem[{Wolkovich et~al.(2012)Wolkovich, Cook, and
+\bibitem[{Wolkovich et~al.(2012{\natexlab{\emph{a}}})Wolkovich, Cook, and
   Regetz}]{wolkovich2012nectar}
-Wolkovich, E., B.~Cook, and J.~Regetz. 2012.
+Wolkovich, E., B.~Cook, and J.~Regetz. 2012{\natexlab{\emph{a}}}.
 \newblock Nectar: Network of ecological and climatological timings across
   regions.
 
@@ -110,6 +127,18 @@ Wolkovich, E.~M., and E.~E. Cleland. 2014.
 \newblock Phenological niches and the future of invaded ecosystems with climate
   change.
 \newblock AoB Plants 6:plu013.
+
+\bibitem[{Wolkovich et~al.(2012{\natexlab{\emph{b}}})Wolkovich, Cook, Allen,
+  Crimmins, Betancourt, Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren,
+  Mazer, McCabe, McGill, Parmesan, Salamin, Schwartz, and
+  Cleland}]{wolkovich2012}
+Wolkovich, E.~M., B.~I. Cook, J.~M. Allen, T.~M. Crimmins, J.~L. Betancourt,
+  S.~E. Travers, S.~Pau, J.~Regetz, T.~J. Davies, N.~J.~B. Kraft, T.~R. Ault,
+  K.~Bolmgren, S.~J. Mazer, G.~J. McCabe, B.~J. McGill, C.~Parmesan,
+  N.~Salamin, M.~D. Schwartz, and E.~E. Cleland. 2012{\natexlab{\emph{b}}}.
+\newblock Warming experiments underpredict plant phenological responses to
+  climate change.
+\newblock Nature 485:494--497.
 
 \bibitem[{Wolkovich and Ettinger(2014)}]{wolkovich2014}
 Wolkovich, E.~M., and A.~K. Ettinger. 2014.
