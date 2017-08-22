@@ -1,0 +1,206 @@
+% Straight up stealing preamble from Eli Holmes 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%START PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+\documentclass{article}
+
+%Required: You must have these
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{gensymb}
+%\usepackage[backend=bibtex]{biblatex}
+%Strongly recommended
+ %put your figures in one place
+\SweaveOpts{prefix.string=figures/, eps=FALSE} 
+%you'll want these for pretty captioning
+\usepackage[small]{caption}
+
+\setkeys{Gin}{width=0.8\textwidth} %make the figs 50 perc textwidth
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+% manual for caption http://www.dd.chalmers.se/latex/Docs/PDF/caption.pdf
+
+%Optional: I like to muck with my margins and spacing in ways that LaTeX frowns on
+%Here's how to do that
+ \topmargin -2cm     
+ \oddsidemargin -0.04cm   
+ \evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+ \textwidth 16.59cm
+ \textheight 22.94cm 
+ %\pagestyle{empty}       % Uncomment if don't want page numbers
+ \parskip 7.2pt           % sets spacing between paragraphs
+ %\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt% sets leading space for paragraphs
+\usepackage{setspace}
+%\doublespacing
+
+%Optional: I like fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{Phenological sequences}
+\fancyhead[RO]{2017}
+%Does early phenology constrain later phenology?
+%Early-season phenological events constrains late-season phenology.
+%Early-season phenology constrains late-season phenology.
+%Early-season life-events contrain late-season events.
+%Timing is everything: Early-season phenology constrains late-season phenology
+%The order of events: How early-season phenology shapes later-season phenology
+%The shape of the season: How early-season phenological define events that follow
+%How do previous phenological events constrain later events?
+%How sequential phenological events determine the shape of a season
+%sally likes"the shape of the season"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+
+%Start of the document
+\begin{document}
+\SweaveOpts{concordance=FALSE}
+% \SweaveOpts{concordance=TRUE}
+\bibliographystyle{/Users/aileneettinger/citations/Bibtex/styles/amnat.bst}
+\title{Supplemental materials for \\ Phenological sequences: how early-season events define those that follow} 
+\author{A.K. Ettinger, S. Gee, and E.M. Wolkovich}
+%\date{\today}
+\maketitle  %put the fancy title on
+%\tableofcontents      %add a table of contents
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+
+%EMW: Be sure to go through and be consistent about hyphen or no-hyphen for inter-phenophase. 
+%\section*{Supplemental Methods}
+
+%\section* {Supplemental Results}
+
+
+%\section{Bibliography}
+%\bibliography{/Users/aileneettinger/citations/Bibtex/mylibrary}
+
+\section* {Supplemental Tables}
+%EMW: Also, the giving of all the equations is a little hard; consider including some of the min/max ones and give the equations in a supplemental table?
+<<label=xtable1, echo=FALSE, results=tex>>=
+options(stringsAsFactors = FALSE)
+# Set working directory: 
+if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints")}
+
+
+library(xtable)
+require(dplyr)
+# options(xtable.sanitize.rownames.function=identity, sanitize.colnames.function = identity, sanitize.text.function=identity)
+
+dat2<-read.csv("data/growingseason_doy2.csv", header = T)
+
+LDstartm<-tapply(dat2$LDStart_DOY,dat2$Species,mean, na.rm=T)
+LDendm<-tapply(dat2$LDEnd_DOY,dat2$Species,mean, na.rm=T)
+LOstartm<-tapply(dat2$LOutStart_DOY,dat2$Species,mean, na.rm=T)
+LOendm<-tapply(dat2$LOutEnd_DOY,dat2$Species,mean, na.rm=T)
+FLstartm<-tapply(dat2$FloStart_DOY,dat2$Species,mean, na.rm=T)
+FLendm<-tapply(dat2$FloEnd_DOY,dat2$Species,mean, na.rm=T)
+FRstartm<-tapply(dat2$FruStart_DOY,dat2$Species,mean, na.rm=T)
+FRendm<-tapply(dat2$FruEnd_DOY,dat2$Species,mean, na.rm=T)
+SENstartm<-tapply(dat2$SenStart_DOY,dat2$Species,mean, na.rm=T)
+SENendm<-tapply(dat2$SenEnd_DOY,dat2$Species,mean, na.rm=T)
+RFRstartm<-tapply(dat2$RipeFruStart_DOY,dat2$Species,mean, na.rm=T)
+RFRendm<-tapply(dat2$RipeFruEnd_DOY,dat2$Species,mean, na.rm=T)
+
+##sort by flowering time
+fFLstartm<-sort(FLstartm, decreasing = FALSE)
+fLDendm<-LDendm[names(fFLstartm)]
+fLDstartm<-LDstartm[names(fFLstartm)]
+fLOendm<-LOendm[names(fFLstartm)]
+fLOstartm<-LOstartm[names(fFLstartm)]
+fFLendm<-FLendm[names(fFLstartm)]
+fFRstartm<-FRstartm[names(fFLstartm)]
+fFRendm<-FRendm[names(fFLstartm)]
+fRFRstartm<-RFRstartm[names(fFLstartm)]
+fRFRendm<-RFRendm[names(fFLstartm)]
+fSENstartm<-SENstartm[names(fFLstartm)]
+fSENendm<-SENendm[names(fFLstartm)]
+fLOstartm<- LOstartm[names(fFLstartm)]
+fLOendm<- LOendm[names(fFLstartm)]
+
+#inter-phenophase times:
+BB_LOdoy = fLOstartm - fLDstartm
+LO_FLdoy = fFLstartm - fLOstartm
+Flo_Frudoy = fRFRstartm - fFLstartm
+Fru_SSdoy = fSENstartm - fRFRstartm
+
+#Fit the previous stage models
+LO_BBmod<-lm(fLOstartm~fLDstartm)
+FL_BBmod<-lm(fFLstartm~fLDstartm)
+FR_BBmod<-lm(fFRstartm~fLDstartm)
+SEN_BBmod<-lm(fSENstartm~fLDstartm)
+FL_LOmod<-lm(fFLstartm~fLOstartm)
+FR_LOmod<-lm(fFRstartm~fLOstartm)
+SEN_LOmod<-lm(fSENstartm~fLOstartm)
+FR_FLmod<-lm(fFRstartm~fFLstartm)
+SEN_FLmod<-lm(fSENstartm~fFLstartm)
+SEN_FRmod<-lm(fSENstartm~fFRstartm)
+
+#Previous stage model tables:
+prevmodtable<-rbind(c(round(summary(LO_BBmod)$coeff[1,1:2],digits=3),round(summary(LO_BBmod)$r.squared,digits=3), round(summary(LO_BBmod)$coeff[2,4],digits=3)),c(round(summary(FL_BBmod)$coeff[1,1:2],digits=3),round(summary(FL_BBmod)$r.squared,digits=3), round(summary(FL_BBmod)$coeff[2,4],digits=3)),c(round(summary(FR_BBmod)$coeff[1,1:2],digits=3),round(summary(FR_BBmod)$r.squared,digits=3), round(summary(FR_BBmod)$coeff[2,4],digits=3)),c(round(summary(SEN_BBmod)$coeff[1,1:2],digits=3),round(summary(SEN_BBmod)$r.squared,digits=3), round(summary(SEN_BBmod)$coeff[2,4],digits=3)),c(round(summary(FL_LOmod)$coeff[1,1:2],digits=3),round(summary(FL_LOmod)$r.squared,digits=3), round(summary(FL_LOmod)$coeff[2,4],digits=3)),c(round(summary(FR_LOmod)$coeff[1,1:2],digits=3),round(summary(FR_LOmod)$r.squared,digits=3), round(summary(FR_LOmod)$coeff[2,4],digits=3)),c(round(summary(SEN_LOmod)$coeff[1,1:2],digits=3),round(summary(SEN_LOmod)$r.squared,digits=3), round(summary(SEN_LOmod)$coeff[2,4],digits=3)),c(round(summary(FR_FLmod)$coeff[1,1:2],digits=3),round(summary(FR_FLmod)$r.squared,digits=3), round(summary(FR_FLmod)$coeff[2,4],digits=3)),c(round(summary(SEN_FLmod)$coeff[1,1:2],digits=3),round(summary(SEN_FLmod)$r.squared,digits=3), round(summary(SEN_FLmod)$coeff[2,4],digits=3)),c(round(summary(SEN_FRmod)$coeff[1,1:2],digits=3),round(summary(SEN_FRmod)$r.squared,digits=3), round(summary(SEN_FRmod)$coeff[2,4],digits=3)))
+
+
+prevmodtable<-cbind(c("leafout vs. budburst","flowering vs. budburst","fruiting vs. budburst","senescence vs. budburst","flowering vs. leafout","fruiting vs. leafout","senescence vs. leafout","fruiting vs. flowering","senescence vs. flowering","senesence vs. fruiting"),prevmodtable)
+ colnames(prevmodtable)<-c("previous phenostage model","intercept","slope","r2","p")
+prev.table<-xtable(prevmodtable,digits=3,
+  caption="Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable,
+and mean day of year of earlier phenostage as the explanatory variable.",label="table:prevphase",align=c(
+                "|p{0.01\\textwidth}",            
+                "|p{0.35\\textwidth}",
+                "|p{0.1\\textwidth}",
+                "p{0.07\\textwidth}",
+                "p{0.07\\textwidth}",
+                "p{0.07\\textwidth}|"))
+ 
+print(prev.table, include.rownames=FALSE, include.colnames=TRUE,caption.placement="top", digits=3)
+
+#Fit the inter-phenophase models
+LOBB_LOmod<-lm(fLOstartm~BB_LOdoy)
+FLBB_LOmod<-lm(fFLstartm~BB_LOdoy)
+FRBB_LOmod<-lm(fRFRstartm~BB_LOdoy)
+SENBB_LOmod<-lm(fSENstartm~BB_LOdoy)
+
+FLLO_FLmod<-lm(fFLstartm~LO_FLdoy)
+FRLO_FLmod<-lm(fRFRstartm~LO_FLdoy)
+SENLO_FLmod<-lm(fSENstartm~LO_FLdoy)
+
+FRFlo_Frmod<-lm(fRFRstartm~Flo_Frudoy)
+SENFlo_Frmod<-lm(fSENstartm~Flo_Frudoy)
+SENFru_SSmod<-lm(fSENstartm~Fru_SSdoy)
+
+#Interphase table
+intermodtable<-rbind(c(round(summary(LOBB_LOmod)$coeff[1,1:2],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FLBB_LOmod)$coeff[1,1:2],digits=3),round(summary(FLBB_LOmod)$r.squared,digits=3), round(summary(FLBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FRBB_LOmod)$coeff[1,1:2],digits=3),round(summary(FRBB_LOmod)$r.squared,digits=3), round(summary(FRBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(SENBB_LOmod)$coeff[1,1:2],digits=3),round(summary(SENBB_LOmod)$r.squared,digits=3), round(summary(SENBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FLLO_FLmod)$coeff[1,1:2],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(FRLO_FLmod)$coeff[1,1:2],digits=3),round(summary(FRLO_FLmod)$r.squared,digits=3), round(summary(FRLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(SENLO_FLmod)$coeff[1,1:2],digits=3),round(summary(SENLO_FLmod)$r.squared,digits=3), round(summary(SENLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(FRFlo_Frmod)$coeff[1,1:2],digits=3),round(summary(FRFlo_Frmod)$r.squared,digits=3), round(summary(FRFlo_Frmod)$coeff[2,4],digits=3)),c(round(summary(SENFlo_Frmod)$coeff[1,1:2],digits=3),round(summary(SENFlo_Frmod)$r.squared,digits=3), round(summary(SENFlo_Frmod)$coeff[2,4],digits=3)),c(round(summary(SENFru_SSmod)$coeff[1,1:2],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3)))
+
+
+intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. leafout-budburst","fruiting vs. leafout-budburst","senescence vs. leafout-budburst","flowering vs. flowering-leafout","fruiting vs. flowering-leafout","senescence vs. flowering-leafout","fruiting vs. fruiting-flowering","senescence vs. fruiting-flowering","senesence vs. senescence-fruiting"),intermodtable)
+ colnames(intermodtable)<-c("inter-phenophase model","intercept","slope","r2","p")
+ inter.table<-xtable(intermodtable,digits=3,
+  caption="Summary of linear models for relationships between phenophases and inter-phenophase duration.",label="table:interphase",align=c(
+                "|p{0.01\\textwidth}",            
+                "|p{0.35\\textwidth}",
+                "|p{0.1\\textwidth}",
+                "p{0.07\\textwidth}",
+                "p{0.07\\textwidth}",
+                "p{0.07\\textwidth}|"))
+ 
+print(inter.table, include.rownames=FALSE, include.colnames=TRUE,caption.placement="top", digits=3)
+@
+\clearpage
+
+\section* {Supplemental Figures}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf}
+  \caption{\textbf{Individual tree phenology during the 2015 growing season, ordered by first-flower dates.} Growth phenology is shown for budburst (from its mean start day-of-year to the mean start day-of-year for leafout, across all individuals within a species), leafout (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and senescence (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95 percent of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95 percent of fruits were first observed as ripe).}
+ \label{fig:focind}
+\end{figure}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

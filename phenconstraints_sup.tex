@@ -1,0 +1,143 @@
+% Straight up stealing preamble from Eli Holmes 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%START PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+\documentclass{article}
+
+%Required: You must have these
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{gensymb}
+%\usepackage[backend=bibtex]{biblatex}
+%Strongly recommended
+ %put your figures in one place
+ 
+%you'll want these for pretty captioning
+\usepackage[small]{caption}
+
+\setkeys{Gin}{width=0.8\textwidth} %make the figs 50 perc textwidth
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+% manual for caption http://www.dd.chalmers.se/latex/Docs/PDF/caption.pdf
+
+%Optional: I like to muck with my margins and spacing in ways that LaTeX frowns on
+%Here's how to do that
+ \topmargin -2cm     
+ \oddsidemargin -0.04cm   
+ \evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+ \textwidth 16.59cm
+ \textheight 22.94cm 
+ %\pagestyle{empty}       % Uncomment if don't want page numbers
+ \parskip 7.2pt           % sets spacing between paragraphs
+ %\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt% sets leading space for paragraphs
+\usepackage{setspace}
+%\doublespacing
+
+%Optional: I like fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{Phenological sequences}
+\fancyhead[RO]{2017}
+%Does early phenology constrain later phenology?
+%Early-season phenological events constrains late-season phenology.
+%Early-season phenology constrains late-season phenology.
+%Early-season life-events contrain late-season events.
+%Timing is everything: Early-season phenology constrains late-season phenology
+%The order of events: How early-season phenology shapes later-season phenology
+%The shape of the season: How early-season phenological define events that follow
+%How do previous phenological events constrain later events?
+%How sequential phenological events determine the shape of a season
+%sally likes"the shape of the season"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+
+%Start of the document
+\begin{document}
+
+% \SweaveOpts{concordance=TRUE}
+\bibliographystyle{/Users/aileneettinger/citations/Bibtex/styles/amnat.bst}
+\title{Supplemental materials for \\ Phenological sequences: how early-season events define those that follow} 
+\author{A.K. Ettinger, S. Gee, and E.M. Wolkovich}
+%\date{\today}
+\maketitle  %put the fancy title on
+%\tableofcontents      %add a table of contents
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+
+%EMW: Be sure to go through and be consistent about hyphen or no-hyphen for inter-phenophase. 
+%\section*{Supplemental Methods}
+
+%\section* {Supplemental Results}
+
+
+%\section{Bibliography}
+%\bibliography{/Users/aileneettinger/citations/Bibtex/mylibrary}
+
+\section* {Supplemental Tables}
+%EMW: Also, the giving of all the equations is a little hard; consider including some of the min/max ones and give the equations in a supplemental table?
+% latex table generated in R 3.2.4 by xtable 1.8-2 package
+% Tue Aug 22 10:26:10 2017
+\begin{table}[ht]
+\centering
+\caption{Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Linear models were fit with the species-level mean day of year of the later phenological stages as the response variable,
+and mean day of year of earlier phenostage as the explanatory variable.} 
+\label{table:prevphase}
+\begin{tabular}{|p{0.35\textwidth}|p{0.1\textwidth}p{0.07\textwidth}p{0.07\textwidth}p{0.07\textwidth}|}
+  \hline
+previous phenostage model & intercept & slope & r2 & p \\ 
+  \hline
+leafout vs. budburst & 65.839 & 15.331 & 0.439 & 0 \\ 
+  flowering vs. budburst & 3.184 & 65.271 & 0.172 & 0.039 \\ 
+  fruiting vs. budburst & -80.306 & 96.268 & 0.226 & 0.016 \\ 
+  senescence vs. budburst & 243.876 & 45.52 & 0.028 & 0.427 \\ 
+  flowering vs. leafout & -105.279 & 80.043 & 0.3 & 0.005 \\ 
+  fruiting vs. leafout & -107.193 & 134.069 & 0.156 & 0.051 \\ 
+  senescence vs. leafout & 237.388 & 60.891 & 0.022 & 0.484 \\ 
+  fruiting vs. flowering & 5.212 & 31.73 & 0.541 & 0 \\ 
+  senescence vs. flowering & 261.654 & 19.358 & 0.041 & 0.332 \\ 
+  senesence vs. fruiting & 253.545 & 13.996 & 0.145 & 0.06 \\ 
+   \hline
+\end{tabular}
+\end{table}% latex table generated in R 3.2.4 by xtable 1.8-2 package
+% Tue Aug 22 10:26:10 2017
+\begin{table}[ht]
+\centering
+\caption{Summary of linear models for relationships between phenophases and inter-phenophase duration.} 
+\label{table:interphase}
+\begin{tabular}{|p{0.35\textwidth}|p{0.1\textwidth}p{0.07\textwidth}p{0.07\textwidth}p{0.07\textwidth}|}
+  \hline
+inter-phenophase model & intercept & slope & r2 & p \\ 
+  \hline
+leafout vs. leafout-budburst & 128.977 & 2.33 & 0.035 & 0.374 \\ 
+  flowering vs. leafout-budburst & 144.522 & 8.307 & 0.001 & 0.874 \\ 
+  fruiting vs. leafout-budburst & 276.477 & 15.903 & 0.047 & 0.3 \\ 
+  senescence vs. leafout-budburst & 281.98 & 5.338 & 0.004 & 0.763 \\ 
+  flowering vs. flowering-leafout & 129.28 & 1.591 & 0.926 & 0 \\ 
+  fruiting vs. flowering-leafout & 245.864 & 9.92 & 0.25 & 0.011 \\ 
+  senescence vs. flowering-leafout & 278.627 & 3.698 & 0.034 & 0.381 \\ 
+  fruiting vs. fruiting-flowering & 143.556 & 15.426 & 0.74 & 0 \\ 
+  senescence vs. fruiting-flowering & 258.294 & 8.647 & 0.242 & 0.013 \\ 
+  senesence vs. senescence-fruiting & 282.109 & 3.231 & 0.047 & 0.296 \\ 
+   \hline
+\end{tabular}
+\end{table}\clearpage
+
+\section* {Supplemental Figures}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf}
+  \caption{\textbf{Individual tree phenology during the 2015 growing season, ordered by first-flower dates.} Growth phenology is shown for budburst (from its mean start day-of-year to the mean start day-of-year for leafout, across all individuals within a species), leafout (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and senescence (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95 percent of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95 percent of fruits were first observed as ripe).}
+ \label{fig:focind}
+\end{figure}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -65,10 +65,10 @@ fSENendm<-SENendm[names(fFLstartm)]
 #figure out what max and min values are for all phases, so that i know what the x axis limits should be
 #max(dat[,12:19],na.rm=T)
 #min(dat[,12:19],na.rm=T)
-quartz(height=8,width=8)#for pc you replace "quartz" with X11
+quartz(height=8,width=10)#for pc you replace "quartz" with X11
 par(mai=c(1,3,.1,.1), omi=c(1.2,.1,.1,.2))
-plot(10,10, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(1,50), yaxt='n',xlim=c(110,340),las=1)
-axis(side=2,at=c(seq(from =2, to = 50, by = 2)),labels=(paste(rev(names(fLDstartm)))),las=1)
+plot(8,10, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(1,50), yaxt='n',xlim=c(110,385),las=1)
+axis(side=2,at=c(seq(from =2, to = 50, by = 2)),labels=(paste(rev(names(fLDstartm)))),las=1, font=3)
 
 #Start with first to flower
 species<-names(fFLstartm)
@@ -85,7 +85,35 @@ for(i in 1:length(species)){
   lines(c(fSENstartm[i],fSENendm[i]),c(y[i],y[i]), col="yellow2",lwd=3)
 }
 
-legend(330,50, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("seagreen","palegreen","yellow","orchid","gray","darkorchid"))
+legend(325,50, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("seagreen","palegreen","yellow","orchid","gray","darkorchid"), cex=.85)
+
+#Plot same figure, but for individual instead of species:
+#sort by flowering date
+inddat<-dat2[order(dat2$FloStart),]
+
+quartz(height=12,width=12)#for pc you replace "quartz" with X11
+par(mai=c(1,1.5,.1,.1), omi=c(1.5,.1,.1,.2))
+plot(10,15, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(2,236), yaxt='n',xlim=c(110,390),las=1)
+axis(side=2,at=c(seq(from =2, to = 236, by = 2)),labels=(paste(rev(inddat$Species))),las=1, cex.axis=0.3)
+
+#Start with first to flower
+species<-names(fFLstartm)
+
+
+y<-rev(seq(from =2, to = 236, by = 2))
+for(i in 1:length(inddat$Species)){
+  lines(c(inddat$LOutStart_DOY[i],inddat$LOutEnd_DOY[i]),c(y[i],y[i]), col="seagreen",lwd=2)
+  lines(c(inddat$LDStart_DOY[i],inddat$SenEnd_DOY[i]),c(y[i],y[i]), col="seagreen",lwd=2)
+  lines(c(inddat$FloStart_DOY[i],inddat$RipeFruEnd_DOY[i]),c(y[i]-0.4,y[i]-0.4),col="lightgray", lwd=2)
+  lines(c(inddat$FloStart_DOY[i],inddat$FruStart_DOY[i]),c(y[i]-0.4,y[i]-0.4), col="orchid", lwd=2)
+  lines(c(inddat$LDStart_DOY[i],inddat$LDEnd_DOY[i]),c(y[i],y[i]), col="palegreen", lwd=2)
+  lines(c(inddat$RipeFruStart_DOY[i],inddat$RipeFruEnd_DOY[i]),c(y[i]-0.4,y[i]-0.4), col="darkorchid", lwd=2)
+  lines(c(inddat$SenStart_DOY[i],inddat$SenEnd_DOY[i]),c(y[i],y[i]), col="yellow2",lwd=2)
+}
+
+legend(330,100, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("seagreen","palegreen","yellow","orchid","gray","darkorchid"))
+
+
 ###########################################
 # 10/5/16 & 10/18/16 plotting all possible combinations
 # plotting the difference between flowering doy and leaf developement doy over the season
@@ -107,7 +135,6 @@ Flo_Frudoy = fFLstartm - fRFRstartm #will get negative values
 
 ## Added best fit line 10/24
 fspecies<-names(fLDstartm)
-
 BB_Flodoy = fFLstartm - fLDstartm
 
 BB_Frudoy = fRFRstartm - fLDstartm
@@ -130,47 +157,39 @@ BB_LOdoy = fLOstartm - fLDstartm
 
 LO_FLdoy = fFLstartm - fLOstartm
 LO_FRdoy = fRFRstartm - fLOstartm
-
 LO_SSdoy = fSENstartm - fLOstartm
 
 BB_Flodoy = fFLstartm - fLDstartm
 BB_Frudoy = fRFRstartm - fLDstartm
 Flo_Frudoy = fRFRstartm - fFLstartm
-
 BB_SSdoy = fSENstartm - fLDstartm
-
 Flo_SSdoy = fSENstartm - fFLstartm 
-
 Fru_SSdoy = fSENstartm - fRFRstartm
-
 BB_LOdoy = fLOstartm - fLDstartm
-
 LO_FLdoy = fFLstartm - fLOstartm
-
 LO_FRdoy = fRFRstartm - fLOstartm
-
 LO_SSdoy = fSENstartm - fLOstartm
 ################################
 ################################
 #### 11/1/16 Megaplot 2.0
 ####################
+#Modified August 18, 2017 by Ailene to only shower lower triangle (only earlier interphenophases can predict later phases)
 fspecies<-names(fFLstartm)
 fspecies_num<-c(1:25)
 quartz(height=7, width=9)#this sets the dimensions of the plotting window
 #par(mfrow=c(5,5))#this sets the number of rows and columns for the plots - in this case 5 rows and 5 columns
-par(mfcol=c(5,5),mai=c(.2,.6,.2,.005), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
+par(mfcol=c(4,4),mai=c(.2,.6,.2,.005), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
 
 #1- 
-plot(BB_LOdoy, fLDstartm, ylab = "", xlab = "Leaf Out - Budburst DOY",pch=21,bg=cols[fspecies_num], xaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
-abline(lm(fLDstartm~BB_LOdoy))
-mtext(paste("=",round(summary(lm(fLDstartm~BB_LOdoy))$r.squared, digits=2),",  p=",round(summary(lm(fLDstartm~BB_LOdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext("Budburst DOY", side=2, cex=.7, line=2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.4) # works
+#plot(BB_LOdoy, fLDstartm, ylab = "", xlab = "Leaf Out - Budburst DOY",pch=21,bg=cols[fspecies_num], xaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
+#abline(lm(fLDstartm~BB_LOdoy))
+#mtext(paste("=",round(summary(lm(fLDstartm~BB_LOdoy))$r.squared, digits=2),",  p=",round(summary(lm(fLDstartm~BB_LOdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext("Budburst DOY", side=2, cex=.7, line=2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.4) # works
 
 plot(BB_LOdoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
 mtext(paste("=",round(summary((lm(fLOstartm~BB_LOdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~BB_LOdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
 mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
-
 mtext("Leaf Out DOY", side=2, cex=.7, line=2)
 
 plot(BB_LOdoy,fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
@@ -190,40 +209,40 @@ mtext("Senescence DOY", side=2, cex=.7, line=2)
 mtext(paste("=",round(summary((lm(fSENstartm~BB_LOdoy)))$r.squared, digits=2),", p=",round(summary(lm(fSENstartm~BB_LOdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
 mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.5) # works
 
-#2
-plot(BB_Flodoy, fLDstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
-mtext(paste("=",round(summary((lm(fLDstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.5) # works
+#2-Remove this column and focus on leafout
+#plot(BB_Flodoy, fLDstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
+#mtext(paste("=",round(summary((lm(fLDstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.5) # works
 
-plot(BB_Flodoy,fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
-abline(lm(fLOstartm~BB_Flodoy), lty=2)
-mtext(paste("=",round(summary((lm(fLOstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+#plot(BB_Flodoy,fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
+#abline(lm(fLOstartm~BB_Flodoy), lty=2)
+#mtext(paste("=",round(summary((lm(fLOstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
-plot(BB_Flodoy,fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
-abline(lm(fFLstartm~BB_Flodoy))
-mtext(paste("=",round(summary((lm(fFLstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fFLstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.55) # works
+#plot(BB_Flodoy,fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
+#abline(lm(fFLstartm~BB_Flodoy))
+#mtext(paste("=",round(summary((lm(fFLstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fFLstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.55) # works
 
-plot(BB_Flodoy,fRFRstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fRFRstartm-5),max(fRFRstartm+5)))
-abline(lm(fRFRstartm~BB_Flodoy))
-mtext(paste("=",round(summary((lm(fRFRstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fRFRstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+#plot(BB_Flodoy,fRFRstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fRFRstartm-5),max(fRFRstartm+5)))
+#abline(lm(fRFRstartm~BB_Flodoy))
+#mtext(paste("=",round(summary((lm(fRFRstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fRFRstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
-plot(BB_Flodoy,fSENstartm, ylab = "", xlab = "Flowering - Budburst DOY",pch=21,bg=cols[fspecies_num], yaxt='n', ylim=c(min(fSENstartm-5),max(fSENstartm+5)), bty="l")
-mtext(paste("=",round(summary((lm(fSENstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fSENstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+#plot(BB_Flodoy,fSENstartm, ylab = "", xlab = "Flowering - Budburst DOY",pch=21,bg=cols[fspecies_num], yaxt='n', ylim=c(min(fSENstartm-5),max(fSENstartm+5)), bty="l")
+#mtext(paste("=",round(summary((lm(fSENstartm~BB_Flodoy)))$r.squared, digits=2),", p=",round(summary(lm(fSENstartm~BB_Flodoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
-mtext("Flowering - Budburst DOY", side=1, cex=.7, line=2)
+#mtext("Flowering - Budburst DOY", side=1, cex=.7, line=2)
 
 #3
-plot(LO_FLdoy, fLDstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
-mtext(paste("=",round(summary((lm(fLDstartm~LO_FLdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~LO_FLdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
-
-plot(LO_FLdoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
-mtext(paste("=",round(summary((lm(fLOstartm~LO_FLdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~LO_FLdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+#plot(LO_FLdoy, fLDstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
+#mtext(paste("=",round(summary((lm(fLDstartm~LO_FLdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~LO_FLdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+plot.new()
+#plot(LO_FLdoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
+#mtext(paste("=",round(summary((lm(fLOstartm~LO_FLdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~LO_FLdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
 plot(LO_FLdoy, fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
 abline(lm(fFLstartm~LO_FLdoy))
@@ -242,17 +261,20 @@ mtext("Inter-phenophase time", side=1, cex=.9, line=3, adj=.5)
 mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
 #4
-plot(Flo_Frudoy,fLDstartm,xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
-mtext(paste("=",round(summary((lm(fLDstartm~Flo_Frudoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~Flo_Frudoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+#plot(Flo_Frudoy,fLDstartm,xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
+#mtext(paste("=",round(summary((lm(fLDstartm~Flo_Frudoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~Flo_Frudoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
-plot(Flo_Frudoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
-mtext(paste("=",round(summary((lm(fLOstartm~Flo_Frudoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~Flo_Frudoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.5) # works
+#plot(Flo_Frudoy, fLOstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
+#mtext(paste("=",round(summary((lm(fLOstartm~Flo_Frudoy)))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~Flo_Frudoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.5) # works
+plot.new()
+plot.new()
 
-plot(Flo_Frudoy, fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
-mtext(paste("=",round(summary((lm(fFLstartm~Flo_Frudoy)))$r.squared, digits=2),", p=",round(summary(lm(fFLstartm~Flo_Frudoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+
+#plot(Flo_Frudoy, fFLstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
+#mtext(paste("=",round(summary((lm(fFLstartm~Flo_Frudoy)))$r.squared, digits=2),", p=",round(summary(lm(fFLstartm~Flo_Frudoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
 plot(Flo_Frudoy, fRFRstartm, ylab = "", xlab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fRFRstartm-5),max(fRFRstartm+5)))
 abline(lm(fRFRstartm~Flo_Frudoy))
@@ -266,26 +288,28 @@ abline(lm(fSENstartm~Flo_Frudoy))
 mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.4) # works
 
 #5
-plot(Fru_SSdoy, fLDstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l",ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
-abline(lm(fLDstartm~Fru_SSdoy))
-mtext(paste("=",round(summary((lm(fLDstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
+#plot(Fru_SSdoy, fLDstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l",ylim=c(min(fLDstartm-5),max(fLDstartm+5)))
+#abline(lm(fLDstartm~Fru_SSdoy))
+#mtext(paste("=",round(summary((lm(fLDstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fLDstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 
-plot(Fru_SSdoy, fLOstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
-mtext(paste("=",round(summary(lm(fLOstartm~Fru_SSdoy))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
-
+#plot(Fru_SSdoy, fLOstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fLOstartm-5),max(fLOstartm+5)))
+#mtext(paste("=",round(summary(lm(fLOstartm~Fru_SSdoy))$r.squared, digits=2),", p=",round(summary(lm(fLOstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.35) # works
 #abline(lm(fLOstartm~Fru_SSdoy), lty=2)
 
-plot(Fru_SSdoy, fFLstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
-abline(lm(fFLstartm~Fru_SSdoy))
-mtext(paste("=",round(summary((lm(fFLstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fFLstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.6) # works
+#plot(Fru_SSdoy, fFLstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fFLstartm-5),max(fFLstartm+5)))
+#abline(lm(fFLstartm~Fru_SSdoy))
+#mtext(paste("=",round(summary((lm(fFLstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fFLstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.6) # works
 
-plot(Fru_SSdoy, fRFRstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fRFRstartm-5),max(fRFRstartm+5)))
-abline(lm(fRFRstartm~Fru_SSdoy))
-mtext(paste("=",round(summary((lm(fRFRstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fRFRstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.6) # works
+#plot(Fru_SSdoy, fRFRstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], xaxt='n', yaxt='n', bty="l", ylim=c(min(fRFRstartm-5),max(fRFRstartm+5)))
+#abline(lm(fRFRstartm~Fru_SSdoy))
+#mtext(paste("=",round(summary((lm(fRFRstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fRFRstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+#mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.6) # works
+plot.new()
+plot.new()
+plot.new()
 
 plot(Fru_SSdoy, fSENstartm, xlab = "", ylab = "Senescence - Fruiting DOY",pch=21,bg=cols[fspecies_num], yaxt='n', bty="l", ylim=c(min(fSENstartm-5),max(fSENstartm+5)))
 mtext("Senescence - Fruiting DOY", side=1, cex=.7, line=2)
