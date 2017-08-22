@@ -85,14 +85,14 @@
 <<label=xtable1, echo=FALSE, results=tex>>=
 options(stringsAsFactors = FALSE)
 # Set working directory: 
-if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints")}
+if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints/documents")}
 
 
 library(xtable)
 require(dplyr)
 # options(xtable.sanitize.rownames.function=identity, sanitize.colnames.function = identity, sanitize.text.function=identity)
 
-dat2<-read.csv("data/growingseason_doy2.csv", header = T)
+dat2<-read.csv("../data/growingseason_doy2.csv", header = T)
 
 LDstartm<-tapply(dat2$LDStart_DOY,dat2$Species,mean, na.rm=T)
 LDendm<-tapply(dat2$LDEnd_DOY,dat2$Species,mean, na.rm=T)
@@ -196,7 +196,7 @@ print(inter.table, include.rownames=FALSE, include.colnames=TRUE,caption.placeme
 
 \begin{figure}[h]
   \centering
-  \includegraphics{analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf}
+  \includegraphics{../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf}
   \caption{\textbf{Individual tree phenology during the 2015 growing season, ordered by first-flower dates.} Growth phenology is shown for budburst (from its mean start day-of-year to the mean start day-of-year for leafout, across all individuals within a species), leafout (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and senescence (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95 percent of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95 percent of fruits were first observed as ripe).}
  \label{fig:focind}
 \end{figure}
