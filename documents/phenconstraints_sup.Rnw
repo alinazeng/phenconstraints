@@ -60,7 +60,7 @@
 \SweaveOpts{concordance=FALSE}
 % \SweaveOpts{concordance=TRUE}
 \bibliographystyle{/Users/aileneettinger/citations/Bibtex/styles/amnat.bst}
-\title{Supplemental materials for \\ Phenological sequences: how early-season events define those that follow} 
+\title{Supplemental materials for \\ Phenological sequences: How early-season events define those that follow} 
 \author{A.K. Ettinger, S. Gee, and E.M. Wolkovich}
 %\date{\today}
 \maketitle  %put the fancy title on
