@@ -85,19 +85,46 @@ for(i in 1:length(species)){
   lines(c(fSENstartm[i],fSENendm[i]),c(y[i],y[i]), col="yellow2",lwd=3)
 }
 
-legend(325,50, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("seagreen","palegreen","yellow","orchid","gray","darkorchid"), cex=.85)
+legend(325,50, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("palegreen","seagreen","yellow","orchid","gray","darkorchid"), cex=.85)
 
 #Plot same figure, but for individual instead of species:
-#sort by flowering date
-inddat<-dat2[order(dat2$FloStart),]
+#sort by species-level mean flowering date
+nameorder<-data.frame(cbind(names(fFLstartm),c(1:25)))
+colnames(nameorder)<-c("Species","Order")
+dat3<-left_join(dat2,nameorder,by=c("Species"), copy=TRUE)
+
+inddat<-dat3[order(dat3$Order),]
 
 quartz(height=12,width=12)#for pc you replace "quartz" with X11
 par(mai=c(1,1.5,.1,.1), omi=c(1.5,.1,.1,.2))
-plot(10,15, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(2,236), yaxt='n',xlim=c(110,390),las=1)
-axis(side=2,at=c(seq(from =2, to = 236, by = 2)),labels=(paste(rev(inddat$Species))),las=1, cex.axis=0.3)
-
-#Start with first to flower
-species<-names(fFLstartm)
+plot(10,15, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(2,236), yaxt='n',xlim=c(110,385),las=1)
+#Make new label for y-axis that is has species name only once
+names<- c("Populus deltoides"," "," "," "," ",
+          "Quercus alba"," "," "," "," " ,
+          "Quercus glandulifera"," "," "," ",
+          "Carya ovata"," "," "," "," ",
+          "Fraxinus chinensis"," "," "," "," ",
+          "Liquidambar styraciflua"," "," "," "," ",
+          "Platanus occidentalis","","","","",
+          "Carya glabra",""," "," "," ",
+          "Crataegus crus-galli"," "," "," "," ",                 
+          "Phellodendron amurense"," ","  "," ",
+          "Liriodendron tulipifera"," "," "," "," ", 
+          "Betula alleghaniensis"," "," "," "," ", 
+          "Gleditsia triacanthos"," "," "," "," ",            
+          "Tilia japonica"," "," "," "," ", 
+          "Catalpa speciosa"," "," "," "," ", 
+          "Tilia americana"," "," "," "," ",                      
+          "Kalopanax septemlobus"," "," ",
+          "Styphnolobium japonicum"," "," "," "," ",
+          "Betula nigra", " "," "," "," ", 
+          "Pyrus ussuriensis"," "," "," "," ",  
+          "Fagus engleriana"," "," "," ",
+          "Quercus rubra", " "," "," "," ", 
+          "Aesculus flava"," "," "," "," ", 
+          "Fagus grandifolia"," "," "," "," ", 
+          "Pyrus calleryana var. dimorphophylla"," "," ")
+axis(side=2,at=c(seq(from =2, to = 236, by = 2)),labels=(paste(rev(names))),las=1, cex.axis=0.5, font=3, tick=FALSE)
 
 
 y<-rev(seq(from =2, to = 236, by = 2))
@@ -111,7 +138,7 @@ for(i in 1:length(inddat$Species)){
   lines(c(inddat$SenStart_DOY[i],inddat$SenEnd_DOY[i]),c(y[i],y[i]), col="yellow2",lwd=2)
 }
 
-legend(330,100, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("seagreen","palegreen","yellow","orchid","gray","darkorchid"))
+legend(340,50, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("palegreen","seagreen","yellow","orchid","gray","darkorchid"))
 
 
 ###########################################
@@ -311,7 +338,7 @@ plot.new()
 plot.new()
 plot.new()
 
-plot(Fru_SSdoy, fSENstartm, xlab = "", ylab = "Senescence - Fruiting DOY",pch=21,bg=cols[fspecies_num], yaxt='n', bty="l", ylim=c(min(fSENstartm-5),max(fSENstartm+5)))
+plot(Fru_SSdoy, fSENstartm, xlab = "", ylab = "",pch=21,bg=cols[fspecies_num], yaxt='n', bty="l", ylim=c(min(fSENstartm-5),max(fSENstartm+5)))
 mtext("Senescence - Fruiting DOY", side=1, cex=.7, line=2)
 mtext(paste("=",round(summary((lm(fSENstartm~Fru_SSdoy)))$r.squared, digits=2),", p=",round(summary(lm(fSENstartm~Fru_SSdoy))$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
 mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.55) # works
