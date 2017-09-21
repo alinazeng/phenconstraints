@@ -77,3 +77,7 @@ z<-lm(y - b*x ~ 1)
 y.null<-x+z[[1]]
 abline(lm(y.null~x), col="red")
 
+# altogether:
+abline(lm((x+(lm(y ~ 1 + offset(b*x)))[[1]])~x), col="red")
+
+
