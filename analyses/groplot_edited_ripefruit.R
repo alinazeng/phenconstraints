@@ -436,6 +436,14 @@ mtext(paste("=",round(summary((lm(fSENstartm~fRFRstartm)))$r.squared, digits=2),
 mtext("Fruiting DOY", side=1, cex=.7, line=2)
 
 
+##Write csv with all the species-level data in it for Lizzie to use:
+sp<-cbind(fspecies,fLDstartm,fLOstartm,fFLstartm,fRFRstartm,fSENstartm,fSENendm,BB_LOdoy, LO_FLdoy, Flo_Frudoy, Fru_SSdoy)
+colnames(sp)<-
+write.csv(sp, rownames=FALSE)
+
+
+
+
 
 
 ###Simulating data to make hypotheses figures
@@ -458,6 +466,12 @@ flowendoy<-flowstdoy+flowdur
 frstdoy<-flowstdoy+flowdur
 plot(flowdur,frstdoy)
 abline(lm(frstdoy~flowdur))
+
+
+
+
+
+
 
 
 #Look at Dan & Lizzie's data from growth chambers to see if it matches Sally's:
