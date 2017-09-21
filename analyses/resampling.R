@@ -20,19 +20,11 @@ dat2<-read.csv("data/growingseason_doy2.csv", header = TRUE)
 # Hypothesis 2 (interpheno)
 
 # `real' data
-interpheno <- rnorm(25, 10, 7)
-phenophase <- 40 + 3*interpheno + rnorm(25, 8, 4)
-plot(phenophase ~ interpheno, ylab="later phenophase", xlab="interpheno phase")
+prephase<- rnorm(25, 40, 10)
+postphase<- prephase + rnorm(25, 40, 10)
+interpheno<-postphase-prephase
+plot(postphase ~ interpheno, ylab="later phenophase", xlab="interpheno phase")
 
-prephase <- phenophase-interpheno
-
-if(FALSE){
-    # alternative method to simulate data
-    prephase<- rnorm(25, 40, 10)
-    postphase<- prephase + rnorm(25, 40, 10)
-    interpheno<-postphase-prephase
-    plot(postphase ~ interpheno, ylab="later phenophase", xlab="interpheno phase")
-}
 
 # resampled (JD, resamples only one thing at a time) ...
 for (i in 1:100){
@@ -42,7 +34,7 @@ for (i in 1:100){
      # plot(postphase.fake~interpheno.fake)
      abline(lm(postphase.fake~interpheno.fake), col="lightblue")
 }
-abline(lm(phenophase ~ interpheno), lwd=2)
+abline(lm(postphase ~ interpheno), lwd=2)
 # alternative method (not shown) use normal distributions that match your data and draw from those.
 
 
