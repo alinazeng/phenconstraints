@@ -437,9 +437,9 @@ mtext("Fruiting DOY", side=1, cex=.7, line=2)
 
 
 ##Write csv with all the species-level data in it for Lizzie to use:
-sp<-cbind(fspecies,fLDstartm,fLOstartm,fFLstartm,fRFRstartm,fSENstartm,fSENendm,BB_LOdoy, LO_FLdoy, Flo_Frudoy, Fru_SSdoy)
-colnames(sp)<-
-write.csv(sp, rownames=FALSE)
+sp<-cbind(fspecies,fLDstartm,fLOstartm,fFLstartm,fRFRstartm,fSENstartm,BB_LOdoy, LO_FLdoy, Flo_Frudoy, Fru_SSdoy)
+colnames(sp)<-c("species","bb","lo","fl", "fr", "sen","bb_lo","lo_fl","fl_fr","fr_sen")
+write.csv(sp,"phenomeans.csv", row.names=FALSE)
 
 
 
