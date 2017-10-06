@@ -31,7 +31,8 @@ for (i in 1:100){
      interpheno.fake<-sample(interpheno, 25, replace=TRUE)
      # create the postphase based on above
      postphase.fake <- prephase+interpheno.fake
-     # plot(postphase.fake~interpheno.fake)
+     quartz()
+     plot(postphase.fake~interpheno.fake)
      abline(lm(postphase.fake~interpheno.fake), col="lightblue")
 }
 abline(lm(postphase ~ interpheno), lwd=2)
