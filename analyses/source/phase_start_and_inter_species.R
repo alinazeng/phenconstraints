@@ -49,7 +49,7 @@ BB_SSdoy = fSENstartm - fLDstartm
 #leafout to flowering interphase
 LO_FLdoy = fFLstartm - fLOstartm
 #leafout to fruiting interphase
-LO_FRdoy = fRFRstartm - fLOstartm
+LO_Frudoy = fRFRstartm - fLOstartm
 #leafout to senesence interphase
 LO_SSdoy = fSENstartm - fLOstartm
 

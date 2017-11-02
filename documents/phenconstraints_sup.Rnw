@@ -82,7 +82,7 @@ library(xtable)
 require(dplyr)
 require(xtable)
     
-dat2<-read.csv("../data/growingseason_doy2.csv", header = T)
+dat2<-read.csv("../analyses/output/growingseason_doy2.csv", header = T)
 
 LDstartm<-tapply(dat2$LDStart_DOY,dat2$Species,mean, na.rm=T)
 LDendm<-tapply(dat2$LDEnd_DOY,dat2$Species,mean, na.rm=T)
@@ -121,26 +121,39 @@ Fru_SSdoy = fSENstartm - fRFRstartm
 
 #Fit the previous stage models
 LO_BBmod<-lm(fLOstartm~fLDstartm)
+LO_BBfmod <- lm(fLOstartm ~ 1 + offset(1*fLDstartm)) # Force a slope of 1 through the data
+
+#anova(LO_BBmod, LO_BBfmod)#test if the models are different
+
+library(car)
+#linearHypothesis(LO_BBmod, "fLDstartm=1")
 FL_BBmod<-lm(fFLstartm~fLDstartm)
+
 FR_BBmod<-lm(fFRstartm~fLDstartm)
+FR_BBfmod <- lm(fFRstartm ~ 1 + offset(1*fLDstartm)) # Force a slope of 1 through the data
+#anova(FR_BBmod, FR_BBfmod)#test if the models are different
+
 SEN_BBmod<-lm(fSENstartm~fLDstartm)
 FL_LOmod<-lm(fFLstartm~fLOstartm)
 FR_LOmod<-lm(fFRstartm~fLOstartm)
 SEN_LOmod<-lm(fSENstartm~fLOstartm)
 FR_FLmod<-lm(fFRstartm~fFLstartm)
+FR_FLfmod<-lm(fFRstartm~1+offset(1*FLstartm))
+#anova(FR_FLmod, FR_FLfmod)#test if the models are different
+
 SEN_FLmod<-lm(fSENstartm~fFLstartm)
 SEN_FRmod<-lm(fSENstartm~FRstartm)
-#tried fitting no intercept modelbut that doesn't make sense
-#summary(LO_BBmod)
-#summary(FL_BBmod)
-#summary(FR_BBmod)
-#summary(SEN_BBmod)
-#summary(FL_LOmod)
-#summary(FR_LOmod)
-#summary(SEN_LOmod)
-#summary(FR_FLmod)
-#summary(SEN_FLmod)
-#summary(SEN_FRmod)
+#tried fitting no intercept model but that doesn't make sense
+#summary(LO_BBmod); confint(LO_BBmod)
+#summary(FL_BBmod);confint(FL_BBmod)
+#summary(FR_BBmod);confint(FR_BBmod)
+#summary(SEN_BBmod);confint(SEN_BBmod)
+#summary(FL_LOmod);confint(FL_LOmod)
+#summary(FR_LOmod);confint(FR_LOmod)
+#summary(SEN_LOmod);confint(SEN_LOmod)
+#summary(FR_FLmod);confint(FR_FLmod)
+#summary(SEN_FLmod);confint(SEN_FLmod)
+#summary(SEN_FRmod);confint(SEN_FRmod)
 
 #Previous stage model tables:
 prevmodtable<-data.frame(rbind(c(round(summary(LO_BBmod)$coeff[1:2,1],digits=3),round(summary(LO_BBmod)$r.squared,digits=3), round(summary(LO_BBmod)$coeff[2,4],digits=3)),c(round(summary(FL_BBmod)$coeff[1:2,1],digits=3),round(summary(FL_BBmod)$r.squared,digits=3), round(summary(FL_BBmod)$coeff[2,4],digits=3)),c(round(summary(FR_BBmod)$coeff[1:2,1],digits=3),round(summary(FR_BBmod)$r.squared,digits=3), round(summary(FR_BBmod)$coeff[2,4],digits=3)),c(round(summary(SEN_BBmod)$coeff[1:2,1],digits=3),round(summary(SEN_BBmod)$r.squared,digits=3), round(summary(SEN_BBmod)$coeff[2,4],digits=3)),c(round(summary(FL_LOmod)$coeff[1:2,1],digits=3),round(summary(FL_LOmod)$r.squared,digits=3), round(summary(FL_LOmod)$coeff[2,4],digits=3)),c(round(summary(FR_LOmod)$coeff[1:2,1],digits=3),round(summary(FR_LOmod)$r.squared,digits=3), round(summary(FR_LOmod)$coeff[2,4],digits=3)),c(round(summary(SEN_LOmod)$coeff[1:2,1],digits=3),round(summary(SEN_LOmod)$r.squared,digits=3), round(summary(SEN_LOmod)$coeff[2,4],digits=3)),c(round(summary(FR_FLmod)$coeff[1:2,1],digits=3),round(summary(FR_FLmod)$r.squared,digits=3), round(summary(FR_FLmod)$coeff[2,4],digits=3)),c(round(summary(SEN_FLmod)$coeff[1:2,1],digits=3),round(summary(SEN_FLmod)$r.squared,digits=3), round(summary(SEN_FLmod)$coeff[2,4],digits=3)),c(round(summary(SEN_FRmod)$coeff[1:2,1],digits=3),round(summary(SEN_FRmod)$r.squared,digits=3), round(summary(SEN_FRmod)$coeff[2,4],digits=3))))

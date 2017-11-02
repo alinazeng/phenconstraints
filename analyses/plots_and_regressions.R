@@ -10,7 +10,7 @@ if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints")}
 
 #load libraries
 library(RColorBrewer)
-
+library(dplyr)
 #Read in data:
 #dat<-read.csv("data/growingseason_doy.csv", header=T)
 #dat2 has additional phenophases in it; otherwise i think the two datasets are the same?
@@ -258,3 +258,5 @@ mtext("Fruiting DOY", side=1, cex=.7, line=2)
 sp<-cbind(fspecies,fLDstartm,fLOstartm,fFLstartm,fRFRstartm,fSENstartm,BB_LOdoy, LO_FLdoy, Flo_Frudoy, Fru_SSdoy)
 colnames(sp)<-c("species","bb","lo","fl", "fr", "sen","bb_lo","lo_fl","fl_fr","fr_sen")
 write.csv(sp,"analyses/output/phenomeans.csv", row.names=FALSE)
+
+

@@ -72,8 +72,42 @@
 
 \section* {Supplemental Tables}
 %EMW: Also, the giving of all the equations is a little hard; consider including some of the min/max ones and give the equations in a supplemental table?
-% latex table generated in R 3.2.4 by xtable 1.8-2 package
-% Thu Sep 21 10:26:41 2017
+Analysis of Variance Table
+
+Model 1: fLOstartm ~ fLDstartm
+Model 2: fLOstartm ~ 1 + offset(1 * fLDstartm)
+  Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1     23 567.61                                
+2     24 909.03 -1   -341.42 13.835 0.001126 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1Linear hypothesis test
+
+Hypothesis:
+fLDstartm = 1
+
+Model 1: restricted model
+Model 2: fLOstartm ~ fLDstartm
+
+  Res.Df    RSS Df Sum of Sq      F   Pr(>F)   
+1     24 909.03                                
+2     23 567.61  1    341.42 13.835 0.001126 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1Analysis of Variance Table
+
+Model 1: fFRstartm ~ fLDstartm
+Model 2: fFRstartm ~ 1 + offset(1 * fLDstartm)
+  Res.Df   RSS Df Sum of Sq      F Pr(>F)
+1     23 22381                           
+2     24 24087 -1   -1705.4 1.7526 0.1986Analysis of Variance Table
+
+Model 1: fFRstartm ~ fFLstartm
+Model 2: fFRstartm ~ 1 + offset(1 * FLstartm)
+  Res.Df   RSS Df Sum of Sq      F    Pr(>F)    
+1     23 13260                                  
+2     24 30117 -1    -16857 29.238 1.709e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1% latex table generated in R 3.4.2 by xtable 1.8-2 package
+% Thu Nov  2 15:23:12 2017
 \begin{table}[ht]
 \centering
 \caption{Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable,
@@ -95,8 +129,8 @@ leafout vs. budburst & 65.84 & 0.53 & 0.44 & <0.001 \\
   senesence vs. fruiting & 277.81 & 0.02 & 0.00 & 0.851 \\ 
    \hline
 \end{tabular}
-\end{table}% latex table generated in R 3.2.4 by xtable 1.8-2 package
-% Thu Sep 21 10:26:41 2017
+\end{table}% latex table generated in R 3.4.2 by xtable 1.8-2 package
+% Thu Nov  2 15:23:13 2017
 \begin{table}[ht]
 \centering
 \caption{Summary of linear models for relationships between later phenophases and inter-phenophase duration, as shown in Figure 4 in the main text. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous inter-phenophase duration as the explanatory variable.} 
