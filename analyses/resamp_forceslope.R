@@ -40,7 +40,7 @@ cols <- colorRampPalette(brewer.pal(9,"YlOrRd"))(25)#yellow to red with later fl
 fspecies<-names(fFLstartm)
 fspecies_num<-c(1:25)
 #make blank dataframe for model results
-prephase<-latephase<-int<-rse<-rsq<-c()
+prephase<-latephase<-int<-rse<-rsq<-pvals<-c()
 
 quartz(height=7, width=7)#this sets the dimensions of the plotting window
 par(mfrow=c(4,4),mai=c(.2,.7,.2,.01), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
@@ -57,6 +57,7 @@ for (i in 1:length(late_phase_col)){
   ss_tot <- sum((y - mean(y))^2)
   ss_res <- sum((y - yhat)^2)
   Rsq <- 1 - (ss_res / ss_tot)
+  p<-round(anova(forceBmod,regmod)$Pr[2], digits=3)
   latephase<-c(latephase,colnames(phases)[late_phase_col[i]])
   prephase<-c(prephase,colnames(phases)[prev_phase_col[j]])
   plot(x,y, ylab = paste(latephaselab[i]), xlab = paste(prevphaselab[j]),pch=21,bg=cols[fspecies_num], bty="l")
@@ -69,6 +70,7 @@ for (i in 1:length(late_phase_col)){
   int<-c(int,summary(forceBmod)$coef[1])
   rse<-c(rse,summary(forceBmod)$sigma)
   rsq<-c(rsq,Rsq)
+  pvals<-c(pvals,p)
   print(colnames(phases)[late_phase_col[i]]); print(colnames(phases)[prev_phase_col[j]])
   print(AIC(forceBmod,Intmod,Bmod,regmod)); print(Rsq)
   }
