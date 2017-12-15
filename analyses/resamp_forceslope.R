@@ -43,7 +43,7 @@ fspecies_num<-c(1:25)
 prephase<-latephase<-int<-rse<-rsq<-pvals<-c()
 
 quartz(height=7, width=7)#this sets the dimensions of the plotting window
-par(mfrow=c(4,4),mai=c(.2,.7,.2,.01), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
+par(mfrow=c(4,4),mai=c(.2,.2,.2,.01), omi=c(.6,.6,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
 
 for (i in 1:length(late_phase_col)){
   y=phases[,late_phase_col[i]]
@@ -60,13 +60,47 @@ for (i in 1:length(late_phase_col)){
   p<-round(anova(forceBmod,regmod)$Pr[2], digits=3)
   latephase<-c(latephase,colnames(phases)[late_phase_col[i]])
   prephase<-c(prephase,colnames(phases)[prev_phase_col[j]])
-  plot(x,y, ylab = paste(latephaselab[i]), xlab = paste(prevphaselab[j]),pch=21,bg=cols[fspecies_num], bty="l")
-  abline(a=forceBmod$coef,b=1, lty=1)
-  abline(a=regmod$coef[1],b=regmod$coef[2], lty=2, col="Red")
-  if(i==1 & j==1){plot.new();plot.new(); plot.new()}
-  if(i==2 & j==2){plot.new();plot.new()}
-  if(i==3 & j==3){plot(c(seq(1:25)),c(seq(1:25)), col="white",ylab = "", xlab = "",bty="n",xaxt='n', yaxt='n')
+  plot(x,y, ylab = paste(latephaselab[i]), xlab = paste(prevphaselab[j]),pch=21,bg=cols[fspecies_num], bty="l", xaxt='n', yaxt='n')
+  axis(side=1,labels=FALSE) 
+  axis(side=2,labels=FALSE) 
+  abline(a=forceBmod$coef,b=1, lty=2, col="Red")
+  rsq.regmod<-summary(regmod)$r.squared
+  p.regmod<-summary(regmod)$coeff[2,4]
+  if(p.regmod<0.05){
+    abline(a=regmod$coef[1],b=regmod$coef[2], lty=1)
+    mtext(paste("=",round(summary(regmod)$r.squared, digits=2),", p=",round(summary(regmod)$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+    mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.2) # works
+  }
+  if(i==1 & j==1){
+    axis(side=2,labels=TRUE) 
+    mtext("Leafout DOY", side=2, cex=.7, line=2, adj=.5)
+    plot.new();plot.new();plot.new();
     legend("top",legend=fspecies,pch=21,pt.bg=cols[fspecies_num], bty="n", cex=1.1)}
+  if(i==2 & j==1){axis(side=2,labels=TRUE) 
+    mtext("Flowering DOY", side=2, cex=.7, line=2, adj=.5)
+    mtext("Later phenological event", side=2, cex=.9, line=4, adj=.5)}
+  if(i==2 & j==2){plot.new();plot.new()}
+  if(i==3 & j==1){axis(side=2,labels=TRUE) 
+  mtext("Fruiting DOY", side=2, cex=.7, line=2, adj=.5)}
+  if(i==3 & j==3){plot(c(seq(1:25)),c(seq(1:25)), col="white",ylab = "", xlab = "",bty="n",xaxt='n', yaxt='n')}
+  if(i==4 & j==1){
+    axis(side=2,labels=TRUE) 
+    mtext("Senescence DOY", side=2, cex=.7, line=2, adj=.5)
+    mtext("Budburst DOY", side=1, cex=.7, line=2, adj=.5)
+    axis(side=1,labels=TRUE) 
+  }
+  if(i==4 & j==2){
+    axis(side=1,labels=TRUE) 
+    mtext("Leafout DOY", side=1, cex=.7, line=2, adj=.5)
+    mtext("Previous phenological event", side=1, cex=.9, line=3, adj=.5)
+    }
+  if(i==4 & j==3){ 
+    axis(side=1,labels=TRUE) 
+    mtext("Flowering DOY", side=1, cex=.7, line=2, adj=.5)}
+  if(i==4 & j==4){axis(side=1,labels=TRUE) 
+
+    mtext("Fruting DOY", side=1, cex=.7, line=2, adj=.5)}
+  
   int<-c(int,summary(forceBmod)$coef[1])
   rse<-c(rse,summary(forceBmod)$sigma)
   rsq<-c(rsq,Rsq)
@@ -84,42 +118,75 @@ interph<-as.data.frame(cbind(BB_LOdoy,LO_FLdoy,Flo_Frudoy, Fru_SSdoy)) #interpha
 # Function to plot everything and fit line to resampled data f(x)
 plothyp2 <- function(postphase,interpheno,prephase, extraphase,xlab,ylab){
   plot(postphase~interpheno, type="n", bty="l", xlab=paste(xlab), ylab=paste(ylab))
+  axis(side=1,labels=FALSE) 
+  axis(side=2,labels=FALSE) 
   for (i in 1:999){
     interpheno.resamp <- sample(interpheno, 25, replace=TRUE)
     postphase.resamp <- prephase+interpheno.resamp+extraphase
     abline(lm(postphase.resamp~interpheno.resamp), col="gray")
   }
-  abline(lm(postphase~interpheno), col="black", lwd=2)
+  mod<-lm(postphase~interpheno)
+  rsq<-summary(mod)$r.squared
+  p<-summary(mod)$coeff[2,4]
+  if(p<0.05){
+    abline(a=mod$coef[1],b=mod$coef[2], lty=1)
+    mtext(paste("=",round(summary(mod)$r.squared, digits=2),", p=",round(summary(mod)$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+    mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.2) # works
+    abline(mod, col="black", lwd=2)
+    }
   points(postphase~interpheno, pch=21,bg=cols[fspecies_num])
 }
 
-# adj phases
-quartz(height=7, width=2.5)#this sets the dimensions of the plotting window
-par(mfrow=c(4,1),mai=c(.5,.7,.2,.01), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
+# adjacent phases only
+quartz(height=7, width=3)#this sets the dimensions of the plotting window
+par(mfrow=c(4,1),mai=c(.5,.6,.1,.01), omi=c(.6,.6,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
 plothyp2(phases$LOstartm, interph$BB_LOdoy, phases$LDstartm, rep(0, 25),"Leaf Out - Budburst DOY", "Leafout DOY")
-#plot.new();plot.new(); plot.new();
 plothyp2(phases$FLstartm, interph$LO_FLdoy, phases$LOstartm, rep(0, 25),"Flowering - Leaf Out DOY", "Flowering DOY")
 plothyp2(phases$RFRstartm, interph$Flo_Frudoy, phases$FLstartm, rep(0, 25), "Fruiting - Flowering DOY","Fruiting DOY")
+mtext("Later phenological event DOY", side=2, cex=.9, line=4, adj=0)
 plothyp2(phases$SENstartm, interph$Fru_SSdoy, phases$RFRstartm, rep(0, 25), "Senescence - Fruiting DOY","Senescence DOY")
+mtext("Interphase duration (days)", side=1, cex=.9, line=4, adj=.5)
 
 #all phases
 interph2<-as.data.frame(cbind(BB_LOdoy,BB_Flodoy,LO_FLdoy,BB_Frudoy,LO_Frudoy,Flo_Frudoy, BB_SSdoy,LO_SSdoy,Flo_SSdoy,Fru_SSdoy)) #interphases for adjacent phases for now:budburst to leafout interphase, leafout to flowering interphase,flowering to fruiting interphase, fruiting to senescence interphase
 quartz(height=7, width=7)#this sets the dimensions of the plotting window
-par(mfrow=c(4,4),mai=c(.5,.7,.2,.01), omi=c(.8,.01,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
+par(mfrow=c(4,4),mai=c(.2,.2,.2,.01), omi=c(.6,.6,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
 #leafout
 plothyp2(phases$LOstartm, interph2$BB_LOdoy, phases$LDstartm, rep(0, 25),"Leafout - Budburst DOY", "Leafout DOY")
+axis(side=2,labels=TRUE) 
+mtext("Leafout", side=2, cex=.7, line=2, adj=.5)
 plot.new();plot.new(); plot.new();
 #flowering
 plothyp2(phases$FLstartm, interph2$BB_Flodoy, phases$LDstartm, rep(0, 25),"Flowering - Budburst DOY", "Flowering DOY")
-plothyp2(phases$FLstartm, interph2$LO_FLdoy, phases$LOstartm, rep(0, 25),"Flowering - Leafout DOY", "Flowering DOY")
-plot.new();plot.new(); 
+axis(side=2,labels=TRUE) 
+mtext("Flowering", side=2, cex=.7, line=2, adj=.5)
+mtext("Later phenological event DOY", side=2, cex=.9, line=3, adj=.5)
+
+plothyp2(phases$FLstartm, interph2$LO_FLdoy, phases$LOstartm, rep(0, 25),"Flowering - Leafout DOY", "")
+plot.new();plot.new();
+legend("top",legend=fspecies,pch=21,pt.bg=cols[fspecies_num], bty="n", cex=1.1)}
+
 #fruiting
 plothyp2(phases$RFRstartm, interph2$BB_Frudoy, phases$LDstartm, rep(0, 25), "Fruiting - Budburst DOY","Fruiting DOY")
+axis(side=2,labels=TRUE) 
+mtext("Fruiting", side=2, cex=.7, line=2, adj=.5)
 plothyp2(phases$RFRstartm, interph2$LO_Frudoy, phases$LOstartm, rep(0, 25), "Fruiting - Leafout DOY","Fruiting DOY")
 plothyp2(phases$RFRstartm, interph2$Flo_Frudoy, phases$FLstartm, rep(0, 25), "Fruiting - Flowering DOY","Fruiting DOY")
 plot.new(); 
 #senescence
 plothyp2(phases$SENstartm, interph2$BB_SSdoy, phases$LDstartm, rep(0, 25), "Senescence - Budburst DOY","Senescence DOY")
+axis(side=2,labels=TRUE) 
+mtext("Senescence", side=2, cex=.7, line=2, adj=.5)
+axis(side=1,labels=TRUE) 
+mtext("Later phase - Budburst DOY", side=1, cex=.7, line=2, adj=.5)
 plothyp2(phases$SENstartm, interph2$LO_SSdoy, phases$LOstartm, rep(0, 25), "Senescence - Leafout DOY","Senescence DOY")
+axis(side=1,labels=TRUE) 
+mtext("Later phase - Leafout DOY", side=1, cex=.7, line=2, adj=.5)
+mtext("Interphase duration (days)", side=1, cex=.9, line=3, adj=.5)
+
 plothyp2(phases$SENstartm, interph2$Flo_SSdoy, phases$FLstartm, rep(0, 25), "Senescence - Flowering DOY","Senescence DOY")
+axis(side=1,labels=TRUE) 
+mtext("Later phase - Flowering DOY", side=1, cex=.7, line=2, adj=.5)
 plothyp2(phases$SENstartm, interph2$Fru_SSdoy, phases$RFRstartm, rep(0, 25), "Senescence - Fruiting DOY","Senescence DOY")
+axis(side=1,labels=TRUE) 
+mtext("Senescence - Fruiting DOY", side=1, cex=.7, line=2, adj=.5)
