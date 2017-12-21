@@ -106,7 +106,7 @@ for (i in 1:length(late_phase_col)){
   rsq<-c(rsq,Rsq)
   pvals<-c(pvals,p)
   print(colnames(phases)[late_phase_col[i]]); print(colnames(phases)[prev_phase_col[j]])
-  print(AIC(forceBmod,Intmod,Bmod,regmod)); print(Rsq)
+  print(AIC(forceBmod,regmod)); print(Rsq);print(p)
   }
 }
 

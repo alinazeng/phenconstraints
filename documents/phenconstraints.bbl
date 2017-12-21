@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{40}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Archetti et~al.(2013)Archetti, Richardson, O'Keefe, and
@@ -7,7 +7,6 @@ Archetti, M., A.~D. Richardson, J.~O'Keefe, and N.~Delpierre. 2013.
 \newblock Predicting climate change impacts on the amount and duration of
   autumn colors in a new england forest.
 \newblock Plos One 8:e57373.
-\newblock PT: J; UT: WOS:000318679900027.
 
 \bibitem[{Basler and K{\"o}rner(2012)}]{basler2012}
 Basler, D., and C.~K{\"o}rner. 2012.
@@ -65,10 +64,23 @@ Elmendorf, S.~C., K.~D. Jones, B.~I. Cook, J.~M. Diez, C.~A. Enquist, R.~A.
   observatory network.
 \newblock Ecosphere 7.
 
+\bibitem[{Elzinga et~al.(2007)Elzinga, Atlan, Biere, Gigord, Weis, and
+  Bernasconi}]{elzinga2007}
+Elzinga, J.~A., A.~Atlan, A.~Biere, L.~Gigord, A.~E. Weis, and G.~Bernasconi.
+  2007.
+\newblock Time after time: flowering phenology and biotic interactions.
+\newblock Trends in Ecology and Evolution 22:432--439.
+
 \bibitem[{Fenner(1998)}]{fenner1998}
 Fenner, M. 1998.
 \newblock The phenology of growth and reproduction in plants.
 \newblock Perspectives in Plant Ecology, Evolution and Systematics 1:78--91.
+
+\bibitem[{Fitter and Fitter(2002)}]{fitter2002}
+Fitter, A.~H., and R.~S.~R. Fitter. 2002.
+\newblock Rapid changes in flowering time in british plants.
+\newblock Science 296:1689--1691.
+\newblock ID: 15; PT: J.
 
 \bibitem[{Flint(1974)}]{flint1974}
 Flint, H.~L. 1974.
@@ -136,16 +148,13 @@ Miller-Rushing, A.~J., T.~T. Hoye, D.~W. Inouye, and E.~Post. 2010.
 \newblock The effects of phenological mismatches on demography.
 \newblock Philosophical Transactions of the Royal Society B-Biological Sciences
   365:3177--3186.
-\newblock PT: J; NR: 92; TC: 19; J9: PHILOS T R SOC B; PG: 10; GA: 647IL; UT:
-  WOS:000281611800006.
 
-\bibitem[{Miller-Rushing et~al.(2008)Miller-Rushing, Inouye, and
-  Primack}]{miller-rushing2008}
-Miller-Rushing, A.~J., D.~W. Inouye, and R.~B. Primack. 2008.
-\newblock How well do first flowering dates measure plant responses to climate
-  change? the effects of population size and sampling frequency.
-\newblock Journal of Ecology 96.
-\newblock PT: J; TC: 37; UT: WOS:000260108500016.
+\bibitem[{Miller-Rushing and Primack(2008)}]{millerrushing2008}
+Miller-Rushing, A.~J., and R.~B. Primack. 2008.
+\newblock Global warming and flowering times in thoreau's concord: A community
+  perspective.
+\newblock Ecology 89.
+\newblock PT: J; TC: 92; UT: WOS:000254124200006.
 
 \bibitem[{Mimura and Aitken(2010)}]{mimura2010}
 Mimura, M., and S.~Aitken. 2010.
@@ -183,7 +192,6 @@ Primack, R.~B., I.~Ibanez, H.~Higuchi, S.~D. Lee, A.~J. Miller-Rushing, A.~M.
 Primack, R.~B., and A.~J. Miller-Rushing. 2009.
 \newblock The role of botanical gardens in climate change research.
 \newblock New Phytologist 182.
-\newblock PT: J; TC: 26; UT: WOS:000264635400006.
 
 \bibitem[{Richardson et~al.(2006)Richardson, Bailey, Denny, Martin, and
   O'Keefe}]{richardson2006}
@@ -214,7 +222,6 @@ Taylor, G., M.~J. Tallis, C.~P. Giardina, K.~E. Percy, F.~Miglietta, P.~S.
   Scarascia-Mugnozza, K.~Kets, S.~P. Long, and D.~F. Karnosky. 2008.
 \newblock Future atmospheric co2 leads to delayed autumnal senescence.
 \newblock Global Change Biology 14:264--275.
-\newblock PT: J; UT: ISI:000253313400006.
 
 \bibitem[{Team(2016)}]{rcoreteam2016}
 Team, R.~C. 2016.
@@ -235,26 +242,19 @@ Willis, C.~G., B.~R. Ruhfel, R.~B. Primack, A.~J. Miller-Rushing, J.~B. Losos,
 \newblock Plos One 5:e8878.
 \newblock PT: J; TC: 27; UT: WOS:000273896500007.
 
-\bibitem[{Wolkovich et~al.(2012{\natexlab{\emph{a}}})Wolkovich, Cook, and
-  Regetz}]{wolkovich2012nectar}
-Wolkovich, E., B.~Cook, and J.~Regetz. 2012{\natexlab{\emph{a}}}.
-\newblock Nectar: Network of ecological and climatological timings across
-  regions.
-
 \bibitem[{Wolkovich and Cleland(2014)}]{wolkovich2014b}
 Wolkovich, E.~M., and E.~E. Cleland. 2014.
 \newblock Phenological niches and the future of invaded ecosystems with climate
   change.
 \newblock AoB Plants 6:plu013.
 
-\bibitem[{Wolkovich et~al.(2012{\natexlab{\emph{b}}})Wolkovich, Cook, Allen,
-  Crimmins, Betancourt, Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren,
-  Mazer, McCabe, McGill, Parmesan, Salamin, Schwartz, and
-  Cleland}]{wolkovich2012}
+\bibitem[{Wolkovich et~al.(2012)Wolkovich, Cook, Allen, Crimmins, Betancourt,
+  Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren, Mazer, McCabe, McGill,
+  Parmesan, Salamin, Schwartz, and Cleland}]{wolkovich2012}
 Wolkovich, E.~M., B.~I. Cook, J.~M. Allen, T.~M. Crimmins, J.~L. Betancourt,
   S.~E. Travers, S.~Pau, J.~Regetz, T.~J. Davies, N.~J.~B. Kraft, T.~R. Ault,
   K.~Bolmgren, S.~J. Mazer, G.~J. McCabe, B.~J. McGill, C.~Parmesan,
-  N.~Salamin, M.~D. Schwartz, and E.~E. Cleland. 2012{\natexlab{\emph{b}}}.
+  N.~Salamin, M.~D. Schwartz, and E.~E. Cleland. 2012.
 \newblock Warming experiments underpredict plant phenological responses to
   climate change.
 \newblock Nature 485:494--497.
@@ -263,6 +263,5 @@ Wolkovich, E.~M., B.~I. Cook, J.~M. Allen, T.~M. Crimmins, J.~L. Betancourt,
 Wolkovich, E.~M., and A.~K. Ettinger. 2014.
 \newblock Back to the future for plant phenology research.
 \newblock New Phytologist 203:1021--1024.
-\newblock PT: J; TC: 0.
 
 \end{thebibliography}
