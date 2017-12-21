@@ -194,15 +194,15 @@ The data set for this study is available online at Knowledge Network for Biocomp
   
   \begin{figure}[h]
   \centering
-  \includegraphics{../analyses/figures/Hyp1_forcedslope2.pdf}
+  \includegraphics{../analyses/figures/Hyp1_forcedslope_samerange.pdf}
   
-  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day-of-year (DOY) of the later phenological stages as the response variable, and mean day-of-year of earlier stage as the explanatory variable. R\textsuperscript{2} and \textit{P}-values for fitted regression lines are shown when \textit{P}<0.05 (black solid line). Models with a forced slope of 1 were also fit, for comparison, and are shown by dashed red lines. Full model statistics are summarized in Table S1 in the Supplemental Materials. Species in the legend are ordered from early to late first-flower dates, as in Figure 2.} %EMW: Nice!
+  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day-of-year (DOY) of the later phenological stages as the response variable, and mean day-of-year of earlier stage as the explanatory variable. Models with a forced slope of 1 are shown by dashed red lines, and r\textsuperscript{2} is given when \textsuperscript{2}>0.10. ("fs", in red).  r\textsuperscript{2} for standard regression ("reg," in black) and lines for these models are shown by solid black lines, when r\textsuperscript{2}>0.10.  Full model statistics are summarized in Table S1 in the Supplemental Materials. Species in the legend are ordered from early to late first-flower dates, as in Figure 2.} %EMW: Nice!
   \label{fig:latevearly}
 \end{figure}
 \begin{figure}[h]
   \centering
   \includegraphics{../analyses/figures/Hyp2.pdf}
-  \caption{\textbf{Relationships among phenological stages and interphase duration across the 25 focal species.} Interphase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day-of-year (DOY) of the later phenological stages as the response variable, and inter-phenophase duration as the explanatory variable. Solid lines (representing model fit), r\textsuperscript{2}, and \textit{p}-values are shown for significant relationships (when \textit{P}<0.05). Gray lines represent model fits when interphase was randomized with respect to the timing of the earlier phenophase. Full model statistics are summarized in Table S1 in the Supplemental Materials. Species are color-coded as in Figure 3.}
+  \caption{\textbf{Relationships among phenological stages and interphase duration across the 25 focal species.} Interphase duration is the time between the start of the earlier phenological event and the start of the later phenological event, e.g., the number of days between the species' mean start of flowering and its mean start of fruiting. Linear models were fit with the species-level mean day-of-year (DOY) of the later phenological stages as the response variable, and inter-phenophase duration as the explanatory variable. Solid lines (representing model fit), r\textsuperscript{2}, are shown r\textsuperscript{2}>0.10). Gray lines represent model fits when interphase was randomized with respect to the timing of the earlier phenophase. Full model statistics are summarized in Table S1 in the Supplemental Materials. Species are color-coded as in Figure 3.}
   \label{fig:inter}
    \end{figure}
 

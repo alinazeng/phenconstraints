@@ -40,45 +40,60 @@ cols <- colorRampPalette(brewer.pal(9,"YlOrRd"))(25)#yellow to red with later fl
 fspecies<-names(fFLstartm)
 fspecies_num<-c(1:25)
 #make blank dataframe for model results
-prephase<-latephase<-int<-rse<-rsq<-pvals<-c()
+prephase<-latephase<-int<-rsq.fs<-rsq.reg<-c()
 
 quartz(height=7, width=7)#this sets the dimensions of the plotting window
 par(mfrow=c(4,4),mai=c(.2,.2,.2,.01), omi=c(.6,.6,.2,.2))#same thing but adding some measurements for margins within individual plots (may) and outside margins for the whole window (omi)
-
+  ylims=rbind(c(110,160), c(116,201),c(154,322),c(154,322))
+  xlims=rbind(c(48,216),c(74,242), c(74,242),c(154,322))
 for (i in 1:length(late_phase_col)){
   y=phases[,late_phase_col[i]]
   for(j in 1:i){
   x=phases[,j]
   forceBmod <- lm(y ~ 1 + offset(1*x)) # Force a slope of 1 through the data
-  Intmod <- lm(y ~ 1 ) # fit only intercept
-  Bmod <- lm(y ~ -1+x ) # fit only slope
+  #Intmod <- lm(y ~ 1 ) # fit only intercept
+  #Bmod <- lm(y ~ -1+x ) # fit only slope
   regmod <- lm(y ~ x ) # fit standard regression
   yhat <- predict(forceBmod)
   ss_tot <- sum((y - mean(y))^2)
   ss_res <- sum((y - yhat)^2)
-  Rsq <- 1 - (ss_res / ss_tot)
-  p<-round(anova(forceBmod,regmod)$Pr[2], digits=3)
+  Rsq.fs <- 1 - (ss_res / ss_tot)
   latephase<-c(latephase,colnames(phases)[late_phase_col[i]])
   prephase<-c(prephase,colnames(phases)[prev_phase_col[j]])
-  plot(x,y, ylab = paste(latephaselab[i]), xlab = paste(prevphaselab[j]),pch=21,bg=cols[fspecies_num], bty="l", xaxt='n', yaxt='n')
-  axis(side=1,labels=FALSE) 
-  axis(side=2,labels=FALSE) 
+  xlim=c(xlims[j,])
+  ylim=c(ylims[i,])
+  if(i==1 & j==1){xlim=c(110,160)}
+  if(i==2 & j==1){xlim=c(100,180)}
+  if(i==2 & j==2){xlim=c(100,180)}
+
+  if(i==4 & j<3){xlim=c(105,175); ylim=c(240,310)}
+  if(i==4 & j==3){xlim=c(110,200);ylim=c(230,320)}
+  
+  plot(x,y, ylab = paste(latephaselab[i]), xlab = paste(prevphaselab[j]),pch=21,bg=cols[fspecies_num], bty="l", xaxt='n', yaxt='n', xlim=xlim, ylim=ylim)
+  axis(side=1,labels=TRUE) 
+  axis(side=2,labels=TRUE) 
   abline(a=forceBmod$coef,b=1, lty=2, col="Red")
-  rsq.regmod<-summary(regmod)$r.squared
-  p.regmod<-summary(regmod)$coeff[2,4]
-  if(p.regmod<0.05){
+  rsq.regmod<-round(summary(regmod)$r.squared, digits=3)
+  rsq.fsmod<-round(Rsq.fs, digits=3)
+  if(rsq.fsmod>0.10){mtext(paste("fs =",rsq.fsmod), side=3, line=-.5, cex=.6, adj=.2, col="Red")
+  mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=0.05, col="Red")}
+  
+  p.regmod<-summary(regmod)$coef[2,4]
+  if(rsq.regmod>0.10){
     abline(a=regmod$coef[1],b=regmod$coef[2], lty=1)
-    mtext(paste("=",round(summary(regmod)$r.squared, digits=2),", p=",round(summary(regmod)$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
-    mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.2) # works
-  }
+    mtext(paste("reg =",rsq.regmod), side=3, line=-1.5, cex=.6, adj=.2)
+    mtext(expression( "r" ^ italic("2")), side=3, line=-1.5, cex=.6, adj=0.05)
+    }
   if(i==1 & j==1){
     axis(side=2,labels=TRUE) 
     mtext("Leafout DOY", side=2, cex=.7, line=2, adj=.5)
     plot.new();plot.new();plot.new();
-    legend("top",legend=fspecies,pch=21,pt.bg=cols[fspecies_num], bty="n", cex=1.1)}
+    legend("top",legend=fspecies,pch=21,pt.bg=cols[fspecies_num], bty="n", cex=1.1)
+    }
   if(i==2 & j==1){axis(side=2,labels=TRUE) 
     mtext("Flowering DOY", side=2, cex=.7, line=2, adj=.5)
-    mtext("Later phenological event", side=2, cex=.9, line=4, adj=.5)}
+    mtext("Later phenological event", side=2, cex=.9, line=4, adj=.5)
+    }
   if(i==2 & j==2){plot.new();plot.new()}
   if(i==3 & j==1){axis(side=2,labels=TRUE) 
   mtext("Fruiting DOY", side=2, cex=.7, line=2, adj=.5)}
@@ -99,17 +114,21 @@ for (i in 1:length(late_phase_col)){
     mtext("Flowering DOY", side=1, cex=.7, line=2, adj=.5)}
   if(i==4 & j==4){axis(side=1,labels=TRUE) 
 
-    mtext("Fruting DOY", side=1, cex=.7, line=2, adj=.5)}
+    mtext("Fruiting DOY", side=1, cex=.7, line=2, adj=.5)}
   
-  int<-c(int,summary(forceBmod)$coef[1])
-  rse<-c(rse,summary(forceBmod)$sigma)
-  rsq<-c(rsq,Rsq)
-  pvals<-c(pvals,p)
+  #int<-c(int,summary(forceBmod)$coef[1])
+  #rse<-c(rse,summary(forceBmod)$sigma)
+  rsq.fs.<-c(rsq.fs,rsq.fsmod)
+  rsq.reg<-c(rsq.reg,rsq.regmod)
   print(colnames(phases)[late_phase_col[i]]); print(colnames(phases)[prev_phase_col[j]])
-  print(AIC(forceBmod,regmod)); print(Rsq);print(p)
+  print(max(y));print(min(y));print(max(y)-min(y))
+  print(max(x));print(min(x));print(max(x)-min(x))
+  print(AIC(forceBmod,regmod))
   }
 }
 
+  
+  
 #######################################################################
 ####Hypothesis 2: Interphase predicts Later phase: Using Resampling####
 #######################################################################
@@ -130,7 +149,7 @@ plothyp2 <- function(postphase,interpheno,prephase, extraphase,xlab,ylab){
   p<-summary(mod)$coeff[2,4]
   if(p<0.05){
     abline(a=mod$coef[1],b=mod$coef[2], lty=1)
-    mtext(paste("=",round(summary(mod)$r.squared, digits=2),", p=",round(summary(mod)$coeff[2,4],digits=3)), side=3, line=-.5, cex=.6, adj=1.2)
+    mtext(paste("=",round(summary(mod)$r.squared, digits=2),digits=3), side=3, line=-.5, cex=.6, adj=1.2)
     mtext(expression( "r" ^ italic("2")), side=3, line=-.5, cex=.6, adj=.2) # works
     abline(mod, col="black", lwd=2)
     }
