@@ -74,89 +74,10 @@
 \section* {Supplemental Tables}
 
 <<label=xtable1, echo=FALSE, results=tex>>=
-options(stringsAsFactors = FALSE)
-# Set working directory: 
 if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints/documents")}
 
-
-library(xtable)
-require(dplyr)
-require(xtable)
-    
-dat2<-read.csv("../analyses/output/growingseason_doy2.csv", header = T)
-
-LDstartm<-tapply(dat2$LDStart_DOY,dat2$Species,mean, na.rm=T)
-LDendm<-tapply(dat2$LDEnd_DOY,dat2$Species,mean, na.rm=T)
-LOstartm<-tapply(dat2$LOutStart_DOY,dat2$Species,mean, na.rm=T)
-LOendm<-tapply(dat2$LOutEnd_DOY,dat2$Species,mean, na.rm=T)
-FLstartm<-tapply(dat2$FloStart_DOY,dat2$Species,mean, na.rm=T)
-FLendm<-tapply(dat2$FloEnd_DOY,dat2$Species,mean, na.rm=T)
-FRstartm<-tapply(dat2$FruStart_DOY,dat2$Species,mean, na.rm=T)
-FRendm<-tapply(dat2$FruEnd_DOY,dat2$Species,mean, na.rm=T)
-SENstartm<-tapply(dat2$SenStart_DOY,dat2$Species,mean, na.rm=T)
-SENendm<-tapply(dat2$SenEnd_DOY,dat2$Species,mean, na.rm=T)
-RFRstartm<-tapply(dat2$RipeFruStart_DOY,dat2$Species,mean, na.rm=T)
-RFRendm<-tapply(dat2$RipeFruEnd_DOY,dat2$Species,mean, na.rm=T)
-
-##sort by flowering time
-fFLstartm<-sort(FLstartm, decreasing = FALSE)
-fLDendm<-LDendm[names(fFLstartm)]
-fLDstartm<-LDstartm[names(fFLstartm)]
-fLOendm<-LOendm[names(fFLstartm)]
-fLOstartm<-LOstartm[names(fFLstartm)]
-fFLendm<-FLendm[names(fFLstartm)]
-fFRstartm<-FRstartm[names(fFLstartm)]
-fFRendm<-FRendm[names(fFLstartm)]
-fRFRstartm<-RFRstartm[names(fFLstartm)]
-fRFRendm<-RFRendm[names(fFLstartm)]
-fSENstartm<-SENstartm[names(fFLstartm)]
-fSENendm<-SENendm[names(fFLstartm)]
-fLOstartm<- LOstartm[names(fFLstartm)]
-fLOendm<- LOendm[names(fFLstartm)]
-
-#inter-phenophase times:
-BB_LOdoy = fLOstartm - fLDstartm
-LO_FLdoy = fFLstartm - fLOstartm
-Flo_Frudoy = fRFRstartm - fFLstartm
-Fru_SSdoy = fSENstartm - fRFRstartm
-
-#Fit the previous stage models
-LO_BBmod<-lm(fLOstartm~fLDstartm)
-LO_BBfmod <- lm(fLOstartm ~ 1 + offset(1*fLDstartm)) # Force a slope of 1 through the data
-
-#anova(LO_BBmod, LO_BBfmod)#test if the models are different
-
-library(car)
-#linearHypothesis(LO_BBmod, "fLDstartm=1")
-FL_BBmod<-lm(fFLstartm~fLDstartm)
-FL_BBfmod<-lm(fFLstartm~1 + offset(1*fLDstartm))
-
-FR_BBmod<-lm(fFRstartm~fLDstartm)
-FR_BBfmod <- lm(fFRstartm ~ 1 + offset(1*fLDstartm)) # Force a slope of 1 through the data
-#anova(FR_BBmod, FR_BBfmod)#test if the models are different
-
-SEN_BBmod<-lm(fSENstartm~fLDstartm)
-SEN_BBfmod<-lm(fSENstartm~1+offset(1*fLDstartm))
-
-FL_LOmod<-lm(fFLstartm~fLOstartm)
-FL_LOfmod<-lm(fFLstartm~1+offset(1*fLOstartm))
-
-FR_LOmod<-lm(fFRstartm~fLOstartm)
-FR_LOfmod<-lm(fFRstartm~1+offset(1*fLOstartm))
-
-SEN_LOmod<-lm(fSENstartm~fLOstartm)
-SEN_LOfmod<-lm(fSENstartm~1+offset(1*fLOstartm))
-
-FR_FLmod<-lm(fFRstartm~fFLstartm)
-FR_FLfmod<-lm(fFRstartm~1+offset(1*fFLstartm))
-#anova(FR_FLmod, FR_FLfmod)#test if the models are different
-
-SEN_FLmod<-lm(fSENstartm~fFLstartm)
-SEN_FLfmod<-lm(fSENstartm~1+offset(1*fFLstartm))
-
-SEN_FRmod<-lm(fSENstartm~FRstartm)
-SEN_FRfmod<-lm(fSENstartm~1+offset(1*FRstartm))
-
+#prevphase analyses
+source("../analyses/source/prev_phase_fortables.R")
 
 #Previous stage model table:
 prevmodtable<-data.frame(rbind(c(round(summary(LO_BBmod)$coeff[1:2,1],digits=3), round(summary(LO_BBmod)$coeff[2,4],digits=3),round(summary(LO_BBmod)$r.squared,digits=3)),c(round(summary(FL_BBmod)$coeff[1:2,1],digits=3), round(summary(FL_BBmod)$coeff[2,4],digits=3),round(summary(FL_BBmod)$r.squared,digits=3)),c(round(summary(FR_BBmod)$coeff[1:2,1],digits=3), round(summary(FR_BBmod)$coeff[2,4],digits=3),round(summary(FR_BBmod)$r.squared,digits=3)),c(round(summary(SEN_BBmod)$coeff[1:2,1],digits=3), round(summary(SEN_BBmod)$coeff[2,4],digits=3),round(summary(SEN_BBmod)$r.squared,digits=3)),c(round(summary(FL_LOmod)$coeff[1:2,1],digits=3), round(summary(FL_LOmod)$coeff[2,4],digits=3),round(summary(FL_LOmod)$r.squared,digits=3)),c(round(summary(FR_LOmod)$coeff[1:2,1],digits=3), round(summary(FR_LOmod)$coeff[2,4],digits=3),round(summary(FR_LOmod)$r.squared,digits=3)),c(round(summary(SEN_LOmod)$coeff[1:2,1],digits=3), round(summary(SEN_LOmod)$coeff[2,4],digits=3),round(summary(SEN_LOmod)$r.squared,digits=3)),c(round(summary(FR_FLmod)$coeff[1:2,1],digits=3), round(summary(FR_FLmod)$coeff[2,4],digits=3),round(summary(FR_FLmod)$r.squared,digits=3)),c(round(summary(SEN_FLmod)$coeff[1:2,1],digits=3), round(summary(SEN_FLmod)$coeff[2,4],digits=3),round(summary(SEN_FLmod)$r.squared,digits=3)),c(round(summary(SEN_FRmod)$coeff[1:2,1],digits=3), round(summary(SEN_FRmod)$coeff[2,4],digits=3),round(summary(SEN_FRmod)$r.squared,digits=3))))
@@ -182,12 +103,12 @@ prevmodtable<-cbind(c("leafout vs. budburst","flowering vs. budburst","fruiting 
  colnames(prevmodtable)[1:4]<-c("previous phenostage model","intercept","r\\textsuperscript{2}","AIC")
  colnames(prevmodtable)[9]<-"AIC"
 prev.table<-xtable(prevmodtable,
-  caption="Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Two types of linear models were fit: those with the intercept only estimated and a forced slope of one, and those with both the slope and intercept estimated. All models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and mean day-of-year of earlier phenostage as the explanatory variable. STILL NEED TO ADD A ROW TO THIS TABLE THAT SAYS 'FORCED SLOPE MODEL' for first three columns, and 'REGRESSION MODEL' for others",label="table:prevphase",align=c(
+  caption="Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Two types of linear models were fit: those with the intercept only estimated and a forced slope of one, and those with both the slope and intercept estimated (i.e. s standard regression model). All models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and mean day-of-year of earlier phenostage as the explanatory variable.",label="table:prevphase",align=c(
                 "|p{0.01\\textwidth}",            
                 "|p{0.27\\textwidth}",
                 "|p{0.07\\textwidth}",
                 "|p{0.05\\textwidth}",
-                "|p{0.05\\textwidth}|",
+                "|p{0.05\\textwidth}",
                 "|p{0.07\\textwidth}",
                 "|p{0.05\\textwidth}",
                 "|p{0.05\\textwidth}",
@@ -195,21 +116,17 @@ prev.table<-xtable(prevmodtable,
                 "|p{0.05\\textwidth}|"))
  
 
-print(prev.table, include.rownames=FALSE, include.colnames=TRUE,caption.placement="top", sanitize.text.function = identity)
+addtorow <- list()
+addtorow$pos <- list(0, 0)
 
-#Fit the inter-phenophase models
-LOBB_LOmod<-lm(fLOstartm~BB_LOdoy)
-FLBB_LOmod<-lm(fFLstartm~BB_LOdoy)
-FRBB_LOmod<-lm(fRFRstartm~BB_LOdoy)
-SENBB_LOmod<-lm(fSENstartm~BB_LOdoy)
+addtorow$command <- c("&\\multicolumn{3}{c |}{forced slope model} &\\multicolumn{5}{c |}{standard regression model}\\\\\n \\hline","previous phenostage model & intercept & r\\textsuperscript{2} & aic & intercept & slope  & p & r\\textsuperscript{2} & aic \\\\\n") # Trick here is to re-assign that horizontal line in the multicolumn command.
+#print(stmod.table, add.to.row=addtorow,include.rownames=TRUE, include.colnames=FALSE,caption.placement="top",size="\\footnotesize")
 
-FLLO_FLmod<-lm(fFLstartm~LO_FLdoy)
-FRLO_FLmod<-lm(fRFRstartm~LO_FLdoy)
-SENLO_FLmod<-lm(fSENstartm~LO_FLdoy)
+ colnames(prevmodtable)[9]<-"AIC"
+print(prev.table, include.rownames=FALSE, include.colnames=FALSE,caption.placement="top", sanitize.text.function = identity,add.to.row=addtorow)
 
-FRFlo_Frmod<-lm(fRFRstartm~Flo_Frudoy)
-SENFlo_Frmod<-lm(fSENstartm~Flo_Frudoy)
-SENFru_SSmod<-lm(fSENstartm~Fru_SSdoy)
+#prevphase analyses
+source("../analyses/source/interphase_fortables.R")
 
 #Interphase table
 intermodtable<-data.frame(rbind(c(round(summary(LOBB_LOmod)$coeff[1:2,1],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FLBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FLBB_LOmod)$r.squared,digits=3), round(summary(FLBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FRBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FRBB_LOmod)$r.squared,digits=3), round(summary(FRBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(SENBB_LOmod)$coeff[1:2,1],digits=3),round(summary(SENBB_LOmod)$r.squared,digits=3), round(summary(SENBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FLLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(FRLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FRLO_FLmod)$r.squared,digits=3), round(summary(FRLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(SENLO_FLmod)$coeff[1:2,1],digits=3),round(summary(SENLO_FLmod)$r.squared,digits=3), round(summary(SENLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(FRFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(FRFlo_Frmod)$r.squared,digits=3), round(summary(FRFlo_Frmod)$coeff[2,4],digits=3)),c(round(summary(SENFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(SENFlo_Frmod)$r.squared,digits=3), round(summary(SENFlo_Frmod)$coeff[2,4],digits=3)),c(round(summary(SENFru_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3))))
