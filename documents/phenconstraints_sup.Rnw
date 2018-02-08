@@ -129,20 +129,23 @@ print(prev.table, include.rownames=FALSE, include.colnames=FALSE,caption.placeme
 source("../analyses/source/interphase_fortables.R")
 
 #Interphase table
-intermodtable<-data.frame(rbind(c(round(summary(LOBB_LOmod)$coeff[1:2,1],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FLBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FLBB_LOmod)$r.squared,digits=3), round(summary(FLBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FRBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FRBB_LOmod)$r.squared,digits=3), round(summary(FRBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(SENBB_LOmod)$coeff[1:2,1],digits=3),round(summary(SENBB_LOmod)$r.squared,digits=3), round(summary(SENBB_LOmod)$coeff[2,4],digits=3)),c(round(summary(FLLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(FRLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FRLO_FLmod)$r.squared,digits=3), round(summary(FRLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(SENLO_FLmod)$coeff[1:2,1],digits=3),round(summary(SENLO_FLmod)$r.squared,digits=3), round(summary(SENLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(FRFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(FRFlo_Frmod)$r.squared,digits=3), round(summary(FRFlo_Frmod)$coeff[2,4],digits=3)),c(round(summary(SENFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(SENFlo_Frmod)$r.squared,digits=3), round(summary(SENFlo_Frmod)$coeff[2,4],digits=3)),c(round(summary(SENFru_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3))))
+intermodtable<-data.frame(rbind(c(round(summary(LOBB_LOmod)$coeff[1:2,1],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3),round(AIC(LOBB_LOmod),digits=2)),c(round(summary(FLBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FLBB_LOmod)$r.squared,digits=3), round(summary(FLBB_LOmod)$coeff[2,4],digits=3),round(AIC(FLBB_LOmod),digits=2)),c(round(summary(FRBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FRBB_LOmod)$r.squared,digits=3), round(summary(FRBB_LOmod)$coeff[2,4],digits=3),round(AIC(FRBB_LOmod),digits=2)),c(round(summary(SENBB_LOmod)$coeff[1:2,1],digits=3),round(summary(SENBB_LOmod)$r.squared,digits=3), round(summary(SENBB_LOmod)$coeff[2,4],digits=3),round(AIC(SENBB_LOmod),digits=2)),c(round(summary(FLLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3),round(AIC(FLLO_FLmod),digits=2)),c(round(summary(FRLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FRLO_FLmod)$r.squared,digits=3), round(summary(FRLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(SENLO_FLmod)$coeff[1:2,1],digits=3),round(summary(SENLO_FLmod)$r.squared,digits=3), round(summary(SENLO_FLmod)$coeff[2,4],digits=3),round(AIC(SENLO_FLmod),digits=2)),c(round(summary(FRFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(FRFlo_Frmod)$r.squared,digits=3), round(summary(FRFlo_Frmod)$coeff[2,4],digits=3),round(AIC(FRFlo_Frmod),digits=2)),c(round(summary(SENFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(SENFlo_Frmod)$r.squared,digits=3), round(summary(SENFlo_Frmod)$coeff[2,4],digits=3),round(AIC(SENFlo_Frmod),digits=2)),c(round(summary(SENFru_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3),round(AIC(SENFru_SSmod),digits=2))))
 
- colnames(intermodtable)<-c("intercept","slope","r\\textsuperscript{2}","p")
+ colnames(intermodtable)<-c("intercept","slope","r\\textsuperscript{2}","p","aic")
 
+ intermodtable$aic<-round(intermodtable$aic, digits=2)
  intermodtable$p[intermodtable$p<0.001]<-"<0.001"
  
 intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. leafout-budburst","fruiting vs. leafout-budburst","senescence vs. leafout-budburst","flowering vs. flowering-leafout","fruiting vs. flowering-leafout","senescence vs. flowering-leafout","fruiting vs. fruiting-flowering","senescence vs. fruiting-flowering","senesence vs. senescence-fruiting"),intermodtable)
  colnames(intermodtable)[1]<-"interphase model"
  
- inter.table<-xtable(intermodtable,digits=3,
+ 
+ inter.table<-xtable(intermodtable,
   caption="Summary of linear models for relationships between later phenophases and interphase duration, as shown in Figure 4 in the main text. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous interphase duration as the explanatory variable.",label="table:interphase",align=c(
                 "|p{0.01\\textwidth}",            
                 "|p{0.35\\textwidth}",
                 "|p{0.1\\textwidth}",
+                "|p{0.07\\textwidth}",
                 "|p{0.07\\textwidth}",
                 "|p{0.07\\textwidth}",
                 "|p{0.07\\textwidth}|"))
