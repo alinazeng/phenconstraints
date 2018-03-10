@@ -53,8 +53,8 @@ library(car)
 FL_BBmod<-lm(fFLstartm~fLDstartm)
 FL_BBfmod<-lm(fFLstartm~1 + offset(1*fLDstartm))
 
-FR_BBmod<-lm(fFRstartm~fLDstartm)
-FR_BBfmod <- lm(fFRstartm ~ 1 + offset(1*fLDstartm)) # Force a slope of 1 through the data
+RFR_BBmod<-lm(fRFRstartm~fLDstartm)
+RFR_BBfmod <- lm(fRFRstartm ~ 1 + offset(1*fLDstartm)) # Force a slope of 1 through the data
 #anova(FR_BBmod, FR_BBfmod)#test if the models are different
 
 SEN_BBmod<-lm(fSENstartm~fLDstartm)
@@ -63,18 +63,22 @@ SEN_BBfmod<-lm(fSENstartm~1+offset(1*fLDstartm))
 FL_LOmod<-lm(fFLstartm~fLOstartm)
 FL_LOfmod<-lm(fFLstartm~1+offset(1*fLOstartm))
 
-FR_LOmod<-lm(fFRstartm~fLOstartm)
-FR_LOfmod<-lm(fFRstartm~1+offset(1*fLOstartm))
+RFR_LOmod<-lm(fRFRstartm~fLOstartm)
+RFR_LOfmod<-lm(fRFRstartm~1+offset(1*fLOstartm))
 
 SEN_LOmod<-lm(fSENstartm~fLOstartm)
+
 SEN_LOfmod<-lm(fSENstartm~1+offset(1*fLOstartm))
 
-FR_FLmod<-lm(fFRstartm~fFLstartm)
-FR_FLfmod<-lm(fFRstartm~1+offset(1*fFLstartm))
+
+
+RFR_FLmod<-lm(fRFRstartm~fFLstartm)
+RFR_FLfmod<-lm(fRFRstartm~1+offset(1*fFLstartm))
 #anova(FR_FLmod, FR_FLfmod)#test if the models are different
 
 SEN_FLmod<-lm(fSENstartm~fFLstartm)
 SEN_FLfmod<-lm(fSENstartm~1+offset(1*fFLstartm))
 
-SEN_FRmod<-lm(fSENstartm~FRstartm)
-SEN_FRfmod<-lm(fSENstartm~1+offset(1*FRstartm))
+SEN_RFRmod<-lm(fSENstartm~fRFRstartm)
+SEN_RFRfmod<-lm(fSENstartm~1+offset(1*FRstartm))
+

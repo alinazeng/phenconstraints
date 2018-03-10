@@ -142,7 +142,8 @@ plothyp2 <- function(postphase,interpheno,prephase, extraphase,xlab,ylab){
   for (i in 1:999){
     interpheno.resamp <- sample(interpheno, 25, replace=TRUE)
     postphase.resamp <- prephase+interpheno.resamp+extraphase
-    abline(lm(postphase.resamp~interpheno.resamp), col="gray")
+    mod<-lm(postphase.resamp~interpheno.resamp)
+    abline(mod, col="gray")
   }
   mod<-lm(postphase~interpheno)
   rsq<-summary(mod)$r.squared

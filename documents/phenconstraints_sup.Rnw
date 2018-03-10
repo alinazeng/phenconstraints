@@ -80,11 +80,11 @@ if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints/documents")}
 source("../analyses/source/prev_phase_fortables.R")
 
 #Previous stage model table:
-prevmodtable<-data.frame(rbind(c(round(summary(LO_BBmod)$coeff[1:2,1],digits=3), round(summary(LO_BBmod)$coeff[2,4],digits=3),round(summary(LO_BBmod)$r.squared,digits=3)),c(round(summary(FL_BBmod)$coeff[1:2,1],digits=3), round(summary(FL_BBmod)$coeff[2,4],digits=3),round(summary(FL_BBmod)$r.squared,digits=3)),c(round(summary(FR_BBmod)$coeff[1:2,1],digits=3), round(summary(FR_BBmod)$coeff[2,4],digits=3),round(summary(FR_BBmod)$r.squared,digits=3)),c(round(summary(SEN_BBmod)$coeff[1:2,1],digits=3), round(summary(SEN_BBmod)$coeff[2,4],digits=3),round(summary(SEN_BBmod)$r.squared,digits=3)),c(round(summary(FL_LOmod)$coeff[1:2,1],digits=3), round(summary(FL_LOmod)$coeff[2,4],digits=3),round(summary(FL_LOmod)$r.squared,digits=3)),c(round(summary(FR_LOmod)$coeff[1:2,1],digits=3), round(summary(FR_LOmod)$coeff[2,4],digits=3),round(summary(FR_LOmod)$r.squared,digits=3)),c(round(summary(SEN_LOmod)$coeff[1:2,1],digits=3), round(summary(SEN_LOmod)$coeff[2,4],digits=3),round(summary(SEN_LOmod)$r.squared,digits=3)),c(round(summary(FR_FLmod)$coeff[1:2,1],digits=3), round(summary(FR_FLmod)$coeff[2,4],digits=3),round(summary(FR_FLmod)$r.squared,digits=3)),c(round(summary(SEN_FLmod)$coeff[1:2,1],digits=3), round(summary(SEN_FLmod)$coeff[2,4],digits=3),round(summary(SEN_FLmod)$r.squared,digits=3)),c(round(summary(SEN_FRmod)$coeff[1:2,1],digits=3), round(summary(SEN_FRmod)$coeff[2,4],digits=3),round(summary(SEN_FRmod)$r.squared,digits=3))))
+prevmodtable<-data.frame(rbind(c(round(summary(LO_BBmod)$coeff[1:2,1],digits=3), round(summary(LO_BBmod)$coeff[2,4],digits=3),round(summary(LO_BBmod)$r.squared,digits=3)),c(round(summary(FL_BBmod)$coeff[1:2,1],digits=3), round(summary(FL_BBmod)$coeff[2,4],digits=3),round(summary(FL_BBmod)$r.squared,digits=3)),c(round(summary(RFR_BBmod)$coeff[1:2,1],digits=3), round(summary(RFR_BBmod)$coeff[2,4],digits=3),round(summary(RFR_BBmod)$r.squared,digits=3)),c(round(summary(SEN_BBmod)$coeff[1:2,1],digits=3), round(summary(SEN_BBmod)$coeff[2,4],digits=3),round(summary(SEN_BBmod)$r.squared,digits=3)),c(round(summary(FL_LOmod)$coeff[1:2,1],digits=3), round(summary(FL_LOmod)$coeff[2,4],digits=3),round(summary(FL_LOmod)$r.squared,digits=3)),c(round(summary(RFR_LOmod)$coeff[1:2,1],digits=3), round(summary(RFR_LOmod)$coeff[2,4],digits=3),round(summary(RFR_LOmod)$r.squared,digits=3)),c(round(summary(SEN_LOmod)$coeff[1:2,1],digits=3), round(summary(SEN_LOmod)$coeff[2,4],digits=3),round(summary(SEN_LOmod)$r.squared,digits=3)),c(round(summary(RFR_FLmod)$coeff[1:2,1],digits=3), round(summary(RFR_FLmod)$coeff[2,4],digits=3),round(summary(RFR_FLmod)$r.squared,digits=3)),c(round(summary(SEN_FLmod)$coeff[1:2,1],digits=3), round(summary(SEN_FLmod)$coeff[2,4],digits=3),round(summary(SEN_FLmod)$r.squared,digits=3)),c(round(summary(SEN_RFRmod)$coeff[1:2,1],digits=3), round(summary(SEN_RFRmod)$coeff[2,4],digits=3),round(summary(SEN_RFRmod)$r.squared,digits=3))))
  colnames(prevmodtable)<-c("intercept","slope","p","r\\textsuperscript{2}")
 
  prevmodtable$p[prevmodtable$p<0.001]<-"<0.001"
-fsints<-c(round(summary(LO_BBfmod)$coeff[1,1],digits=3),round(summary(FL_BBfmod)$coeff[1,1],digits=3),round(summary(FR_BBfmod)$coeff[1,1],digits=3),round(summary(SEN_BBfmod)$coeff[1,1],digits=3),round(summary(FL_LOfmod)$coeff[1,1],digits=3),round(summary(FR_LOfmod)$coeff[1,1],digits=3),round(summary(SEN_LOfmod)$coeff[1,1],digits=3),round(summary(FR_FLfmod)$coeff[1,1],digits=3),round(summary(SEN_FLfmod)$coeff[1,1],digits=3),round(summary(SEN_FRfmod)$coeff[1,1],digits=3))#forced slope model intercepts
+fsints<-c(round(summary(LO_BBfmod)$coeff[1,1],digits=3),round(summary(FL_BBfmod)$coeff[1,1],digits=3),round(summary(RFR_BBfmod)$coeff[1,1],digits=3),round(summary(SEN_BBfmod)$coeff[1,1],digits=3),round(summary(FL_LOfmod)$coeff[1,1],digits=3),round(summary(RFR_LOfmod)$coeff[1,1],digits=3),round(summary(SEN_LOfmod)$coeff[1,1],digits=3),round(summary(RFR_FLfmod)$coeff[1,1],digits=3),round(summary(SEN_FLfmod)$coeff[1,1],digits=3),round(summary(SEN_RFRfmod)$coeff[1,1],digits=3))#forced slope model intercepts
   
 rsq.fs <- function(y,forceBmod){ 
   yhat <- predict(forceBmod)
@@ -94,10 +94,10 @@ rsq.fs <- function(y,forceBmod){
   Rsq.fs<-round(Rsq.fs,digits=2)
   return(Rsq.fs)
 }
-  fsrsqs<-c(rsq.fs(fLOstartm,LO_BBfmod),rsq.fs(fFLstartm,FL_BBfmod),rsq.fs(fFRstartm,FR_BBfmod),rsq.fs(fSENstartm,SEN_BBfmod),rsq.fs(fFLstartm,FL_LOfmod),rsq.fs(fFRstartm,FR_LOfmod),rsq.fs(fSENstartm,SEN_LOfmod),rsq.fs(fFRstartm,FR_FLfmod),rsq.fs(fSENstartm,SEN_FLfmod),rsq.fs(fSENstartm,SEN_FRfmod))#forced slope model r-squareds
+  fsrsqs<-c(rsq.fs(fLOstartm,LO_BBfmod),rsq.fs(fFLstartm,FL_BBfmod),rsq.fs(fRFRstartm,RFR_BBfmod),rsq.fs(fSENstartm,SEN_BBfmod),rsq.fs(fFLstartm,FL_LOfmod),rsq.fs(fRFRstartm,RFR_LOfmod),rsq.fs(fSENstartm,SEN_LOfmod),rsq.fs(fRFRstartm,RFR_FLfmod),rsq.fs(fSENstartm,SEN_FLfmod),rsq.fs(fSENstartm,SEN_RFRfmod))#forced slope model r-squareds
 
-  fsaics<-c(AIC(LO_BBfmod),AIC(FL_BBfmod),AIC(FR_BBfmod),AIC(SEN_BBfmod),AIC(FL_LOfmod),AIC(FR_LOfmod),AIC(SEN_LOfmod),AIC(FR_FLfmod),AIC(SEN_FLfmod),AIC(SEN_FRfmod))
- aics<-c(AIC(LO_BBmod),AIC(FL_BBmod),AIC(FR_BBmod),AIC(SEN_BBmod),AIC(FL_LOmod),AIC(FR_LOmod),AIC(SEN_LOmod),AIC(FR_FLmod),AIC(SEN_FLmod),AIC(SEN_FRmod))
+  fsaics<-c(AIC(LO_BBfmod),AIC(FL_BBfmod),AIC(RFR_BBfmod),AIC(SEN_BBfmod),AIC(FL_LOfmod),AIC(RFR_LOfmod),AIC(SEN_LOfmod),AIC(RFR_FLfmod),AIC(SEN_FLfmod),AIC(SEN_RFRfmod))
+ aics<-c(AIC(LO_BBmod),AIC(FL_BBmod),AIC(RFR_BBmod),AIC(SEN_BBmod),AIC(FL_LOmod),AIC(RFR_LOmod),AIC(SEN_LOmod),AIC(RFR_FLmod),AIC(SEN_FLmod),AIC(SEN_RFRmod))
   
 prevmodtable<-cbind(c("leafout vs. budburst","flowering vs. budburst","fruiting vs. budburst","senescence vs. budburst","flowering vs. leafout","fruiting vs. leafout","senescence vs. leafout","fruiting vs. flowering","senescence vs. flowering","senesence vs. fruiting"),fsints,fsrsqs,fsaics,prevmodtable,aics)
  colnames(prevmodtable)[1:4]<-c("previous phenostage model","intercept","r\\textsuperscript{2}","AIC")
@@ -122,35 +122,39 @@ addtorow$pos <- list(0, 0)
 addtorow$command <- c("&\\multicolumn{3}{c |}{forced slope model} &\\multicolumn{5}{c |}{standard regression model}\\\\\n \\hline","previous phenostage model & intercept & r\\textsuperscript{2} & aic & intercept & slope  & p & r\\textsuperscript{2} & aic \\\\\n") # Trick here is to re-assign that horizontal line in the multicolumn command.
 #print(stmod.table, add.to.row=addtorow,include.rownames=TRUE, include.colnames=FALSE,caption.placement="top",size="\\footnotesize")
 
- colnames(prevmodtable)[9]<-"AIC"
+colnames(prevmodtable)[9]<-"aic"
 print(prev.table, include.rownames=FALSE, include.colnames=FALSE,caption.placement="top", sanitize.text.function = identity,add.to.row=addtorow)
 
-#prevphase analyses
+#interphase analyses
+source("../analyses/source/phase_start_and_inter_species.R")
+
 source("../analyses/source/interphase_fortables.R")
 
 #Interphase table
-intermodtable<-data.frame(rbind(c(round(summary(LOBB_LOmod)$coeff[1:2,1],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3),round(AIC(LOBB_LOmod),digits=2)),c(round(summary(FLBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FLBB_LOmod)$r.squared,digits=3), round(summary(FLBB_LOmod)$coeff[2,4],digits=3),round(AIC(FLBB_LOmod),digits=2)),c(round(summary(FRBB_LOmod)$coeff[1:2,1],digits=3),round(summary(FRBB_LOmod)$r.squared,digits=3), round(summary(FRBB_LOmod)$coeff[2,4],digits=3),round(AIC(FRBB_LOmod),digits=2)),c(round(summary(SENBB_LOmod)$coeff[1:2,1],digits=3),round(summary(SENBB_LOmod)$r.squared,digits=3), round(summary(SENBB_LOmod)$coeff[2,4],digits=3),round(AIC(SENBB_LOmod),digits=2)),c(round(summary(FLLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3),round(AIC(FLLO_FLmod),digits=2)),c(round(summary(FRLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FRLO_FLmod)$r.squared,digits=3), round(summary(FRLO_FLmod)$coeff[2,4],digits=3)),c(round(summary(SENLO_FLmod)$coeff[1:2,1],digits=3),round(summary(SENLO_FLmod)$r.squared,digits=3), round(summary(SENLO_FLmod)$coeff[2,4],digits=3),round(AIC(SENLO_FLmod),digits=2)),c(round(summary(FRFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(FRFlo_Frmod)$r.squared,digits=3), round(summary(FRFlo_Frmod)$coeff[2,4],digits=3),round(AIC(FRFlo_Frmod),digits=2)),c(round(summary(SENFlo_Frmod)$coeff[1:2,1],digits=3),round(summary(SENFlo_Frmod)$r.squared,digits=3), round(summary(SENFlo_Frmod)$coeff[2,4],digits=3),round(AIC(SENFlo_Frmod),digits=2)),c(round(summary(SENFru_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3),round(AIC(SENFru_SSmod),digits=2))))
+intermodtable<-data.frame(rbind(c(round(summary(LOBB_LOmod)$coeff[1:2,1],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3),round(AIC(LOBB_LOmod),digits=2)),c(round(summary(FLBB_FLmod)$coeff[1:2,1],digits=3),round(summary(FLBB_FLmod)$r.squared,digits=3), round(summary(FLBB_FLmod)$coeff[2,4],digits=3),round(AIC(FLBB_FLmod),digits=2)),c(round(summary(FRBB_FRmod)$coeff[1:2,1],digits=3),round(summary(FRBB_FRmod)$r.squared,digits=3), round(summary(FRBB_FRmod)$coeff[2,4],digits=3),round(AIC(FRBB_FRmod),digits=2)),c(round(summary(SENBB_SSmod)$coeff[1:2,1],digits=3),round(summary(SENBB_SSmod)$r.squared,digits=3), round(summary(SENBB_SSmod)$coeff[2,4],digits=3),round(AIC(SENBB_SSmod),digits=2)),c(round(summary(FLLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3),round(AIC(FLLO_FLmod),digits=2)),c(round(summary(FRLO_FRmod)$coeff[1:2,1],digits=3),round(summary(FRLO_FRmod)$r.squared,digits=3), round(summary(FRLO_FRmod)$coeff[2,4],digits=3),round(AIC(FRLO_FRmod),digits=2)),c(round(summary(SENLO_SSmod)$coeff[1:2,1],digits=3),round(summary(SENLO_SSmod)$r.squared,digits=3), round(summary(SENLO_SSmod)$coeff[2,4],digits=3),round(AIC(SENLO_SSmod),digits=2)),c(round(summary(FRFlo_FRmod)$coeff[1:2,1],digits=3),round(summary(FRFlo_FRmod)$r.squared,digits=3), round(summary(FRFlo_FRmod)$coeff[2,4],digits=3),round(AIC(FRFlo_FRmod),digits=2)),c(round(summary(SENFlo_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFlo_SSmod)$r.squared,digits=3), round(summary(SENFlo_SSmod)$coeff[2,4],digits=3),round(AIC(SENFlo_SSmod),digits=2)),c(round(summary(SENFru_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3),round(AIC(SENFru_SSmod),digits=2))))
+intermodtable$ranslopeci<-paste(cis$perc2.5,cis$perc97.5, sep= "-")
 
- colnames(intermodtable)<-c("intercept","slope","r\\textsuperscript{2}","p","aic")
+ colnames(intermodtable)<-c("intercept","slope","r\\textsuperscript{2}","p","aic","random.slopes")
 
  intermodtable$aic<-round(intermodtable$aic, digits=2)
  intermodtable$p[intermodtable$p<0.001]<-"<0.001"
  
-intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. leafout-budburst","fruiting vs. leafout-budburst","senescence vs. leafout-budburst","flowering vs. flowering-leafout","fruiting vs. flowering-leafout","senescence vs. flowering-leafout","fruiting vs. fruiting-flowering","senescence vs. fruiting-flowering","senesence vs. senescence-fruiting"),intermodtable)
+intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. flowering-budburst","fruiting vs. fruiting-budburst","senescence vs. senescence-budburst","flowering vs. flowering-leafout","fruiting vs. fruiting-leafout","senescence vs. fruiting-leafout","fruiting vs. fruiting-flowering","senescence vs. senescence-flowering","senesence vs. senescence-fruiting"),intermodtable)
  colnames(intermodtable)[1]<-"interphase model"
  
- 
  inter.table<-xtable(intermodtable,
-  caption="Summary of linear models for relationships between later phenophases and interphase duration, as shown in Figure 4 in the main text. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous interphase duration as the explanatory variable.",label="table:interphase",align=c(
+  caption="Summary of linear models for relationships between later phenophases and interphase duration, as shown in Figure 4 in the main text. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous interphase duration as the explanatory variable. The random.slopes column gives the range in which 95 percent of slopes in the randomization occur (betwen 2.5 percent and 97.5 percent).", label ="table:interphase",align=c(
                 "|p{0.01\\textwidth}",            
                 "|p{0.35\\textwidth}",
                 "|p{0.1\\textwidth}",
                 "|p{0.07\\textwidth}",
                 "|p{0.07\\textwidth}",
                 "|p{0.07\\textwidth}",
-                "|p{0.07\\textwidth}|"))
+                "|p{0.07\\textwidth}",
+                "|p{0.12\\textwidth}|"))
  
 print(inter.table, include.rownames=FALSE, include.colnames=TRUE,caption.placement="top", sanitize.text.function = identity)
+
 @
 \clearpage
 
@@ -159,7 +163,7 @@ print(inter.table, include.rownames=FALSE, include.colnames=TRUE,caption.placeme
 \begin{figure}[h]
   \centering
   \includegraphics{../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf}
-  \caption{\textbf{Individual tree phenology during the 2015 growing season, ordered by species-level mean first-flower dates.} Growth phenology is shown for budburst (from its mean start day-of-year to the mean start day-of-year for leafout, across all individuals within a species), leafout (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and senescence (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95 percent of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95 percent of fruits were first observed as ripe).}
+  \caption{\textbf{Individual tree phenology during the 2015 growing season, ordered by species-level mean first-flower dates.} Growth phenology is shown for budburst (from its mean start day-of-year to the mean start day-of-year for leafout, across all individuals within a species), leafout (from the mean day-of-year when fully-expanded leaves were first observed through the start of senescence), and senescence (from the mean day-of-year when leaves first began changing color through the mean day-of-year when more than 95\% of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the mean day-of-year when flowers first appeared to the mean day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the mean day-of-year when fruits first appeared to the mean day-of-year when more than 95\% of fruits were first observed as ripe).}
  \label{fig:focind}
 \end{figure}
   
