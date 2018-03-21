@@ -36,8 +36,9 @@
  %\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
 \parindent 0pt% sets leading space for paragraphs
 \usepackage{setspace}
-%\doublespacing
-
+\usepackage{lineno}
+\doublespacing
+\usepackage{authblk}
 %Optional: I like fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -54,6 +55,7 @@
 %How sequential phenological events determine the shape of a season
 %sally likes"the shape of the season"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+\linenumbers
 
 %Start of the document
 \begin{document}
@@ -61,7 +63,15 @@
 % \SweaveOpts{concordance=TRUE}
 \bibliographystyle{/Users/aileneettinger/citations/Bibtex/styles/amnat.bst}
 \title{Phenological sequences: how early-season events define those that follow} %Other title ideas: 1. Phenological sequences: Early-season events affect later-season events; The shape of the season: how early phenological events define those that follow 
+\author[1,2,a]{A. Ettinger}
+\author[1]{S.Gee}
+\author[1,3]{E.M. Wolkovich}
 \author{A.K. Ettinger, S. Gee, and E.M. Wolkovich}
+\affil[1]{Arnold Arboretum of Harvard University, Boston, Massachusetts 02131, USA}
+\affil[2]{Tufts University, Medford, Massachusetts 02155, USA}
+\affil[3]{Forest and Conservation Sciences, University of British Columbia, Vancouver, BC V6T 1Z4, Canada}
+\affil[a]{Corresponding author; email: aettinger@fas.harvard.edu; phone: 781-296-4821; mailing address: 1300 Centre Street, Boston, Massachusetts 02140, USA }
+
 %\date{\today}
 \maketitle %put the fancy title on
 %\tableofcontents   %add a table of contents

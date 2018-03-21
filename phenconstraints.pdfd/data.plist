@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowsCopying</key>
+	<true/>
+	<key>AllowsPrinting</key>
+	<true/>
+	<key>CreationDate</key>
+	<date>2018-03-21T16:20:58Z</date>
+	<key>Creator</key>
+	<string>LaTeX with hyperref package</string>
+	<key>Encrypted</key>
+	<false/>
+	<key>FileName</key>
+	<string>phenconstraints.pdf</string>
+	<key>FileSize</key>
+	<string>1.2 MB (1,208,712 bytes)</string>
+	<key>LogicalSize</key>
+	<integer>1208712</integer>
+	<key>ModDate</key>
+	<date>2018-03-21T16:20:58Z</date>
+	<key>PageCount</key>
+	<integer>15</integer>
+	<key>PageHeight</key>
+	<real>792</real>
+	<key>PageSize</key>
+	<string>8.5 x 11.0 in</string>
+	<key>PageWidth</key>
+	<real>612</real>
+	<key>PhysicalSize</key>
+	<integer>1212416</integer>
+	<key>Producer</key>
+	<string>pdfTeX-1.40.16</string>
+	<key>Rating</key>
+	<real>0.0</real>
+	<key>Tags</key>
+	<array/>
+	<key>Version</key>
+	<string>1.5</string>
+</dict>
+</plist>
