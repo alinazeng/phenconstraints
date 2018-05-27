@@ -1,4 +1,4 @@
-\begin{thebibliography}{47}
+\begin{thebibliography}{48}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Archetti et~al.(2013)Archetti, Richardson, O'Keefe, and
@@ -95,7 +95,7 @@ Elzinga, J.~A., A.~Atlan, A.~Biere, L.~Gigord, A.~E. Weis, and G.~Bernasconi.
 
 \bibitem[{Fitter and Fitter(2002)}]{fitter2002}
 Fitter, A.~H., and R.~S.~R. Fitter. 2002.
-\newblock Rapid changes in flowering time in british plants.
+\newblock {Rapid changes in flowering time in British plants}.
 \newblock Science 296:1689--1691.
 
 \bibitem[{Flint(1974)}]{flint1974}
@@ -107,6 +107,12 @@ Flint, H.~L. 1974.
 Gee, S., A.~Ettinger, and E.~Wolkovich. 2017.
 \newblock Phenological sequences: a dataset of tree phenology from 25 species
   throughout one growing season.
+
+\bibitem[{Inouye(2008)}]{inouye2008}
+Inouye, D.~W. 2008.
+\newblock Effects of climate change on phenology, frost damage, and floral
+  abundance of montane wildflowers.
+\newblock Ecology 89:353--362.
 
 \bibitem[{Jeong and Medvigy(2014)}]{jeong2014}
 Jeong, S.-J., and D.~Medvigy. 2014.
@@ -130,8 +136,8 @@ Laube, J., T.~H. Sparks, N.~Estrella, J.~H{\"o}fler, D.~P. Ankerst, and
 
 \bibitem[{Lechowicz(1984)}]{lechowicz1984}
 Lechowicz, M.~J. 1984.
-\newblock Why do temperate deciduous trees leaf out at different times?
-  adaptation and ecology of forest communities.
+\newblock {Why do temperate deciduous trees leaf out at different times?
+  Adaptation and ecology of forest communities}.
 \newblock The American Naturalist 124:821--842.
 
 \bibitem[{Lechowicz(1995)}]{lechowicz1995}
@@ -182,19 +188,19 @@ Miller-Rushing, A.~J., T.~T. Hoye, D.~W. Inouye, and E.~Post. 2010.
 
 \bibitem[{Miller-Rushing and Primack(2008)}]{millerrushing2008}
 Miller-Rushing, A.~J., and R.~B. Primack. 2008.
-\newblock Global warming and flowering times in {T}horeau's concord: A
-  community perspective.
+\newblock {Global warming and flowering times in Thoreau's Concord: A community
+  perspective}.
 \newblock Ecology 89:332---341.
 
 \bibitem[{Mimura and Aitken(2010)}]{mimura2010}
 Mimura, M., and S.~Aitken. 2010.
-\newblock Local adaptation at the range peripheries of sitka spruce.
-\newblock Journal of evolutionary biology 23:249--258.
+\newblock L{ocal adaptation at the range peripheries of Sitka spruce}.
+\newblock Journal of Evolutionary Biology 23:249--258.
 
 \bibitem[{Morin et~al.(2010)Morin, Roy, Soni{\'e}, and Chuine}]{morin2010}
 Morin, X., J.~Roy, L.~Soni{\'e}, and I.~Chuine. 2010.
-\newblock Changes in leaf phenology of three european oak species in response
-  to experimental climate change.
+\newblock {Changes in leaf phenology of three European oak species in response
+  to experimental climate change}.
 \newblock New Phytologist 186:900--910.
 
 \bibitem[{Ogle et~al.(2015)Ogle, Barber, Barron-Gafford, Bentley, Young,
@@ -202,7 +208,7 @@ Morin, X., J.~Roy, L.~Soni{\'e}, and I.~Chuine. 2010.
 Ogle, K., J.~J. Barber, G.~A. Barron-Gafford, L.~P. Bentley, J.~M. Young, T.~E.
   Huxman, M.~E. Loik, and D.~T. Tissue. 2015.
 \newblock Quantifying ecological memory in plant and ecosystem processes.
-\newblock Ecology letters 18:221--235.
+\newblock Ecology Letters 18:221--235.
 
 \bibitem[{Parmesan(2006)}]{parmesan2006}
 Parmesan, C. 2006.
@@ -213,9 +219,9 @@ Parmesan, C. 2006.
   Hitchcock}]{polgar2013}
 Polgar, C.~A., R.~B. Primack, E.~H. Williams, S.~Stichter, and C.~Hitchcock.
   2013.
-\newblock Climate effects on the flight period of lycaenid butterflies in
-  {M}assachusetts.
-\newblock Biological conservation 160:25--31.
+\newblock {Climate effects on the flight period of Lycaenid butterflies in
+  Massachusetts}.
+\newblock Biological Conservation 160:25--31.
 
 \bibitem[{Primack et~al.(2009)Primack, Ibanez, Higuchi, Lee, Miller-Rushing,
   Wilson, and Jr.}]{primack2009c}
@@ -244,9 +250,9 @@ Richardson, A., A.~Bailey, E.~Denny, C.~Martin, and J.~O'Keefe. 2006.
 \bibitem[{Schwartz et~al.(2013)Schwartz, Beaubien, Crimmins, and
   Weltzin}]{schwartz2013}
 Schwartz, M.~D., E.~G. Beaubien, T.~M. Crimmins, and J.~F. Weltzin. 2013.
-\newblock North america.
+\newblock {North America}.
 \newblock Pages 67--89 \emph{in} M.~D. Schwartz, ed. Phenology: an integrative
-  environmental science. Springer.
+  environmental science. Springer, New York.
 
 \bibitem[{Schwartz and Hanes(2010)}]{schwartz2010}
 Schwartz, M.~D., and J.~M. Hanes. 2010.
@@ -287,14 +293,13 @@ Thackeray, S.~J., T.~H. Sparks, M.~Frederiksen, S.~Burthe, P.~J. Bacon, J.~R.
 \newblock Trophic level asynchrony in rates of phenological change for marine,
   freshwater and terrestrial environments.
 \newblock Global Change Biology 16:3304--3313.
-\newblock PT: J; TC: 128.
 
 \bibitem[{Willis et~al.(2010)Willis, Ruhfel, Primack, Miller-Rushing, Losos,
   and Davis}]{willis2010}
 Willis, C.~G., B.~R. Ruhfel, R.~B. Primack, A.~J. Miller-Rushing, J.~B. Losos,
   and C.~C. Davis. 2010.
 \newblock Favorable climate change response explains non-native species'
-  success in thoreau's woods.
+  success in {T}horeau's woods.
 \newblock Plos One 5:e8878.
 
 \bibitem[{Wolkovich and Cleland(2014)}]{wolkovich2014b}

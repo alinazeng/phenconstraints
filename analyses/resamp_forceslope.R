@@ -17,6 +17,12 @@ library(RColorBrewer)
 #Read in data:
 dat2<-read.csv("analyses/output/growingseason_doy2.csv", header = T)
 
+#check variation in start and end date of budburst within species
+#head(dat2)
+#min<-aggregate(dat2$LDStart_DOY,by=list(dat2$Species),min, na.rm=TRUE)
+#max<-aggregate(dat2$LDStart_DOY,by=list(dat2$Species),max, na.rm=TRUE)
+#cbind(min,max[,2])
+#range<-max[,2]-min[,2]
 #calculate start of each phase and interphase durations:
 source("analyses/source/phase_start_and_inter_species.R")
 
