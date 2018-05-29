@@ -1,4 +1,4 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Archetti et~al.(2013)Archetti, Richardson, O'Keefe, and
@@ -55,6 +55,12 @@ Cleland, E.~E., I.~Chuine, A.~Menzel, H.~A. Mooney, and M.~D. Schwartz. 2007.
 \newblock Shifting plant phenology in response to global change.
 \newblock Trends in Ecology and Evolution 22:357--365.
 
+\bibitem[{Cody and Prigge(2003)}]{cody2003}
+Cody, M.~L., and B.~A. Prigge. 2003.
+\newblock Spatial and temporal variations in the timing of leaf replacement in
+  a quercus cornelius-mulleri population.
+\newblock Journal of vegetation science 14:789--798.
+
 \bibitem[{Craine et~al.(2012)Craine, Wolkovich, Towne, and Kembel}]{craine2012}
 Craine, J.~M., E.~M. Wolkovich, E.~G. Towne, and S.~W. Kembel. 2012.
 \newblock Flowering phenology as a functional trait in a tallgrass prairie.
@@ -76,6 +82,12 @@ Diez, J.~M., I.~Ib{\'a}{\~n}ez, A.~J. Miller-Rushing, S.~J. Mazer, T.~M.
 \newblock Forecasting phenology: from species variability to community
   patterns.
 \newblock Ecology Letters 15:545--553.
+
+\bibitem[{Diggle(1997)}]{diggle1997}
+Diggle, P. 1997.
+\newblock Extreme preformation in alpine polygonum viviparum: an architectural
+  and developmental analysis.
+\newblock American Journal of Botany 84:154--154.
 
 \bibitem[{Elmendorf et~al.(2016)Elmendorf, Jones, Cook, Diez, Enquist, Hufft,
   Jones, Mazer, Miller-Rushing, Moore et~al.}]{elmendorf2016}
@@ -126,6 +138,12 @@ Keenan, T.~F., and A.~D. Richardson. 2015.
   phenology: implications for predictive models.
 \newblock Global Change Biology 21:2634--2641.
 
+\bibitem[{Klimes et~al.(2007)}]{klimes2007}
+Klimes, J., et~al. 2007.
+\newblock Bud banks and their role in vegetative regeneration--a literature
+  review and proposal for simple classification and assessment.
+\newblock Perspectives in Plant Ecology, Evolution and Systematics 8:115--129.
+
 \bibitem[{Laube et~al.(2014)Laube, Sparks, Estrella, H{\"o}fler, Ankerst, and
   Menzel}]{laube2014}
 Laube, J., T.~H. Sparks, N.~Estrella, J.~H{\"o}fler, D.~P. Ankerst, and
@@ -149,6 +167,14 @@ Lechowicz, M.~J. 1984.
 Letten, A.~D., S.~Kathleen~Lyons, and A.~T. Moles. 2013.
 \newblock The mid-domain effect: it's not just about space.
 \newblock Journal of Biogeography 40:2017--2019.
+
+\bibitem[{Li et~al.(2016)Li, Jiang, Meng, Wang, Niu, Iler, Duan, Zhang, Luo,
+  Cui et~al.}]{li2016}
+Li, X., L.~Jiang, F.~Meng, S.~Wang, H.~Niu, A.~M. Iler, J.~Duan, Z.~Zhang,
+  C.~Luo, S.~Cui, et~al. 2016.
+\newblock Responses of sequential and hierarchical phenological events to
+  warming and cooling in alpine meadows.
+\newblock Nature communications 7:12489.
 
 \bibitem[{Liu et~al.(2016)Liu, Fu, Zhu, Liu, Liu, Huang, Janssens, and
   Piao}]{liu2016}
@@ -194,14 +220,21 @@ Miller-Rushing, A.~J., and R.~B. Primack. 2008.
 
 \bibitem[{Mimura and Aitken(2010)}]{mimura2010}
 Mimura, M., and S.~Aitken. 2010.
-\newblock L{ocal adaptation at the range peripheries of Sitka spruce}.
-\newblock Journal of Evolutionary Biology 23:249--258.
+\newblock Local adaptation at the range peripheries of sitka spruce.
+\newblock Journal of evolutionary biology 23:249--258.
 
 \bibitem[{Morin et~al.(2010)Morin, Roy, Soni{\'e}, and Chuine}]{morin2010}
 Morin, X., J.~Roy, L.~Soni{\'e}, and I.~Chuine. 2010.
 \newblock {Changes in leaf phenology of three European oak species in response
   to experimental climate change}.
 \newblock New Phytologist 186:900--910.
+
+\bibitem[{Nakamura et~al.(2010)Nakamura, Muller, Tayanagi, Nakaji, and
+  Hiura}]{nakamura2010}
+Nakamura, M., O.~Muller, S.~Tayanagi, T.~Nakaji, and T.~Hiura. 2010.
+\newblock Experimental branch warming alters tall tree leaf phenology and acorn
+  production.
+\newblock Agricultural and Forest Meteorology 150:1026--1029.
 
 \bibitem[{Ogle et~al.(2015)Ogle, Barber, Barron-Gafford, Bentley, Young,
   Huxman, Loik, and Tissue}]{ogle2015}
@@ -219,9 +252,9 @@ Parmesan, C. 2006.
   Hitchcock}]{polgar2013}
 Polgar, C.~A., R.~B. Primack, E.~H. Williams, S.~Stichter, and C.~Hitchcock.
   2013.
-\newblock {Climate effects on the flight period of Lycaenid butterflies in
-  Massachusetts}.
-\newblock Biological Conservation 160:25--31.
+\newblock Climate effects on the flight period of lycaenid butterflies in
+  {M}assachusetts.
+\newblock Biological conservation 160:25--31.
 
 \bibitem[{Primack et~al.(2009)Primack, Ibanez, Higuchi, Lee, Miller-Rushing,
   Wilson, and Jr.}]{primack2009c}

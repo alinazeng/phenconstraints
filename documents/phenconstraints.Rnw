@@ -86,7 +86,7 @@ Plant phenology is a critical trait as the timings of phenophases such as budbur
 We observed phenology (budburst, leafout, flowering, fruiting, and senescence) of 118 individual trees across 25 species, from April through December 2015. 
 \subsection*{Key results}
 %EMW: These sentences feel a little unrelated now and the results feels especially unrelated to the conclusions. Some edits below (including a sentence I have already commented out) but I think needs a little more help. 
-We found that early phenological events weakly (most r\textsuperscript{2}<0.30) constrain most later events, with the strongest constraints (maximum r\textsuperscript{2}=0.43) seen between consecutive stages. In contrast interphase duration was a much stronger predictor of phenology (r\textsuperscript{2}=0.17-0.98), especially for reproductive events (r\textsuperscript{2}>0.7), suggesting that the development time of flowers and fruits constrain the phenology of these events.
+We found that early phenological events weakly (most r\textsuperscript{2}<0.30) constrain most later events, with the strongest constraints (maximum r\textsuperscript{2}=0.43) seen between consecutive stages. In contrast, interphase duration was a much stronger predictor of phenology (r\textsuperscript{2}=0.17-0.98), especially for reproductive events (r\textsuperscript{2}>0.7), suggesting that the development time of flowers and fruits constrain the phenology of these events.
 \subsection*{Conclusions}
 We found that much of the variation in later phenological events can be explained by the timing of earlier events and by interphase durations. This highlights that a shift in one phenophase may often have cascading effects on later phases, thus accurate forecasts of climate change impacts should include multiple phenophases within and across years. %Comment from David Inouye: This also points out that early phenology can be used to make reasonable predictions about what will happen throughout the season.  
 
@@ -201,7 +201,7 @@ The data set for this study is available online at Knowledge Network for Biocomp
  
  \begin{figure}[h]
  \centering
- \includegraphics{../analyses/figures/Hyp1_forcedslope_samerange.pdf}
+ \includegraphics{../analyses/figures/Hyp1_forcedslope_samerange2.pdf}
  \caption{\textbf{Relationships among phenological stages across the 25 focal species.} Linear models were fit with the species-level mean day-of-year (DOY) of the later phenological stages as the response variable, and mean day-of-year of earlier stage as the explanatory variable. Models with a forced slope of 1 are shown by dashed red lines, and r\textsuperscript{2} is given when r\textsuperscript{2}>0.10. (``fs", in red). r\textsuperscript{2} for standard regression (``reg," in black) and lines for these models are shown when r\textsuperscript{2}>0.10 (solid black lines). Full model statistics are summarized in Table S1 in the Supplemental Materials. Species in the legend are ordered from early to late first-flower dates.} 
  \label{fig:latevearly}
 \end{figure}
