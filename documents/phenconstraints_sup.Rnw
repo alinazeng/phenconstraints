@@ -156,6 +156,39 @@ intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. flowering-b
 print(inter.table, include.rownames=FALSE, include.colnames=TRUE,caption.placement="top", sanitize.text.function = identity)
 
 @
+
+<<label=xtable2, echo=FALSE, results=tex>>=
+
+#add new table for interphase = endprev to first next phase.
+source("../analyses/source/phase_start_and_inter_species_end.R")
+source("../analyses/source/interphase_fortables.R")
+
+#Interphase table
+intermodtable<-data.frame(rbind(c(round(summary(LOBB_LOmod)$coeff[1:2,1],digits=3),round(summary(LOBB_LOmod)$r.squared,digits=3), round(summary(LOBB_LOmod)$coeff[2,4],digits=3),round(AIC(LOBB_LOmod),digits=2)),c(round(summary(FLBB_FLmod)$coeff[1:2,1],digits=3),round(summary(FLBB_FLmod)$r.squared,digits=3), round(summary(FLBB_FLmod)$coeff[2,4],digits=3),round(AIC(FLBB_FLmod),digits=2)),c(round(summary(FRBB_FRmod)$coeff[1:2,1],digits=3),round(summary(FRBB_FRmod)$r.squared,digits=3), round(summary(FRBB_FRmod)$coeff[2,4],digits=3),round(AIC(FRBB_FRmod),digits=2)),c(round(summary(SENBB_SSmod)$coeff[1:2,1],digits=3),round(summary(SENBB_SSmod)$r.squared,digits=3), round(summary(SENBB_SSmod)$coeff[2,4],digits=3),round(AIC(SENBB_SSmod),digits=2)),c(round(summary(FLLO_FLmod)$coeff[1:2,1],digits=3),round(summary(FLLO_FLmod)$r.squared,digits=3), round(summary(FLLO_FLmod)$coeff[2,4],digits=3),round(AIC(FLLO_FLmod),digits=2)),c(round(summary(FRLO_FRmod)$coeff[1:2,1],digits=3),round(summary(FRLO_FRmod)$r.squared,digits=3), round(summary(FRLO_FRmod)$coeff[2,4],digits=3),round(AIC(FRLO_FRmod),digits=2)),c(round(summary(SENLO_SSmod)$coeff[1:2,1],digits=3),round(summary(SENLO_SSmod)$r.squared,digits=3), round(summary(SENLO_SSmod)$coeff[2,4],digits=3),round(AIC(SENLO_SSmod),digits=2)),c(round(summary(FRFlo_FRmod)$coeff[1:2,1],digits=3),round(summary(FRFlo_FRmod)$r.squared,digits=3), round(summary(FRFlo_FRmod)$coeff[2,4],digits=3),round(AIC(FRFlo_FRmod),digits=2)),c(round(summary(SENFlo_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFlo_SSmod)$r.squared,digits=3), round(summary(SENFlo_SSmod)$coeff[2,4],digits=3),round(AIC(SENFlo_SSmod),digits=2)),c(round(summary(SENFru_SSmod)$coeff[1:2,1],digits=3),round(summary(SENFru_SSmod)$r.squared,digits=3), round(summary(SENFru_SSmod)$coeff[2,4],digits=3),round(AIC(SENFru_SSmod),digits=2))))
+intermodtable$ranslopeci<-paste(round(cis$perc2.5, digits=2),cis$perc97.5, sep= "-")
+
+ colnames(intermodtable)<-c("intercept","slope","r\\textsuperscript{2}","p","aic","random.slopes")
+
+ intermodtable$aic<-round(intermodtable$aic, digits=2)
+ intermodtable$p[intermodtable$p<0.001]<-"<0.001"
+ 
+intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. flowering-budburst","fruiting vs. fruiting-budburst","senescence vs. senescence-budburst","flowering vs. flowering-leafout","fruiting vs. fruiting-leafout","senescence vs. fruiting-leafout","fruiting vs. fruiting-flowering","senescence vs. senescence-flowering","senesence vs. senescence-fruiting"),intermodtable)
+ colnames(intermodtable)[1]<-"interphase model"
+ 
+ inter.table<-xtable(intermodtable,
+  caption="Summary of linear models for relationships between later phenophases and interphase duration, with interphase calculated as the time between number of days between the end date of the previous phase and the start date of the later phase. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous interphase duration as the explanatory variable. The random.slopes column gives the range in which 95 percent of slopes in the randomization occur (betwen 2.5 percent and 97.5 percent).", label ="table:interphase_end",align=c(
+                "|p{0.01\\textwidth}",            
+                "|p{0.35\\textwidth}",
+                "|p{0.1\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.12\\textwidth}|"))
+ 
+print(inter.table, include.rownames=FALSE, include.colnames=TRUE,caption.placement="top", sanitize.text.function = identity)
+
+@
 \clearpage
 
 \section* {Supplemental Figures}

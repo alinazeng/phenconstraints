@@ -37,27 +37,26 @@ fSENendm<-SENendm[names(fFLstartm)]
 ##################################
 
 #budburst to leafout interphase
-BB_LOdoy = fLOstartm - fLDstartm
+BB_LOdoy = fLOstartm - fLDendm
 #budburst to flowering interphase
-BB_Flodoy = fFLstartm - fLDstartm
+BB_Flodoy = fFLstartm - fLDendm
 
 #budburst to fruiting interphase
-BB_Frudoy = fRFRstartm - fLDstartm
+BB_Frudoy = fRFRstartm - fLDendm
 #budburst to senesence interphase
-BB_SSdoy = fSENstartm - fLDstartm
+BB_SSdoy = fSENstartm - fLDendm
 
 #leafout to flowering interphase
-LO_FLdoy = fFLstartm - fLOstartm
+LO_FLdoy = fFLstartm - fLOendm
 #leafout to fruiting interphase
-LO_Frudoy = fRFRstartm - fLOstartm
+LO_Frudoy = fRFRstartm - fLOendm
 #leafout to senesence interphase
-LO_SSdoy = fSENstartm - fLOstartm
+LO_SSdoy = fSENstartm - fLOendm
 
 #flowering to fruiting interphase
-Flo_Frudoy = fRFRstartm - fFLstartm
-Flo_FrudoyEnd = fRFRstartm - fFLendm
+Flo_Frudoy = fRFRstartm - fFLendm
 #flowering to senescence interphase
-Flo_SSdoy = fSENstartm - fFLstartm 
+Flo_SSdoy = fSENstartm - fFLendm 
 
 #fruiting to senescence interphase
-Fru_SSdoy = fSENstartm - fRFRstartm
+Fru_SSdoy = fSENstartm - fRFRendm

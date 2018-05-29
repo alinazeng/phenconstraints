@@ -9,6 +9,7 @@ FLLO_FLmod<-lm(fFLstartm~LO_FLdoy)
 FRLO_FRmod<-lm(fRFRstartm~LO_Frudoy)
 SENLO_SSmod<-lm(fSENstartm~LO_SSdoy)
 
+#FRFlo_FRmod<-lm(fRFRstartm~Flo_Frudoy)
 FRFlo_FRmod<-lm(fRFRstartm~Flo_Frudoy)
 SENFlo_SSmod<-lm(fSENstartm~Flo_SSdoy)
 SENFru_SSmod<-lm(fSENstartm~Fru_SSdoy)
@@ -17,7 +18,6 @@ SENFru_SSmod<-lm(fSENstartm~Fru_SSdoy)
 # Function to plot everything and fit line to resampled data f(x)
 phases=as.data.frame(cbind(fLDstartm,fLOstartm,fFLstartm,fRFRstartm,fSENstartm))
 interph2<-as.data.frame(cbind(BB_LOdoy,BB_Flodoy,LO_FLdoy,BB_Frudoy,LO_Frudoy,Flo_Frudoy, BB_SSdoy,LO_SSdoy,Flo_SSdoy,Fru_SSdoy)) #interphases for adjacent phases for now:budburst to leafout interphase, leafout to flowering interphase,flowering to fruiting interphase, fruiting to senescence interphase
-
 resamps <- function(postphase,interpheno,prephase, extraphase){
   slopes<-c()
   ints<-c()
