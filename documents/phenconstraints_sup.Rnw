@@ -176,7 +176,7 @@ intermodtable<-cbind(c("leafout vs. leafout-budburst","flowering vs. flowering-b
  colnames(intermodtable)[1]<-"interphase model"
  
  inter.table<-xtable(intermodtable,
-  caption="Summary of linear models for relationships between later phenophases and interphase duration, with interphase calculated as the time between number of days between the end date of the previous phase and the start date of the later phase. Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous interphase duration as the explanatory variable. The random.slopes column gives the range in which 95 percent of slopes in the randomization occur (betwen 2.5 percent and 97.5 percent).", label ="table:interphase_end",align=c(
+  caption="Summary of linear models for relationships between later phenophases and interphase duration, with interphase duration calculated as the number of days between start day-of-year of the later phase and the end day-of-year for the previous phase (instead of the start date for the previous phase, as in Table S2 and Figure 4 in the main text). Linear models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and the number of days in each previous interphase duration as the explanatory variable. The random.slopes column gives the range in which 95 percent of slopes in the randomization occur (betwen 2.5 percent and 97.5 percent).", label ="table:interphase_end",align=c(
                 "|p{0.01\\textwidth}",            
                 "|p{0.35\\textwidth}",
                 "|p{0.1\\textwidth}",
