@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  25 MAY 2018 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  30 MAY 2018 17:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -244,45 +244,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
 [2
 
 ] [3]
-./RevResponse_AJB.tex:90: Undefined control sequence.
-l.90 \section
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+./RevResponse_AJB.tex:99: Undefined control sequence.
+l.99 \section
               {REVIEWER 2}
 ? 
-[4]
-Overfull \hbox (30.04927pt too wide) in paragraph at lines 130--131
-[]\OT1/cmr/m/n/10 I WOULD LOVE SOME HELP HERE. I'M NOT QUITE SURE WHAT IS MEANT
- BY THIS, AND WHETHER/HOW
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--151
+Underfull \hbox (badness 10000) in paragraph at lines 156--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
-[5] [6] (./RevResponse_AJB.aux) ) 
+[6] (./RevResponse_AJB.aux) ) 
 Here is how much of TeX's memory you used:
  1903 strings out of 493089
  28442 string characters out of 6134842
- 98054 words of memory out of 5000000
+ 97054 words of memory out of 5000000
  5392 multiletter control sequences out of 15000+600000
  3986 words of font info for 15 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,23p,1354b,143s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb>
-Output written on RevResponse_AJB.pdf (6 pages, 149675 bytes).
+ 37i,6n,23p,1465b,158s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb>
+Output written on RevResponse_AJB.pdf (6 pages, 149640 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream

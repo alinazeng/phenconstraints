@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{55}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Archetti et~al.(2013)Archetti, Richardson, O'Keefe, and
@@ -112,7 +112,7 @@ Fitter, A.~H., and R.~S.~R. Fitter. 2002.
 
 \bibitem[{Flint(1974)}]{flint1974}
 Flint, H.~L. 1974.
-\newblock Phenology and Genecology of Woody Plants, pages 83--97.
+\newblock Phenology and genecology of woody plants, pages 83--97.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg.
 
 \bibitem[{Gee et~al.(2017)Gee, Ettinger, and Wolkovich}]{gee2017}
@@ -274,6 +274,11 @@ Primack, R.~B., and A.~J. Miller-Rushing. 2009.
 \newblock R: A Language and Environment for Statistical Computing.
 \newblock R Foundation for Statistical Computing, Vienna, Austria.
 
+\bibitem[{Rathcke and Lacey(1985)}]{rathcke1985}
+Rathcke, B., and E.~P. Lacey. 1985.
+\newblock Phenological patterns of terrestrial plants.
+\newblock Annual Review of Ecology and Systematics 16:179--214.
+
 \bibitem[{Richardson et~al.(2006)Richardson, Bailey, Denny, Martin, and
   O'Keefe}]{richardson2006}
 Richardson, A., A.~Bailey, E.~Denny, C.~Martin, and J.~O'Keefe. 2006.
@@ -291,6 +296,12 @@ Schwartz, M.~D., E.~G. Beaubien, T.~M. Crimmins, and J.~F. Weltzin. 2013.
 Schwartz, M.~D., and J.~M. Hanes. 2010.
 \newblock Continental-scale phenology: warming and chilling.
 \newblock International Journal of Climatology 30:1595--1598.
+
+\bibitem[{Schwartz et~al.(2014)Schwartz, Hanes, and Liang}]{schwartz2014}
+Schwartz, M.~D., J.~M. Hanes, and L.~Liang. 2014.
+\newblock Separating temperature from other factors in phenological
+  measurements.
+\newblock International Journal of Biometeorology 58:1699--1704.
 
 \bibitem[{Sun and Frelich(2011)}]{sun2011}
 Sun, S., and L.~E. Frelich. 2011.
