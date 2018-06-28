@@ -1,0 +1,131 @@
+% Straight up stealing preamble from Eli Holmes 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%START PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+\documentclass{article}
+
+%Required: You must have these
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{gensymb}
+
+%\usepackage[backend=bibtex]{biblatex}
+%Strongly recommended
+ %put your figures in one place
+\SweaveOpts{prefix.string=figures/, eps=FALSE} 
+%you'll want these for pretty captioning
+\usepackage[small]{caption}
+
+\setkeys{Gin}{width=0.8\textwidth} %make the figs 50 perc textwidth
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+% manual for caption http://www.dd.chalmers.se/latex/Docs/PDF/caption.pdf
+
+%Optional: I like to muck with my margins and spacing in ways that LaTeX frowns on
+%Here's how to do that
+ \topmargin -2cm     
+ \oddsidemargin -0.04cm   
+ \evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+ \textwidth 16.59cm
+ \textheight 22.94cm 
+ %\pagestyle{empty}       % Uncomment if don't want page numbers
+ \parskip 7.2pt           % sets spacing between paragraphs
+ %\renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\parindent 0pt% sets leading space for paragraphs
+\usepackage{setspace}
+%\doublespacing
+
+%Optional: I like fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{Phenological sequences}
+\fancyhead[RO]{2018}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%END PREAMBLE THAT IS THE SAME FOR ALL EXAMPLES
+
+%Start of the document
+\begin{document}
+\SweaveOpts{concordance=FALSE}
+% \SweaveOpts{concordance=TRUE}
+\bibliographystyle{/Users/aileneettinger/citations/Bibtex/styles/amnat.bst}
+\title{Ettinger et al. American Journal of Botany. 2018. Appendix S2.} 
+%\author{A.K. Ettinger, S. Gee, and E.M. Wolkovich}
+%\date{\today}
+\maketitle  %put the fancy title on
+%\tableofcontents      %add a table of contents
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thetable}{S\arabic{table}}
+%\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{table}{1}
+
+%\section*{Supplemental Methods}
+
+%\section* {Supplemental Results}
+
+
+%\section{Bibliography}
+%\bibliography{/Users/aileneettinger/citations/Bibtex/mylibrary}
+
+%\section* {Supplemental Tables}
+
+<<label=xtable1, echo=FALSE, results=tex>>=
+if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints/documents")}
+
+#prevphase analyses
+source("../analyses/source/prev_phase_fortables.R")
+
+#Previous stage model table:
+prevmodtable<-data.frame(rbind(c(round(summary(LO_BBmod)$coeff[1:2,1],digits=3), round(summary(LO_BBmod)$coeff[2,4],digits=3),round(summary(LO_BBmod)$r.squared,digits=3)),c(round(summary(FL_BBmod)$coeff[1:2,1],digits=3), round(summary(FL_BBmod)$coeff[2,4],digits=3),round(summary(FL_BBmod)$r.squared,digits=3)),c(round(summary(RFR_BBmod)$coeff[1:2,1],digits=3), round(summary(RFR_BBmod)$coeff[2,4],digits=3),round(summary(RFR_BBmod)$r.squared,digits=3)),c(round(summary(SEN_BBmod)$coeff[1:2,1],digits=3), round(summary(SEN_BBmod)$coeff[2,4],digits=3),round(summary(SEN_BBmod)$r.squared,digits=3)),c(round(summary(FL_LOmod)$coeff[1:2,1],digits=3), round(summary(FL_LOmod)$coeff[2,4],digits=3),round(summary(FL_LOmod)$r.squared,digits=3)),c(round(summary(RFR_LOmod)$coeff[1:2,1],digits=3), round(summary(RFR_LOmod)$coeff[2,4],digits=3),round(summary(RFR_LOmod)$r.squared,digits=3)),c(round(summary(SEN_LOmod)$coeff[1:2,1],digits=3), round(summary(SEN_LOmod)$coeff[2,4],digits=3),round(summary(SEN_LOmod)$r.squared,digits=3)),c(round(summary(RFR_FLmod)$coeff[1:2,1],digits=3), round(summary(RFR_FLmod)$coeff[2,4],digits=3),round(summary(RFR_FLmod)$r.squared,digits=3)),c(round(summary(SEN_FLmod)$coeff[1:2,1],digits=3), round(summary(SEN_FLmod)$coeff[2,4],digits=3),round(summary(SEN_FLmod)$r.squared,digits=3)),c(round(summary(SEN_RFRmod)$coeff[1:2,1],digits=3), round(summary(SEN_RFRmod)$coeff[2,4],digits=3),round(summary(SEN_RFRmod)$r.squared,digits=3))))
+ colnames(prevmodtable)<-c("intercept","slope","p","r\\textsuperscript{2}")
+
+ prevmodtable$p[prevmodtable$p<0.001]<-"<0.001"
+fsints<-c(round(summary(LO_BBfmod)$coeff[1,1],digits=3),round(summary(FL_BBfmod)$coeff[1,1],digits=3),round(summary(RFR_BBfmod)$coeff[1,1],digits=3),round(summary(SEN_BBfmod)$coeff[1,1],digits=3),round(summary(FL_LOfmod)$coeff[1,1],digits=3),round(summary(RFR_LOfmod)$coeff[1,1],digits=3),round(summary(SEN_LOfmod)$coeff[1,1],digits=3),round(summary(RFR_FLfmod)$coeff[1,1],digits=3),round(summary(SEN_FLfmod)$coeff[1,1],digits=3),round(summary(SEN_RFRfmod)$coeff[1,1],digits=3))#forced slope model intercepts
+  
+rsq.fs <- function(y,forceBmod){ 
+  yhat <- predict(forceBmod)
+  ss_tot <- sum((y - mean(y))^2)
+  ss_res <- sum((y - yhat)^2)
+  Rsq.fs <- 1 - (ss_res / ss_tot)
+  Rsq.fs<-round(Rsq.fs,digits=2)
+  return(Rsq.fs)
+}
+  fsrsqs<-c(rsq.fs(fLOstartm,LO_BBfmod),rsq.fs(fFLstartm,FL_BBfmod),rsq.fs(fRFRstartm,RFR_BBfmod),rsq.fs(fSENstartm,SEN_BBfmod),rsq.fs(fFLstartm,FL_LOfmod),rsq.fs(fRFRstartm,RFR_LOfmod),rsq.fs(fSENstartm,SEN_LOfmod),rsq.fs(fRFRstartm,RFR_FLfmod),rsq.fs(fSENstartm,SEN_FLfmod),rsq.fs(fSENstartm,SEN_RFRfmod))#forced slope model r-squareds
+
+  fsaics<-c(AIC(LO_BBfmod),AIC(FL_BBfmod),AIC(RFR_BBfmod),AIC(SEN_BBfmod),AIC(FL_LOfmod),AIC(RFR_LOfmod),AIC(SEN_LOfmod),AIC(RFR_FLfmod),AIC(SEN_FLfmod),AIC(SEN_RFRfmod))
+ aics<-c(AIC(LO_BBmod),AIC(FL_BBmod),AIC(RFR_BBmod),AIC(SEN_BBmod),AIC(FL_LOmod),AIC(RFR_LOmod),AIC(SEN_LOmod),AIC(RFR_FLmod),AIC(SEN_FLmod),AIC(SEN_RFRmod))
+prevmodtable<-cbind(c("leafout vs. budburst","flowering vs. budburst","fruiting vs. budburst","senescence vs. budburst","flowering vs. leafout","fruiting vs. leafout","senescence vs. leafout","fruiting vs. flowering","senescence vs. flowering","senesence vs. fruiting"),fsints,fsrsqs,fsaics,prevmodtable,aics)
+ colnames(prevmodtable)[1:4]<-c("previous phenostage model","intercept","r\\textsuperscript{2}","AIC")
+ colnames(prevmodtable)[9]<-"AIC"
+prev.table<-xtable(prevmodtable,
+  caption="Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Two types of linear models were fit: those with the intercept only estimated and a forced slope of one, and those with both the slope and intercept estimated (i.e., a standard regression model). All models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and mean day-of-year of earlier phenostage as the explanatory variable. Asterisks in Figure 3 correspond to models with r\\textsuperscript{2} >0.10.",label="table:prevphase",align=c(
+                "|p{0.01\\textwidth}",            
+                "|p{0.27\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.05\\textwidth}",
+                "|p{0.05\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.05\\textwidth}",
+                "|p{0.05\\textwidth}",
+                "|p{0.07\\textwidth}",
+                "|p{0.05\\textwidth}|"))
+ 
+
+addtorow <- list()
+addtorow$pos <- list(0, 0)
+
+addtorow$command <- c("&\\multicolumn{3}{c |}{forced slope model} &\\multicolumn{5}{c |}{standard regression model}\\\\\n \\hline","previous phenostage model & intercept & r\\textsuperscript{2} & aic & intercept & slope  & p & r\\textsuperscript{2} & aic \\\\\n") # Trick here is to re-assign that horizontal line in the multicolumn command.
+#print(stmod.table, add.to.row=addtorow,include.rownames=TRUE, include.colnames=FALSE,caption.placement="top",size="\\footnotesize")
+
+colnames(prevmodtable)[9]<-"aic"
+print(prev.table, include.rownames=FALSE, include.colnames=FALSE,caption.placement="top", sanitize.text.function = identity,add.to.row=addtorow)
+
+@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
