@@ -59,7 +59,7 @@
 %\tableofcontents      %add a table of contents
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thetable}{Appendix S\arabic{table}}
 %\renewcommand{\thefigure}{S\arabic{figure}}
 \setcounter{table}{1}
 
@@ -102,7 +102,7 @@ prevmodtable<-cbind(c("leafout vs. budburst","flowering vs. budburst","fruiting 
  colnames(prevmodtable)[1:4]<-c("previous phenostage model","intercept","r\\textsuperscript{2}","AIC")
  colnames(prevmodtable)[9]<-"AIC"
 prev.table<-xtable(prevmodtable,
-  caption="Summary of linear models for relationships between later phenophases and earlier phenophases, as shown in Figure 3 in the main text. Two types of linear models were fit: those with the intercept only estimated and a forced slope of one, and those with both the slope and intercept estimated (i.e., a standard regression model). All models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and mean day-of-year of earlier phenostage as the explanatory variable. Asterisks in Figure 3 correspond to models with r\\textsuperscript{2} >0.10.",label="table:prevphase",align=c(
+  caption="\\textbf{Summary of linear models for relationships between later phenophases and earlier phenophases}, as shown in Figure 3 in the main text. Two types of linear models were fit: those with the intercept only estimated and a forced slope of one, and those with both the slope and intercept estimated (i.e., a standard regression model). All models were fit with the species-level mean day-of-year of the later phenological stages as the response variable, and mean day-of-year of earlier phenostage as the explanatory variable. Asterisks in Figure 3 correspond to models with r\\textsuperscript{2} >0.10.",label="table:prevphase",align=c(
                 "|p{0.01\\textwidth}",            
                 "|p{0.27\\textwidth}",
                 "|p{0.07\\textwidth}",

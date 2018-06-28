@@ -107,10 +107,9 @@ Diggle, P.
 \newblock American Journal of Botany 84:154--154.
 
 \bibitem[{Elmendorf et~al.(2016)Elmendorf, Jones, Cook, Diez, Enquist, Hufft,
-  Jones, Mazer, Miller-Rushing, Moore et~al.}]{elmendorf2016}
+  Jones et~al.}]{elmendorf2016}
 Elmendorf, S.~C., Jones, K.~D., Cook, B.~I., Diez, J.~M., Enquist, C.~A.,
-  Hufft, R.~A., Jones, M.~O., Mazer, S.~J., Miller-Rushing, A.~J., Moore,
-  D.~J., et~al.
+  Hufft, R.~A., Jones, M.~O., et~al.
 \newblock 2016.
 \newblock The plant phenology monitoring design for the {N}ational {E}cological
   {O}bservatory {N}etwork.
@@ -200,14 +199,13 @@ Letten, A.~D., Kathleen~Lyons, S., and Moles, A.~T.
 \newblock The mid-domain effect: it's not just about space.
 \newblock Journal of Biogeography 40:2017--2019.
 
-\bibitem[{Li et~al.(2016)Li, Jiang, Meng, Wang, Niu, Iler, Duan, Zhang, Luo,
-  Cui et~al.}]{li2016}
-Li, X., Jiang, L., Meng, F., Wang, S., Niu, H., Iler, A.~M., Duan, J., Zhang,
-  Z., Luo, C., Cui, S., et~al.
+\bibitem[{Li et~al.(2016)Li, Jiang, Meng, Wang, Niu, Iler, Duan
+  et~al.}]{li2016}
+Li, X., Jiang, L., Meng, F., Wang, S., Niu, H., Iler, A.~M., Duan, J., et~al.
 \newblock 2016.
 \newblock Responses of sequential and hierarchical phenological events to
   warming and cooling in alpine meadows.
-\newblock Nature communications 7:12489.
+\newblock Nature Communications 7:12489.
 
 \bibitem[{Liu et~al.(2016)Liu, Fu, Zhu, Liu, Liu, Huang, Janssens, and
   Piao}]{liu2016}
@@ -226,16 +224,9 @@ Marco, D.~E. and P{\'a}ez, S.~A.
 \newblock Journal of Arid Environments 52:1--16.
 
 \bibitem[{Menzel et~al.(2006)Menzel, Sparks, Estrella, Koch, Aasa, Ahas,
-  Alm-Kuebler, Bissolli, Braslavska, Briede, Chmielewski, Crepinsek, Curnel,
-  Dahl, Defila, Donnelly, Filella, Jatcza, Mage, Mestre, Nordli, Penuelas,
-  Pirinen, Remisova, Scheifinger, Striz, Susnik, Vliet, Wielgolaski, Zach, and
-  Zust}]{menzel2006}
+  Alm-Kuebler et~al.}]{menzel2006}
 Menzel, A., Sparks, T.~H., Estrella, N., Koch, E., Aasa, A., Ahas, R.,
-  Alm-Kuebler, K., Bissolli, P., Braslavska, O., Briede, A., Chmielewski,
-  F.~M., Crepinsek, Z., Curnel, Y., Dahl, A., Defila, C., Donnelly, A.,
-  Filella, Y., Jatcza, K., Mage, F., Mestre, A., Nordli, O., Penuelas, J.,
-  Pirinen, P., Remisova, V., Scheifinger, H., Striz, M., Susnik, A., Vliet, A.
-  J. H.~V., Wielgolaski, F.-E., Zach, S., and Zust, A.
+  Alm-Kuebler, K., et~al.
 \newblock 2006.
 \newblock European phenological response to climate change matches the warming
   pattern.
@@ -300,9 +291,9 @@ Polgar, C.~A., Primack, R.~B., Williams, E.~H., Stichter, S., and Hitchcock, C.
 \newblock Biological conservation 160:25--31.
 
 \bibitem[{Primack et~al.(2009)Primack, Ibanez, Higuchi, Lee, Miller-Rushing,
-  Wilson, and Jr.}]{primack2009c}
+  Wilson, and Silander}]{primack2009c}
 Primack, R.~B., Ibanez, I., Higuchi, H., Lee, S.~D., Miller-Rushing, A.~J.,
-  Wilson, A.~M., and Jr., J. A.~S.
+  Wilson, A.~M., and Silander, J.~A.
 \newblock 2009.
 \newblock Spatial and interspecific variability in phenological responses to
   warming temperatures.
@@ -364,11 +355,9 @@ Sun, S. and Frelich, L.~E.
 \newblock Journal of Ecology 99:991--1000.
 
 \bibitem[{Taylor et~al.(2008)Taylor, Tallis, Giardina, Percy, Miglietta, Gupta,
-  Gioli, Calfapietra, Gielen, Kubiske, Scarascia-Mugnozza, Kets, Long, and
-  Karnosky}]{taylor2008}
+  Gioli et~al.}]{taylor2008}
 Taylor, G., Tallis, M.~J., Giardina, C.~P., Percy, K.~E., Miglietta, F., Gupta,
-  P.~S., Gioli, B., Calfapietra, C., Gielen, B., Kubiske, M.~E.,
-  Scarascia-Mugnozza, G.~E., Kets, K., Long, S.~P., and Karnosky, D.~F.
+  P.~S., Gioli, B., et~al.
 \newblock 2008.
 \newblock Future atmospheric {CO}2 leads to delayed autumnal senescence.
 \newblock Global Change Biology 14:264--275.
@@ -381,14 +370,9 @@ Teller, B.~J., Adler, P.~B., Edwards, C.~B., Hooker, G., and Ellner, S.~P.
 \newblock Methods in Ecology and Evolution 7:171--183.
 
 \bibitem[{Thackeray et~al.(2010)Thackeray, Sparks, Frederiksen, Burthe, Bacon,
-  Bell, Botham, Brereton, Bright, Carvalho, Clutton-Brock, Dawson, Edwards,
-  Elliott, Harrington, Johns, Jones, Jones, Leech, Roy, Scott, Smith, Smithers,
-  Winfield, and Wanless}]{thackeray2010}
+  Bell, Botham et~al.}]{thackeray2010}
 Thackeray, S.~J., Sparks, T.~H., Frederiksen, M., Burthe, S., Bacon, P.~J.,
-  Bell, J.~R., Botham, M.~S., Brereton, T.~M., Bright, P.~W., Carvalho, L.,
-  Clutton-Brock, T., Dawson, A., Edwards, M., Elliott, J.~M., Harrington, R.,
-  Johns, D., Jones, I.~D., Jones, J.~T., Leech, D.~I., Roy, D.~B., Scott,
-  W.~A., Smith, M., Smithers, R.~J., Winfield, I.~J., and Wanless, S.
+  Bell, J.~R., Botham, M.~S., et~al.
 \newblock 2010.
 \newblock Trophic level asynchrony in rates of phenological change for marine,
   freshwater and terrestrial environments.
@@ -411,12 +395,9 @@ Wolkovich, E.~M. and Cleland, E.~E.
 \newblock AoB Plants 6:plu013.
 
 \bibitem[{Wolkovich et~al.(2012)Wolkovich, Cook, Allen, Crimmins, Betancourt,
-  Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren, Mazer, McCabe, McGill,
-  Parmesan, Salamin, Schwartz, and Cleland}]{wolkovich2012}
+  Travers, Pau et~al.}]{wolkovich2012}
 Wolkovich, E.~M., Cook, B.~I., Allen, J.~M., Crimmins, T.~M., Betancourt,
-  J.~L., Travers, S.~E., Pau, S., Regetz, J., Davies, T.~J., Kraft, N. J.~B.,
-  Ault, T.~R., Bolmgren, K., Mazer, S.~J., McCabe, G.~J., McGill, B.~J.,
-  Parmesan, C., Salamin, N., Schwartz, M.~D., and Cleland, E.~E.
+  J.~L., Travers, S.~E., Pau, S., et~al.
 \newblock 2012.
 \newblock Warming experiments underpredict plant phenological responses to
   climate change.

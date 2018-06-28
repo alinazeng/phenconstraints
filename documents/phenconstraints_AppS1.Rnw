@@ -59,7 +59,7 @@
 %\tableofcontents      %add a table of contents
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thefigure}{Appendix S\arabic{figure}}
 
 
 %\section*{Supplemental Methods}
@@ -77,7 +77,7 @@
 \begin{figure}[h]
   \centering
   \includegraphics{../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf}
-  \caption{\textbf{Individual tree phenology during the 2015 growing season, ordered by species-level mean first-flower dates.} Growth phenology is shown for budburst (from day-of-year it was first observed on the individual to the first day-of-year  leafoutwas observed), leafout (from the first day-of-year when fully-expanded leaves were observed through the first day senescence was observed), and senescence (from first day-of-year when leaves began changing color through the day-of-year when more than 95\% of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the first day-of-year when flowers appeared to the day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the first day-of-year when fruits appeared to the day-of-year when more than 95\% of fruits were first observed as ripe).}
+  \caption{\textbf{Individual tree phenology during the 2015 growing season}, ordered by species-level mean first-flower dates. Growth phenology is shown for budburst (from day-of-year it was first observed on the individual to the first day-of-year  leafout was observed), leafout (from the first day-of-year when fully-expanded leaves were observed through the first day senescence was observed), and senescence (from first day-of-year when leaves began changing color through the day-of-year when more than 95\% of leaves on the tree had changed color). Reproductive phenology is shown for flowering (from the first day-of-year when flowers appeared to the day-of-year when fruits first appeared, across all individuals within a species) and fruiting (from the first day-of-year when fruits appeared to the day-of-year when more than 95\% of fruits were first observed as ripe).}
  \label{fig:focind}
 \end{figure}
 \clearpage

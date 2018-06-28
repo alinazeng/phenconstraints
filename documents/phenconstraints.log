@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JUN 2018 23:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 JUN 2018 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**phenconstraints_AppS3.tex
-(./phenconstraints_AppS3.tex
+**phenconstraints.tex
+(./phenconstraints.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -349,55 +349,81 @@ Package caption Info: hyperref package is loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip48
-\f@ncyO@elh=\skip49
-\f@ncyO@erh=\skip50
-\f@ncyO@olh=\skip51
-\f@ncyO@orh=\skip52
-\f@ncyO@elf=\skip53
-\f@ncyO@erf=\skip54
-\f@ncyO@olf=\skip55
-\f@ncyO@orf=\skip56
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count104
+\output=\toks17
+\linenoprevgraf=\count105
+\linenumbersep=\dimen123
+\linenumberwidth=\dimen124
+\c@linenumber=\count106
+\c@pagewiselinenumber=\count107
+\c@LN@truepage=\count108
+\c@internallinenumber=\count109
+\c@internallinenumbers=\count110
+\quotelinenumbersep=\dimen125
+\bframerule=\dimen126
+\bframesep=\dimen127
+\bframebox=\box27
+LaTeX Info: Redefining \\ on input line 3056.
 )
-(./phenconstraints_AppS3.aux)
-\openout1 = `phenconstraints_AppS3.aux'.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/preprint/authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip48
+\@affilsep=\skip49
+\c@Maxaffil=\count111
+\c@authors=\count112
+\c@affil=\count113
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip50
+\f@ncyO@elh=\skip51
+\f@ncyO@erh=\skip52
+\f@ncyO@olh=\skip53
+\f@ncyO@orh=\skip54
+\f@ncyO@elf=\skip55
+\f@ncyO@erf=\skip56
+\f@ncyO@olf=\skip57
+\f@ncyO@orf=\skip58
+)
+(./phenconstraints.aux)
+\openout1 = `phenconstraints.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen123
-\scratchbox=\box27
-\nofMPsegments=\count105
-\nofMParguments=\count106
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen124
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count114
+\scratchdimen=\dimen128
+\scratchbox=\box28
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen129
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks19
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -413,8 +439,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 51.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 62.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -422,117 +448,130 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count110
+\c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 51.
-LaTeX Info: Redefining \pageref on input line 51.
-LaTeX Info: Redefining \nameref on input line 51.
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
 
-(./phenconstraints_AppS3.out) (./phenconstraints_AppS3.out)
+(./phenconstraints.out) (./phenconstraints.out)
 \@outlinefile=\write4
-\openout4 = `phenconstraints_AppS3.out'.
+\openout4 = `phenconstraints.out'.
 
 \symgns@font=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/aer/m/n --> TS1/aer/bx/n on input line 51.
-Package gensymb Info: Math companion symbols declared on input line 51.
-LaTeX Info: Redefining \degree on input line 51.
-LaTeX Info: Redefining \celsius on input line 51.
+(Font)                  TS1/aer/m/n --> TS1/aer/bx/n on input line 62.
+Package gensymb Info: Math companion symbols declared on input line 62.
+LaTeX Info: Redefining \degree on input line 62.
+LaTeX Info: Redefining \celsius on input line 62.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 51.
-LaTeX Info: Redefining \ohm on input line 51.
-Package gensymb Info: Using \textohm for \ohm on input line 51.
-Package gensymb Info: Using \textmu for \micro on input line 51.
+erthousand on input line 62.
+LaTeX Info: Redefining \ohm on input line 62.
+Package gensymb Info: Using \textohm for \ohm on input line 62.
+Package gensymb Info: Using \textmu for \micro on input line 62.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 78.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 62.
+(Font)              <12> on input line 78.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 62.
+(Font)              <8> on input line 78.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 62.
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 62.
+(Font)              <6> on input line 78.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 78.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 62.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <8> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 62.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 62.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 80.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 80.
-LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 80.
-LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 80.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 82.
-LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 82.
-LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <7> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 82.
-
-Overfull \hbox (5.37775pt too wide) in paragraph at lines 84--85
-[]|\T1/aer/m/n/10 random.slopes| 
- []
-
-
-Overfull \hbox (16.41249pt too wide) in paragraph at lines 82--98
- [][] 
- []
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 78.
 
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf, id=18, 867.24pt x
- 867.24pt>
-File: ../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf Graphic file 
-(type pdf)
- <use ../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf>
-Package pdftex.def Info: ../analyses/figures/grosea_repsort_ripefruit_ind_legen
-d.pdf used on input line 105.
-(pdftex.def)             Requested size: 377.62633pt x 377.63011pt.
+[2] [3]
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 108.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 110.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 110.
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <7> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 110.
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 110.
+ [4] [5] [6] [7] [8] [9] [10] [11] (./phenconstraints.bbl [12]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 137.
 
-[2
 
- <../analyses/figures/grosea_repsort_ripefruit_ind_legend.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [13] [14] [15])
+[16]
+Overfull \hbox (35.03929pt too wide) in paragraph at lines 168--181
+[][]
+ []
 
-(./phenconstraints_AppS3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
-Package rerunfilecheck Info: File `phenconstraints_AppS3.out' has not changed.
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--181
+
+ []
+
+[17] [18]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 203.
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 203.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
+ [19
+
+] [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
+ (./phenconstraints.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
+Package rerunfilecheck Info: File `phenconstraints.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
  ) 
 Here is how much of TeX's memory you used:
- 7908 strings out of 493089
- 119707 string characters out of 6134842
- 209405 words of memory out of 5000000
- 11258 multiletter control sequences out of 15000+600000
- 32329 words of font info for 69 fonts, out of 8000000 for 9000
+ 8529 strings out of 493089
+ 128803 string characters out of 6134842
+ 216953 words of memory out of 5000000
+ 11741 multiletter control sequences out of 15000+600000
+ 50356 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,13n,43p,1021b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on phenconstraints_AppS3.pdf (2 pages, 708512 bytes).
+ 36i,10n,43p,2314b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on phenconstraints.pdf (20 pages, 274800 bytes).
 PDF statistics:
- 583 PDF objects out of 1000 (max. 8388607)
- 435 compressed objects within 5 object streams
- 6 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 418 compressed objects within 5 object streams
+ 101 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
