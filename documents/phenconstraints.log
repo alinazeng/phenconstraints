@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 JUN 2018 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 JUN 2018 16:51
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **phenconstraints.tex
 (./phenconstraints.tex
@@ -23,7 +24,7 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Sweave.sty
+(/Users/aileneettinger/Library/texmf/tex/latex/Sweave/tex/latex/Sweave.sty
 Package: Sweave 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
@@ -386,7 +387,7 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \f@ncyO@olf=\skip57
 \f@ncyO@orf=\skip58
 )
-(./phenconstraints.aux)
+No file phenconstraints.aux.
 \openout1 = `phenconstraints.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
@@ -403,7 +404,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
 LaTeX Font Info:    ... okay on input line 62.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
-
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -453,8 +453,6 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 62.
 LaTeX Info: Redefining \pageref on input line 62.
 LaTeX Info: Redefining \nameref on input line 62.
-
-(./phenconstraints.out) (./phenconstraints.out)
 \@outlinefile=\write4
 \openout4 = `phenconstraints.out'.
 
@@ -484,7 +482,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 78.
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 78.
 
-(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
+(/Users/aileneettinger/Library/texmf/tex/latex/Sweave/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <12> not available
@@ -497,9 +495,167 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
+
+Package natbib Warning: Citation `chuine2001' on page 2 undefined on input line
+ 96.
+
+
+Package natbib Warning: Citation `cleland2007' on page 2 undefined on input lin
+e 96.
+
+
+Package natbib Warning: Citation `willis2010' on page 2 undefined on input line
+ 96.
+
+
+Package natbib Warning: Citation `miller-rushing2010' on page 2 undefined on in
+put line 96.
+
+
+Package natbib Warning: Citation `craine2012' on page 2 undefined on input line
+ 96.
+
+
+Package natbib Warning: Citation `parmesan2006' on page 2 undefined on input li
+ne 96.
+
+
+Package natbib Warning: Citation `parmesan2006' on page 2 undefined on input li
+ne 98.
+
+
+Package natbib Warning: Citation `richardson2006' on page 2 undefined on input 
+line 98.
+
+
+Package natbib Warning: Citation `morin2010' on page 2 undefined on input line 
+98.
+
+
+Package natbib Warning: Citation `schwartz2013' on page 2 undefined on input li
+ne 98.
+
+
+Package natbib Warning: Citation `clark2014b' on page 2 undefined on input line
+ 98.
+
+
+Package natbib Warning: Citation `wolkovich2012' on page 2 undefined on input l
+ine 98.
+
+
+Package natbib Warning: Citation `lechowicz1984' on page 2 undefined on input l
+ine 98.
+
+
+Package natbib Warning: Citation `primack2009c' on page 2 undefined on input li
+ne 98.
+
+
+Package natbib Warning: Citation `lechowicz1984' on page 2 undefined on input l
+ine 98.
+
+
+Package natbib Warning: Citation `borchert1992' on page 2 undefined on input li
+ne 98.
+
+
+Package natbib Warning: Citation `marco2002' on page 2 undefined on input line 
+98.
+
+
+Package natbib Warning: Citation `marco2002' on page 2 undefined on input line 
+98.
+
+[2]
+
+Package natbib Warning: Citation `polgar2013' on page 3 undefined on input line
+ 100.
+
+
+Package natbib Warning: Citation `thackeray2010' on page 3 undefined on input l
+ine 100.
+
+
+Package natbib Warning: Citation `wolkovich2014' on page 3 undefined on input l
+ine 102.
+
+
+Package natbib Warning: Citation `basler2012' on page 3 undefined on input line
+ 102.
+
+
+Package natbib Warning: Citation `laube2014' on page 3 undefined on input line 
+102.
+
+
+Package natbib Warning: Citation `fitter2002' on page 3 undefined on input line
+ 102.
+
+
+Package natbib Warning: Citation `millerrushing2008' on page 3 undefined on inp
+ut line 102.
+
+
+Package natbib Warning: Citation `parmesan2006' on page 3 undefined on input li
+ne 102.
+
+
+Package natbib Warning: Citation `taylor2008' on page 3 undefined on input line
+ 102.
+
+
+Package natbib Warning: Citation `archetti2013' on page 3 undefined on input li
+ne 102.
+
+
+Package natbib Warning: Citation `jeong2014' on page 3 undefined on input line 
+102.
+
+
+Package natbib Warning: Citation `wolkovich2012' on page 3 undefined on input l
+ine 102.
+
+
+Package natbib Warning: Citation `li2016' on page 3 undefined on input line 104
+.
+
+
+Package natbib Warning: Citation `lechowicz1995' on page 3 undefined on input l
+ine 104.
+
+
+Package natbib Warning: Citation `keenan2015' on page 3 undefined on input line
+ 104.
+
+
+Package natbib Warning: Citation `liu2016' on page 3 undefined on input line 10
+4.
+
+
+Package natbib Warning: Citation `menzel2006' on page 3 undefined on input line
+ 104.
+
+
+Package natbib Warning: Citation `caradonna2014' on page 3 undefined on input l
+ine 104.
+
+
+Package natbib Warning: Citation `wolkovich2014' on page 3 undefined on input l
+ine 104.
+
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 108.
+
+LaTeX Warning: Reference `fig:hyp' on page 3 undefined on input line 108.
+
+
+LaTeX Warning: Reference `fig:hyp' on page 3 undefined on input line 108.
+
+[3]
+
+LaTeX Warning: Reference `fig:hyp' on page 4 undefined on input line 110.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 110.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -508,14 +664,254 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <7> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 110.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 110.
- [4] [5] [6] [7] [8] [9] [10] [11] (./phenconstraints.bbl [12]
+
+LaTeX Warning: Reference `fig:hyp' on page 4 undefined on input line 110.
+
+
+Package natbib Warning: Citation `primack2009a' on page 4 undefined on input li
+ne 115.
+
+[4]
+
+Package natbib Warning: Citation `denny2014' on page 5 undefined on input line 
+118.
+
+
+Package natbib Warning: Citation `denny2014' on page 5 undefined on input line 
+118.
+
+
+Package natbib Warning: Citation `denny2014' on page 5 undefined on input line 
+119.
+
+
+LaTeX Warning: Reference `fig:hyp' on page 5 undefined on input line 122.
+
+
+LaTeX Warning: Reference `fig:hyp' on page 5 undefined on input line 122.
+
+[5]
+
+LaTeX Warning: Reference `fig:hyp' on page 6 undefined on input line 123.
+
+
+Package natbib Warning: Citation `rcoreteam2017' on page 6 undefined on input l
+ine 125.
+
+
+Package natbib Warning: Citation `gee2017' on page 6 undefined on input line 12
+5.
+
+
+LaTeX Warning: Reference `fig:focsp' on page 6 undefined on input line 128.
+
+
+LaTeX Warning: Reference `fig:focsp' on page 6 undefined on input line 128.
+
+
+LaTeX Warning: Reference `fig:focsp' on page 6 undefined on input line 128.
+
+[6]
+
+LaTeX Warning: Reference `fig:latevearly' on page 7 undefined on input line 130
+.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 7 undefined on input line 130
+.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 7 undefined on input line 130
+.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 7 undefined on input line 130
+.
+
+
+LaTeX Warning: Reference `fig:inter' on page 7 undefined on input line 132.
+
+
+LaTeX Warning: Reference `fig:inter' on page 7 undefined on input line 132.
+
+[7]
+
+Package natbib Warning: Citation `keenan2015' on page 8 undefined on input line
+ 137.
+
+
+Package natbib Warning: Citation `liu2016' on page 8 undefined on input line 13
+7.
+
+
+Package natbib Warning: Citation `li2016' on page 8 undefined on input line 137
+.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 8 undefined on input line 137
+.
+
+
+Package natbib Warning: Citation `lechowicz1995' on page 8 undefined on input l
+ine 137.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 8 undefined on input line 137
+.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 8 undefined on input line 137
+.
+
+
+Package natbib Warning: Citation `bolmgren2008' on page 8 undefined on input li
+ne 139.
+
+
+Package natbib Warning: Citation `sun2011' on page 8 undefined on input line 13
+9.
+
+
+LaTeX Warning: Reference `fig:inter' on page 8 undefined on input line 139.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 8 undefined on input line 139
+.
+
+
+Package natbib Warning: Citation `elzinga2007' on page 8 undefined on input lin
+e 139.
+
+[8]
+
+LaTeX Warning: Reference `fig:inter' on page 9 undefined on input line 141.
+
+
+LaTeX Warning: Reference `fig:inter' on page 9 undefined on input line 141.
+
+
+Package natbib Warning: Citation `letten2013' on page 9 undefined on input line
+ 141.
+
+
+Package natbib Warning: Citation `schwartz2010' on page 9 undefined on input li
+ne 141.
+
+
+Package natbib Warning: Citation `chuine2010' on page 9 undefined on input line
+ 141.
+
+
+Package natbib Warning: Citation `clark2014b' on page 9 undefined on input line
+ 141.
+
+
+Package natbib Warning: Citation `lechowicz1995' on page 9 undefined on input l
+ine 141.
+
+
+LaTeX Warning: Reference `fig:inter' on page 9 undefined on input line 141.
+
+
+LaTeX Warning: Reference `fig:latevearly' on page 9 undefined on input line 143
+.
+
+
+LaTeX Warning: Reference `fig:inter' on page 9 undefined on input line 143.
+
+
+Package natbib Warning: Citation `flint1974' on page 9 undefined on input line 
+143.
+
+
+Package natbib Warning: Citation `inouye2008' on page 9 undefined on input line
+ 143.
+
+[9]
+
+Package natbib Warning: Citation `rathcke1985' on page 10 undefined on input li
+ne 145.
+
+
+Package natbib Warning: Citation `schwartz2014' on page 10 undefined on input l
+ine 145.
+
+
+Package natbib Warning: Citation `nakamura2010' on page 10 undefined on input l
+ine 145.
+
+
+Package natbib Warning: Citation `wolkovich2014b' on page 10 undefined on input
+ line 148.
+
+
+Package natbib Warning: Citation `chuine2001' on page 10 undefined on input lin
+e 148.
+
+
+Package natbib Warning: Citation `li2016' on page 10 undefined on input line 14
+8.
+
+
+Package natbib Warning: Citation `wolkovich2014' on page 10 undefined on input 
+line 148.
+
+
+Package natbib Warning: Citation `elmendorf2016' on page 10 undefined on input 
+line 148.
+
+
+Package natbib Warning: Citation `mimura2010' on page 10 undefined on input lin
+e 148.
+
+
+Package natbib Warning: Citation `ogle2015' on page 10 undefined on input line 
+148.
+
+
+Package natbib Warning: Citation `diggle1997' on page 10 undefined on input lin
+e 148.
+
+
+Package natbib Warning: Citation `klimes2007' on page 10 undefined on input lin
+e 148.
+
+
+Package natbib Warning: Citation `cody2003' on page 10 undefined on input line 
+148.
+
+
+Package natbib Warning: Citation `diez2012' on page 10 undefined on input line 
+148.
+
+[10]
+
+Package natbib Warning: Citation `morin2010' on page 11 undefined on input line
+ 151.
+
+
+Package natbib Warning: Citation `schwartz2013' on page 11 undefined on input l
+ine 151.
+
+
+Package natbib Warning: Citation `teller2016' on page 11 undefined on input lin
+e 151.
+
+
+Package natbib Warning: Citation `lechowicz1995' on page 11 undefined on input 
+line 151.
+
+
+Package natbib Warning: Citation `gee2017' on page 11 undefined on input line 1
+58.
+
+[11] (./phenconstraints.bbl [12]
 LaTeX Font Info:    Try loading font information for T1+aett on input line 137.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 ) [13] [14] [15])
-[16]
 Overfull \hbox (35.03929pt too wide) in paragraph at lines 168--181
 [][]
  []
@@ -525,53 +921,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--181
 
  []
 
-[17] [18]
+[16] [17]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 203.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 203.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
- [19
 
-] [20]
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
+[18
+
+] [19]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
- (./phenconstraints.aux)
+ (./phenconstraints.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
-Package rerunfilecheck Info: File `phenconstraints.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+Package rerunfilecheck Warning: File `phenconstraints.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `phenconstraints.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
  ) 
 Here is how much of TeX's memory you used:
- 8529 strings out of 493089
- 128803 string characters out of 6134842
- 216953 words of memory out of 5000000
+ 8527 strings out of 493089
+ 128654 string characters out of 6134842
+ 212278 words of memory out of 5000000
  11741 multiletter control sequences out of 15000+600000
- 50356 words of font info for 98 fonts, out of 8000000 for 9000
+ 53142 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,10n,43p,2314b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,43p,2311b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on phenconstraints.pdf (20 pages, 274800 bytes).
+}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on phenconstraints.pdf (19 pages, 276381 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 418 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
+ 100 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
