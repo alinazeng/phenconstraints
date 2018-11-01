@@ -1,7 +1,7 @@
 ### Sally Growing Season Partition Data
 ### 1/31/2015
 
-# Leaf Developement: Start = Breaking leaf buds >3%, End = Increasing Leaf Size >95%
+# Leaf Developement: Start = Breaking leaf buds >3, End = Increasing Leaf Size >95%
 # Flowering: Start = 5-24% Open Flowers, End >95% Open Flowers
 # Fruiting: Start = 3-10 Fruits, End >95% Ripe Fruits
 # Senescence: Start = 5-24% Color Change, End = >95% Color Chnage
@@ -175,6 +175,10 @@ alldata2=cbind(alldata,LDStart_DOY,LDEnd_DOY,LOutStart_DOY,LOutEnd_DOY,FloStart_
 head(alldata2)
 write.csv(alldata2,"analyses/output/growingseason_doy2.csv")
 alldata2<-as.data.frame(alldata2)
+
+###create CSV that just has the doy (no dates)
+alldata3<-subset(alldata2, select=c(Accession, Species,LDStart_DOY,LDEnd_DOY,LOutStart_DOY,LOutEnd_DOY,FloStart_DOY,FloEnd_DOY,FruStart_DOY,FruEnd_DOY,RipeFruStart_DOY,RipeFruEnd_DOY, SenStart_DOY,SenEnd_DOY))
+write.csv(alldata3,"analyses/output/gee2018.csv")
 #Getting the numbers that sally had in her thesis (first paragraph in results)
 min(as.numeric(alldata2$LDStart_DOY))#110
 max(as.numeric(alldata2$LDStart_DOY))#142
