@@ -8,6 +8,9 @@ options(stringsAsFactors = FALSE)
 # Set working directory: 
 if(length(grep("ailene", getwd()))>0) {setwd("~/git/phenconstraints")}
 
+setwd("C:/Users/alina/Documents/git/plotcode/phenconstraints")
+
+
 #load libraries
 library(RColorBrewer)
 library(dplyr)
