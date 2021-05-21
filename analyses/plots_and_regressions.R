@@ -25,12 +25,14 @@ source("analyses/source/phase_start_and_inter_species.R")
 #cols <- rev(colorRampPalette(brewer.pal(9,"YlOrRd"))(25))#red to yellow with later flowering dates
 cols <- colorRampPalette(brewer.pal(9,"YlOrRd"))(25)#yellow to red with later flowering dates
 
+# skeleton
 quartz(height=8,width=10)
 par(mai=c(1,3,.1,.1), omi=c(1.2,.1,.1,.2))
 plot(8,10, type="p", cex=.8,pch=21, col="white", bty="L", xlab="Day of Year",ylab=" ", ylim=c(1,50), yaxt='n',xlim=c(110,385),las=1)
 axis(side=2,at=c(seq(from =2, to = 50, by = 2)),labels=(paste(rev(names(fLDstartm)))),las=1, font=3)
 
 #Start with first to flower
+png("test.png", width=950, height=950)
 species<-names(fFLstartm)
 y<-rev(seq(from =2, to = 50, by = 2))
 for(i in 1:length(species)){
@@ -42,6 +44,8 @@ for(i in 1:length(species)){
   lines(c(fSENstartm[i],fSENendm[i]),c(y[i],y[i]), col="yellow2",lwd=3)
 }
 legend(325,50, legend=c("budburst","leafout", "senescence","in flower","fruit developing", "ripe fruit"), lty=1,lwd=2,col=c("palegreen","seagreen","yellow","orchid","gray","darkorchid"), cex=.85)
+dev.off()
+
 
 #Plot same figure, but for individual instead of species:
 #sort by species-level mean flowering date
@@ -258,5 +262,6 @@ mtext("Fruiting DOY", side=1, cex=.7, line=2)
 sp<-cbind(fspecies,fLDstartm,fLOstartm,fFLstartm,fRFRstartm,fSENstartm,BB_LOdoy, LO_FLdoy, Flo_Frudoy, Fru_SSdoy)
 colnames(sp)<-c("species","bb","lo","fl", "fr", "sen","bb_lo","lo_fl","fl_fr","fr_sen")
 write.csv(sp,"analyses/output/phenomeans.csv", row.names=FALSE)
+
 
 
